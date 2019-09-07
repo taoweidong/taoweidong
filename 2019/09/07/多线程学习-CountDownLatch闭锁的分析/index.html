@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="半度微凉">
 <meta property="og:description" content="概念闭锁是一种同步工具类，可以延迟线程的进度直到闭锁到达终止状态。Latch在英语中就是门栓的意思，所以形象地说闭锁就相当于一扇门，在日常生活中我们都遇到过类似的场景，进入一个场馆前，必须达到一定的条件，比如活动开始前半小时可以入场；如果来早了的话，对不起，以便等着。 CountDownLatch 在多线程中也是这样的作用，在闭锁到达结束状态前，这扇门是一直关闭的，不允许任何线程通过，当到达结束状">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-07T04:34:29.973Z">
+<meta property="og:updated_time" content="2019-09-07T08:23:12.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程学习-CountDownLatch闭锁的分析">
 <meta name="twitter:description" content="概念闭锁是一种同步工具类，可以延迟线程的进度直到闭锁到达终止状态。Latch在英语中就是门栓的意思，所以形象地说闭锁就相当于一扇门，在日常生活中我们都遇到过类似的场景，进入一个场馆前，必须达到一定的条件，比如活动开始前半小时可以入场；如果来早了的话，对不起，以便等着。 CountDownLatch 在多线程中也是这样的作用，在闭锁到达结束状态前，这扇门是一直关闭的，不允许任何线程通过，当到达结束状">
@@ -239,6 +239,7 @@
 <p><strong>闭锁可以用来确保某些活动直到其他活动都完成后才继续执行</strong>。CountDownLatch是一种灵活的闭锁实现，它可以使一个或多个线程 等待一组事件的发生。</p>
 <p><strong>闭锁包括一个计数器，该计数器被初始化为一个正整数，表示等待的事件数量。有一等待时间发生时，使用countDown方法递减计数 器，而await方法就是等待所有事件的发生，也就是计数器的值为0.如果计数器的值不为0 那么await 方法需要一直等待</strong>。</p>
 <p>参考： <a href="https://www.cnblogs.com/wei-zw/p/8797757.html" target="_blank" rel="noopener">https://www.cnblogs.com/wei-zw/p/8797757.html</a></p>
+<a id="more"></a>
 <h1 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.juc;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.CountDownLatch;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * CountDownLatch闭锁：在完成某些运算时，只有其他的所有线程的运算全部完成时，当前运算才继续执行</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestCountDownLatch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">final</span> CountDownLatch latch = <span class="keyword">new</span> CountDownLatch(<span class="number">5</span>);</span><br><span class="line">		LatchDemo lt = <span class="keyword">new</span> LatchDemo(latch);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">new</span> Thread(lt).start();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			latch.await();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">long</span> end = System.currentTimeMillis();</span><br><span class="line">		System.out.println(<span class="string">"耗费时间为:"</span> + (end - start));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LatchDemo</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> CountDownLatch latch;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">LatchDemo</span><span class="params">(CountDownLatch latch)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.latch = latch;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50000</span>; i++) &#123;</span><br><span class="line">					<span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">						System.out.println(i);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">				latch.countDown();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     
@@ -580,7 +581,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,7 +589,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,10 +641,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
               </li>
              
@@ -656,15 +653,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
+                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,15 +741,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -796,11 +797,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
+                <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
+                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
               </li>
              
               <li class="article-tag-list-item">
