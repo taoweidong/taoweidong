@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
   <title>SpringBoot学习笔记-集成Spring AOP | 半度微凉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -43,7 +43,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -187,7 +187,7 @@
 </ul>
 <h1 id="创建学习工程"><a href="#创建学习工程" class="headerlink" title="创建学习工程"></a>创建学习工程</h1><p>此处略过，使用集成Mybatis的工程，<a href="https://github.com/TaciturnK/springboot-learning/tree/master/SpringBoot-mybatis" target="_blank" rel="noopener">https://github.com/TaciturnK/springboot-learning/tree/master/SpringBoot-mybatis</a></p>
 <p>项目结构</p>
-<p><img src="https://i.imgur.com/JQXwyaG.png" alt=""></p>
+<p><img src="https://i.imgur.com/JQXwyaG.png" alt></p>
 <h1 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;  </span><br><span class="line">   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  </span><br><span class="line">   &lt;artifactId&gt;spring-boot-starter-aop&lt;/artifactId&gt;  </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="创建Aspect切面类"><a href="#创建Aspect切面类" class="headerlink" title="创建Aspect切面类"></a>创建Aspect切面类</h1><p>AOP的通知类型有：前置通知、后置最终通知、后置返回通知、后置异常通知、环绕通知等，此处对这些通知的添加举例学习下。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>  </span><br><span class="line"><span class="meta">@Aspect</span>  <span class="comment">//注意添加对应的注解</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebControllerAop</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -196,10 +196,10 @@
 <h1 id="前置通知"><a href="#前置通知" class="headerlink" title="前置通知"></a>前置通知</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 前置通知，方法调用前被调用</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * 通过JoinPoint可以获得通知的签名信息，如目标方法名、目标方法参数信息等。通过RequestContextHolder来获取请求信息，Session信息。</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> joinpoint</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="meta">@Before</span>(<span class="string">"executeService()"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doBeforeAdvice</span><span class="params">(JoinPoint joinPoint)</span> </span>&#123;</span><br><span class="line">       logger.info(<span class="string">"这里是前置通知"</span>);</span><br><span class="line">       <span class="comment">//获取目标方法的参数信息</span></span><br><span class="line">       Object[] obj = joinPoint.getArgs();</span><br><span class="line">       <span class="comment">//Aop代理类的信息</span></span><br><span class="line">       joinPoint.getThis();</span><br><span class="line">       <span class="comment">//代理的目标对象</span></span><br><span class="line">       joinPoint.getTarget();</span><br><span class="line">       <span class="comment">//用的最多 通知的签名</span></span><br><span class="line">       Signature signature = joinPoint.getSignature();</span><br><span class="line">       <span class="comment">//代理的是哪个方法</span></span><br><span class="line">       logger.info(<span class="string">"代理的方法："</span> + signature.getName());</span><br><span class="line">       <span class="comment">//AOP代理类的名字</span></span><br><span class="line">       logger.info(<span class="string">"AOP代理类的名字："</span> + signature.getDeclaringTypeName());</span><br><span class="line">       <span class="comment">//AOP代理类的信息</span></span><br><span class="line">       signature.getDeclaringType();</span><br><span class="line">       <span class="comment">//获取RequestAttributes  通过RequestContextHolder来获取请求信息，Session信息。</span></span><br><span class="line">       RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();</span><br><span class="line">       <span class="comment">//获取RequestAttributes中HttpServletRequest的信息</span></span><br><span class="line">       HttpServletRequest request = (HttpServletRequest) requestAttributes.resolveReference(RequestAttributes.REFERENCE_REQUEST);</span><br><span class="line">       <span class="comment">//如果要获取Session信息的话，可以这样写：</span></span><br><span class="line">       <span class="comment">//HttpSession session = (HttpSession) requestAttributes.resolveReference(RequestAttributes.REFERENCE_SESSION);</span></span><br><span class="line">       Enumeration&lt;String&gt; enumeration = request.getParameterNames();</span><br><span class="line">       Map&lt;String, String&gt; parameterMap = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">       <span class="keyword">while</span> (enumeration.hasMoreElements()) &#123;</span><br><span class="line">           String parameter = enumeration.nextElement();</span><br><span class="line">           parameterMap.put(parameter, request.getParameter(parameter));</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//使用fastjson将Map对象转成JSON字符串</span></span><br><span class="line">       String str = JSONUtils.toJSONString(parameterMap);</span><br><span class="line"></span><br><span class="line">       logger.info(<span class="string">"请求的参数信息为："</span> + str);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p>注意：这里用到了JoinPoint和RequestContextHolder。通过JoinPoint可以获得通知的签名信息，如目标方法名、目标方法参数信息等。通过RequestContextHolder来获取请求信息，Session信息。</p>
 <p>启动工程，访问Controller:<a href="http://127.0.0.1:8090//mybatis/queryUserList?nameTest=231313" target="_blank" rel="noopener">http://127.0.0.1:8090//mybatis/queryUserList?nameTest=231313</a></p>
-<p><img src="https://i.imgur.com/I3ulNlx.png" alt=""></p>
-<p><img src="https://i.imgur.com/ZG8lFHh.png" alt=""></p>
+<p><img src="https://i.imgur.com/I3ulNlx.png" alt></p>
+<p><img src="https://i.imgur.com/ZG8lFHh.png" alt></p>
 <h1 id="后置返回通知"><a href="#后置返回通知" class="headerlink" title="后置返回通知"></a>后置返回通知</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AfterReturning</span>(value = <span class="string">"execution(* com.taowd.controller..*.*(..))"</span>, returning = <span class="string">"keys"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfterReturningAdvice1</span><span class="params">(JoinPoint joinPoint, Object keys)</span> </span>&#123;</span><br><span class="line">logger.info(<span class="string">"第一个后置通知的返回值："</span> + keys);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@AfterReturning</span>(value = <span class="string">"execution(* com.taowd.controller..*.*(..))"</span>, returning = <span class="string">"keys"</span>, argNames = <span class="string">"keys"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfterReturningAdvice2</span><span class="params">(String keys)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"第二个后置返回通知的返回值："</span> + keys);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/OHL51MI.png" alt=""></p>
+<p><img src="https://i.imgur.com/OHL51MI.png" alt></p>
 
       
 
@@ -616,18 +616,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
@@ -641,6 +629,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
               </li>
              
               <li class="article-tag-list-item">

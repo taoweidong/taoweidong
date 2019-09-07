@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
   <title>使用Jenkins和GitLab搭建CI环境 | 半度微凉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -50,7 +50,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -199,8 +199,8 @@
 </ul>
 <h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><p>在正式开始安装之前，先更新软件包并打开相关服务的权限。</p>
 <h3 id="更新软件包"><a href="#更新软件包" class="headerlink" title="更新软件包"></a>更新软件包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/mmgP5NC.png" alt=""></p>
-<p><img src="https://i.imgur.com/WLjZRfK.png" alt=""></p>
+<p><img src="https://i.imgur.com/mmgP5NC.png" alt></p>
+<p><img src="https://i.imgur.com/WLjZRfK.png" alt></p>
 <h3 id="安装-sshd"><a href="#安装-sshd" class="headerlink" title="安装 sshd"></a>安装 sshd</h3><ul>
 <li>安装 sshd：</li>
 </ul>
@@ -231,7 +231,7 @@
 </blockquote>
 <p>新建 2 GB 大小的交换分区： </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=/root/swapfile bs=1M count=2048</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/MgdPJZJ.png" alt=""></p>
+<p><img src="https://i.imgur.com/MgdPJZJ.png" alt></p>
 <p>格式化为交换分区文件并启用： </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkswap /root/swapfile</span><br><span class="line">swapon /root/swapfile</span><br></pre></td></tr></table></figure>
 <p>添加自启用。打开 /etc/fstab 文件，在文件最后添加新的一行并按 <code>Ctrl + S</code> 保存： </p>
@@ -267,19 +267,19 @@
 <li>jdk-8u121-linux-x64.tar.gz(根据自己的需要安装版本)</li>
 <li>jenkins.war(注意：Jenkins的版本和jdk版本需对应)</li>
 </ul>
-<p><img src="https://i.imgur.com/mlV2WWt.png" alt=""></p>
+<p><img src="https://i.imgur.com/mlV2WWt.png" alt></p>
 <h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><p>Jenkins是依赖jdk的，因此需要先安装jdk并配置环境变量，配置完成后，安装tomcat，也就是解压tomcat压缩包；Jenkins安装包是一个war包，只需要将这个war包放置在tomcat的wabapp目录下，并运行tomcat就可以使用jenkins<strong>注意：如果服务器上8080端口已经被占用，此处需要修改tomcat的端口，防止端口冲突</strong> </p>
-<p><img src="https://i.imgur.com/PJ93WVA.png" alt=""></p>
-<p><img src="https://i.imgur.com/JEC5lIU.png" alt=""></p>
+<p><img src="https://i.imgur.com/PJ93WVA.png" alt></p>
+<p><img src="https://i.imgur.com/JEC5lIU.png" alt></p>
 <p>注意在用户根目录下存储的初识密码，根据打开的主页上的提示信息，找到初识密码并输入。</p>
-<p><img src="https://i.imgur.com/u6SXvxS.png" alt=""></p>
-<p><img src="https://i.imgur.com/OXmYbp7.png" alt=""></p>
+<p><img src="https://i.imgur.com/u6SXvxS.png" alt></p>
+<p><img src="https://i.imgur.com/OXmYbp7.png" alt></p>
 <p>按照推荐安装Jenkins插件，一般情况下，推荐的插件已经足够使用了。</p>
-<p><img src="https://i.imgur.com/5D0S04H.png" alt=""></p>
+<p><img src="https://i.imgur.com/5D0S04H.png" alt></p>
 <p>创建一个用户，然后安装就成功了，可以开始使用Jenkins了。</p>
-<p><img src="https://i.imgur.com/gUPX2iJ.png" alt=""></p>
+<p><img src="https://i.imgur.com/gUPX2iJ.png" alt></p>
 <p>进入主页：</p>
-<p><img src="https://i.imgur.com/G7wKOq7.png" alt=""></p>
+<p><img src="https://i.imgur.com/G7wKOq7.png" alt></p>
 
       
 
@@ -704,18 +704,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
@@ -729,6 +717,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
               </li>
              
               <li class="article-tag-list-item">

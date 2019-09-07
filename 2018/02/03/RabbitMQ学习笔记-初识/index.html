@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
   <title>RabbitMQ学习笔记-初识 | 半度微凉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -40,7 +40,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -180,7 +180,7 @@
         <h1 id="消息队列的历史"><a href="#消息队列的历史" class="headerlink" title="消息队列的历史"></a>消息队列的历史</h1><p>Message Queue的需求由来已久，80年代最早在金融交易中，高盛等公司采用Teknekron公司的产品，当时的Message queuing软件叫做：the information bus（TIB）。 TIB被电信和通讯公司采用，路透社收购了Teknekron公司。之后，IBM开发了MQSeries，微软开发了Microsoft Message Queue（MSMQ）。这些商业MQ供应商的问题是厂商锁定，价格高昂。2001年，Java Message queuing试图解决锁定和交互性的问题，但对应用来说反而更加麻烦了。</p>
 <p>于是2004年，摩根大通和iMatrix开始着手Advanced Message Queuing Protocol （AMQP）开放标准的开发。2006年，AMQP规范发布。2007年，Rabbit技术公司基于AMQP标准开发的RabbitMQ 1.0 发布。</p>
 <p>目前RabbitMQ的最新版本为3.5.7，基于AMQP 0-9-1。 </p>
-<p><img src="https://i.imgur.com/g3ImCQm.png" alt=""></p>
+<p><img src="https://i.imgur.com/g3ImCQm.png" alt></p>
 <p>RabbitMQ采用Erlang语言开发。Erlang语言由Ericson设计，专门为开发concurrent和distribution系统的一种语言，在电信领域使用广泛。OTP（Open Telecom Platform）作为Erlang语言的一部分，包含了很多基于Erlang开发的中间件／库／工具，如mnesia／SASL，极大方便了Erlang应用的开发。OTP就类似于Python语言中众多的module，用户借助这些module可以很方便的开发应用。</p>
 <a id="more"></a>
 <h1 id="RabbitMQ到底是什么？"><a href="#RabbitMQ到底是什么？" class="headerlink" title="RabbitMQ到底是什么？"></a>RabbitMQ到底是什么？</h1><p>RabbitMQ是一个程序与程序之间通信的方法，或者可以理解为一种专用的通道，专门用来负责消息的读取和写入。应用程序通过在RabbitMQ中读写消息来通信，程序与程序之间无需专门的链接，而是直接通过RabbitMQ来进行数据的读写。RabbitMQ将会采用异步的方式来分发消息，是一种经典的生产者与消费者的模式，多个消费者由RabbitMQ来负责协调，并且保证每一条消息都能得到可靠的执行。假如一条消息在执行过程中出现了错误，RabbitMQ并不会放弃这条消息，而是专由其他的消费者来处理这条消息。</p>
@@ -605,18 +605,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
@@ -630,6 +618,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
               </li>
              
               <li class="article-tag-list-item">

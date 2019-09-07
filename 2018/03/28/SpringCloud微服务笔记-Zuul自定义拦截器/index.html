@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
   <title>SpringCloud微服务笔记-Zuul自定义拦截器 | 半度微凉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -41,7 +41,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -181,7 +181,7 @@
         <h1 id="Zuul过滤器机制"><a href="#Zuul过滤器机制" class="headerlink" title="Zuul过滤器机制"></a>Zuul过滤器机制</h1><p>zuul的核心是一系列的filters, 其作用可以类比Servlet框架的Filter，或者AOP。</p>
 <p>zuul把Request route到 用户处理逻辑 的过程中，这些filter参与一些过滤处理，比如Authentication，Load Shedding等。</p>
 <p>Spring Cloud对Zuul进行了整合和增强。目前，Zuul使用的默认是Apache的HTTP Client，也可以使用Rest Client，可以设置ribbon.restclient.enabled=true.</p>
-<p><img src="https://images2015.cnblogs.com/blog/486074/201702/486074-20170220185335288-1703224333.png" alt=""></p>
+<p><img src="https://images2015.cnblogs.com/blog/486074/201702/486074-20170220185335288-1703224333.png" alt></p>
 <p>Zuul提供了一个框架，可以对过滤器进行动态的加载，编译，运行。</p>
 <p>Zuul的过滤器之间没有直接的相互通信，他们之间通过一个RequestContext的静态类来进行数据传递的。RequestContext类中有ThreadLocal变量来记录每个Request所需要传递的数据。</p>
 <p>Zuul的过滤器是由Groovy写成，这些过滤器文件被放在Zuul Server上的特定目录下面，Zuul会定期轮询这些目录，修改过的过滤器会动态的加载到Zuul Server中以便过滤请求使用。</p>
@@ -201,7 +201,7 @@
 <h2 id="自定义的过滤器"><a href="#自定义的过滤器" class="headerlink" title="自定义的过滤器"></a>自定义的过滤器</h2><p>除了默认的过滤器类型，Zuul还允许我们创建自定义的过滤器类型。</p>
 <p>例如，我们可以定制一种STATIC类型的过滤器，直接在Zuul中生成响应，而不将请求转发到后端的微服务。</p>
 <h1 id="过滤器的生命周期"><a href="#过滤器的生命周期" class="headerlink" title="过滤器的生命周期"></a>过滤器的生命周期</h1><p>Zuul请求的生命周期如图，该图详细描述了各种类型的过滤器的执行顺序。</p>
-<p><img src="https://images2015.cnblogs.com/blog/1099841/201706/1099841-20170630111344414-1260445909.png" alt=""></p>
+<p><img src="https://images2015.cnblogs.com/blog/1099841/201706/1099841-20170630111344414-1260445909.png" alt></p>
 <h1 id="编写Zuul微服务网关"><a href="#编写Zuul微服务网关" class="headerlink" title="编写Zuul微服务网关"></a>编写Zuul微服务网关</h1><h2 id="创建工程，添加依赖"><a href="#创建工程，添加依赖" class="headerlink" title="创建工程，添加依赖"></a>创建工程，添加依赖</h2><pre><code>&lt;!--Api网关依赖--&gt;
 &lt;dependency&gt;
 &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
@@ -708,18 +708,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
@@ -733,6 +721,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
               </li>
              
               <li class="article-tag-list-item">

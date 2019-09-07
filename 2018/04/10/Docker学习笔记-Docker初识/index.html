@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
   <title>Docker学习笔记-Docker初识2 | 半度微凉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -46,7 +46,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -183,7 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://i.imgur.com/eMqKkzM.png" alt=""></p>
+        <p><img src="http://i.imgur.com/eMqKkzM.png" alt></p>
 <h1 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h1><p>是一个开源的应用容器引擎，可以轻松的为任何应用创建一个轻量级的、可移植的、自给自足的容器。利用Linux的LXC、AUFS、Go语言、cgroup实现了资源的独立，可以很轻松的实现文件、资源、网络等隔离，其最终的目标是实现类似PaaS平台的应用隔离。</p>
 <hr>
 <h1 id="docker值得关注的特性："><a href="#docker值得关注的特性：" class="headerlink" title="docker值得关注的特性："></a>docker值得关注的特性：</h1><ol>
@@ -192,7 +192,7 @@
 <li>网络隔离：每个进程容器运行在自己的网络空间，虚拟接口和IP地址。</li>
 <li>日志记录：Docker将会收集和记录每个进程容器的标准流（stdout/stderr/stdin），用于实时检索或批量检索。</li>
 <li>变更管理：容器文件系统的变更可以提交到新的映像中，并可重复使用以创建更多的容器。无需使用模板或手动配置。</li>
-<li>交互式shell：Docker可以分配一个虚拟终端并关联到任何容器的标准输入上，例如运行一个一次<em>*</em>互shell。</li>
+<li>交互式shell：Docker可以分配一个虚拟终端并关联到任何容器的标准输入上，例如运行一个一次***互shell。</li>
 </ol>
 <h1 id="Docker通常用于如下场景"><a href="#Docker通常用于如下场景" class="headerlink" title="Docker通常用于如下场景"></a>Docker通常用于如下场景</h1><ul>
 <li>web应用的自动化打包和发布；</li>
@@ -208,11 +208,11 @@
 </li>
 <li><p>系统环境检查：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/2Jy4IwP.png" alt=""></p>
+<p><img src="https://i.imgur.com/2Jy4IwP.png" alt></p>
 </li>
 <li><p>检查系统硬件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/w6Oi1wC.png" alt=""></p>
+<p><img src="https://i.imgur.com/w6Oi1wC.png" alt></p>
 </li>
 </ol>
 <h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><ul>
@@ -222,13 +222,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@Taowd-PC docker]# yum -y install docker</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="http://www.runoob.com/wp-content/uploads/2016/05/docker09.png" alt=""></p>
+<p><img src="http://www.runoob.com/wp-content/uploads/2016/05/docker09.png" alt></p>
 <h2 id="启动-Docker-后台服务"><a href="#启动-Docker-后台服务" class="headerlink" title="启动 Docker 后台服务"></a>启动 Docker 后台服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@runoob ~]# service docker start</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/nOah2AT.png" alt=""></p>
+<p><img src="https://i.imgur.com/nOah2AT.png" alt></p>
 <h2 id="查看docker版本信息"><a href="#查看docker版本信息" class="headerlink" title="查看docker版本信息"></a>查看docker版本信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@Taowd-PC ~]# docker version</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/RtFd9f0.png" alt=""></p>
+<p><img src="https://i.imgur.com/RtFd9f0.png" alt></p>
 <h2 id="测试运行docker的-hello-world"><a href="#测试运行docker的-hello-world" class="headerlink" title="测试运行docker的 hello-world"></a>测试运行docker的 hello-world</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@Taowd-PC ~]# docker run hello-world</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/t9A0BzX.png" alt=""></p>
+<p><img src="https://i.imgur.com/t9A0BzX.png" alt></p>
 <p>由于本地没有hello-world这个镜像，所以会下载一个hello-world的镜像，并在容器内运行。</p>
 <h2 id="镜像加速"><a href="#镜像加速" class="headerlink" title="镜像加速"></a>镜像加速</h2><p>鉴于国内网络问题，后续拉取 Docker 镜像十分缓慢，我们可以需要配置加速器来解决，我使用的是网易的镜像地址：<a href="http://hub-mirror.c.163.com。" target="_blank" rel="noopener">http://hub-mirror.c.163.com。</a></p>
 <p>新版的 Docker 使用 /etc/docker/daemon.json（Linux） 或者 %programdata%\docker\config\daemon.json（Windows） 来配置 Daemon。</p>
@@ -645,18 +645,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
@@ -670,6 +658,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
   <title>微服务架构中的注册中心-Eureka | 半度微凉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -42,7 +42,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -187,7 +187,7 @@
 <li>跨语言：允许开发者使用多种编程语言构建微服务</li>
 </ul>
 <a id="more"></a>
-<h2 id="服务提供者、消费者、发现组件等三者关系"><a href="#服务提供者、消费者、发现组件等三者关系" class="headerlink" title="服务提供者、消费者、发现组件等三者关系"></a>服务提供者、消费者、发现组件等三者关系</h2><p><img src="https://i.imgur.com/Tj8qJDE.png" alt=""></p>
+<h2 id="服务提供者、消费者、发现组件等三者关系"><a href="#服务提供者、消费者、发现组件等三者关系" class="headerlink" title="服务提供者、消费者、发现组件等三者关系"></a>服务提供者、消费者、发现组件等三者关系</h2><p><img src="https://i.imgur.com/Tj8qJDE.png" alt></p>
 <ul>
 <li>微服务启动件自己的网络地址等信息注册到服务发现组件中，服务发现组件会存储微服务的ip地址、端口等信息。</li>
 <li>服务消费者可以从服务发现组件查询服务提供者的网络地址，并使用该地址调用服务提供者的接口。</li>
@@ -201,7 +201,7 @@
 <h1 id="Eureka简介"><a href="#Eureka简介" class="headerlink" title="Eureka简介"></a>Eureka简介</h1><blockquote>
 <p>Eureka 是 Netflix 出品的用于实现服务注册和发现的工具。 Spring Cloud 集成了 Eureka，并提供了开箱即用的支持。其中， Eureka 又可细分为 Eureka Server 和 Eureka Client。</p>
 </blockquote>
-<h2 id="Eureka框架结构"><a href="#Eureka框架结构" class="headerlink" title="Eureka框架结构"></a>Eureka框架结构</h2><p><img src="https://i.imgur.com/gv7UzFj.png" alt=""></p>
+<h2 id="Eureka框架结构"><a href="#Eureka框架结构" class="headerlink" title="Eureka框架结构"></a>Eureka框架结构</h2><p><img src="https://i.imgur.com/gv7UzFj.png" alt></p>
 <p>Eureka的框架分为2 个组件：Eureka Server和Eureka Client，具体作用如下：</p>
 <ul>
 <li>Eureka Server提供服务发现的能力，微服务启动的时候，先Eureka Server注册自己的信息（ip、端口、服务名称），Eureka Server存储这些信息。</li>
@@ -212,7 +212,7 @@
 <h2 id="Eureka服务治理基础框架3个核心要素"><a href="#Eureka服务治理基础框架3个核心要素" class="headerlink" title="Eureka服务治理基础框架3个核心要素"></a>Eureka服务治理基础框架3个核心要素</h2><ul>
 <li>服务注册中心：提供服务注册与发现的功能</li>
 <li>服务提供者：将自己服务注册到服务注册中心</li>
-<li>服务消费者：消费者应用从服务注册中心获取服务列表，为消费者提供服务。<br>架构图如下：<br><img src="https://i.imgur.com/Zr1y5y9.png" alt=""></li>
+<li>服务消费者：消费者应用从服务注册中心获取服务列表，为消费者提供服务。<br>架构图如下：<br><img src="https://i.imgur.com/Zr1y5y9.png" alt></li>
 </ul>
 <h2 id="服务提供者-服务注册"><a href="#服务提供者-服务注册" class="headerlink" title="服务提供者(服务注册)"></a>服务提供者(服务注册)</h2><p>Rest方式将数据发送给注册中心，配置：<br>指示此实例是否应将其信息注册到eureka服务器以供其他人发现。在某些情况下，您不希望发现实例，而您只想发现其他实例。默认值：true</p>
 <p>eureka.client.register-with-eureka=true</p>
@@ -644,18 +644,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
@@ -669,6 +657,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
               </li>
              
               <li class="article-tag-list-item">

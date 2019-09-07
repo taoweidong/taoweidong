@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
   <title>CentOS相关-安装Mysql并使用 | 半度微凉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目的：在Linux(3.10.0-862.3.2.el7.x86_64)上安装Mysql数据库，并可以远程连接使用。 注意：从最新版本的linux系统开始，默认的是 Mariadb而不是mysql！这里依旧以mysql为例进行展示   先检查系统是否装有mysql1rpm -qa | grep mysql 因为centos-7默认是Mariadb，所以执行以下命令只是更新Mariadb数据库yu">
+  <meta name="description" content="目的：在Linux(3.10.0-862.3.2.el7.x86_64)上安装Mysql数据库，并可以远程连接使用。   注意：从最新版本的linux系统开始，默认的是 Mariadb而不是mysql！这里依旧以mysql为例进行展示   先检查系统是否装有mysql1rpm -qa | grep mysql 因为centos-7默认是Mariadb，所以执行以下命令只是更新Mariadb数据库">
 <meta name="keywords" content="CentOS,Mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS相关-安装Mysql并使用">
 <meta property="og:url" content="http://www.taoweidong.com/2018/06/19/CentOS相关-安装Mysql并使用/index.html">
 <meta property="og:site_name" content="半度微凉">
-<meta property="og:description" content="目的：在Linux(3.10.0-862.3.2.el7.x86_64)上安装Mysql数据库，并可以远程连接使用。 注意：从最新版本的linux系统开始，默认的是 Mariadb而不是mysql！这里依旧以mysql为例进行展示   先检查系统是否装有mysql1rpm -qa | grep mysql 因为centos-7默认是Mariadb，所以执行以下命令只是更新Mariadb数据库yu">
+<meta property="og:description" content="目的：在Linux(3.10.0-862.3.2.el7.x86_64)上安装Mysql数据库，并可以远程连接使用。   注意：从最新版本的linux系统开始，默认的是 Mariadb而不是mysql！这里依旧以mysql为例进行展示   先检查系统是否装有mysql1rpm -qa | grep mysql 因为centos-7默认是Mariadb，所以执行以下命令只是更新Mariadb数据库">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/rtr0I1V.png">
 <meta property="og:updated_time" content="2019-09-07T04:34:29.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS相关-安装Mysql并使用">
-<meta name="twitter:description" content="目的：在Linux(3.10.0-862.3.2.el7.x86_64)上安装Mysql数据库，并可以远程连接使用。 注意：从最新版本的linux系统开始，默认的是 Mariadb而不是mysql！这里依旧以mysql为例进行展示   先检查系统是否装有mysql1rpm -qa | grep mysql 因为centos-7默认是Mariadb，所以执行以下命令只是更新Mariadb数据库yu">
+<meta name="twitter:description" content="目的：在Linux(3.10.0-862.3.2.el7.x86_64)上安装Mysql数据库，并可以远程连接使用。   注意：从最新版本的linux系统开始，默认的是 Mariadb而不是mysql！这里依旧以mysql为例进行展示   先检查系统是否装有mysql1rpm -qa | grep mysql 因为centos-7默认是Mariadb，所以执行以下命令只是更新Mariadb数据库">
 <meta name="twitter:image" content="https://i.imgur.com/rtr0I1V.png">
   
     <link rel="alternative" href="/atom.xml" title="半度微凉" type="application/atom+xml">
@@ -40,7 +40,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -179,6 +179,8 @@
       
         <blockquote>
 <p>目的：在Linux(3.10.0-862.3.2.el7.x86_64)上安装Mysql数据库，并可以远程连接使用。</p>
+</blockquote>
+<blockquote>
 <p>注意：从最新版本的linux系统开始，默认的是 Mariadb而不是mysql！这里依旧以mysql为例进行展示 </p>
 </blockquote>
 <h2 id="先检查系统是否装有mysql"><a href="#先检查系统是否装有mysql" class="headerlink" title="先检查系统是否装有mysql"></a>先检查系统是否装有mysql</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
@@ -204,7 +206,7 @@
 <h2 id="为root添加远程连接的能力"><a href="#为root添加远程连接的能力" class="headerlink" title="为root添加远程连接的能力"></a>为root添加远程连接的能力</h2><ul>
 <li>查看host下面有没有%，我的表中已经有%数据行，如果没有添加一个。 </li>
 </ul>
-<p><img src="https://i.imgur.com/rtr0I1V.png" alt=""></p>
+<p><img src="https://i.imgur.com/rtr0I1V.png" alt></p>
 <ul>
 <li>进行授权如果想root用户使用password从任何主机连接到mysql服务器的话。</li>
 </ul>
@@ -638,18 +640,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
@@ -663,6 +653,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
               </li>
              
               <li class="article-tag-list-item">

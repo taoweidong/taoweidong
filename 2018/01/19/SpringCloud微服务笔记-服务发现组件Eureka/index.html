@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
   <title>SpringCloud微服务笔记-服务发现组件Eureka | 半度微凉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -41,7 +41,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -183,14 +183,14 @@
 </ol>
 <p>它提供了完整的Service Registry和Service Discovery实现</p>
 <p>首先是提供了完整的实现，并且也经受住了Netflix自己的生产环境考验，相对使用起来会比较省心。</p>
-<ol>
+<ol start="2">
 <li>Spring Cloud对Eureka的支持最好</li>
 </ol>
 <p>我们的项目本身就使用了Spring Cloud和Spring Boot，同时Spring Cloud还有一套非常完善的开源代码来整合Eureka，所以使用起来非常方便。</p>
 <p>另外，Eureka还支持在我们应用自身的容器中启动，也就是说我们的应用启动完之后，既充当了Eureka的角色，同时也是服务的提供者。这样就极大地提高了服务的可用性。</p>
 <h1 id="Eureka简介"><a href="#Eureka简介" class="headerlink" title="Eureka简介"></a>Eureka简介</h1><p>Eureka是Netflix开发的服务发现框架，本身是一个基于REST的服务，主要用于定位运行在AWS域中的中间层服务，以达到负载均衡和中间层服务故障转移的目的。SpringCloud将它集成在自己的子项目spring-cloud-netflix中，实现SpringCloud的服务发现功能。</p>
 <a id="more"></a>
-<h1 id="Eureka原理"><a href="#Eureka原理" class="headerlink" title="Eureka原理"></a>Eureka原理</h1><p><img src="https://i.imgur.com/QWmPo0c.png" alt=""></p>
+<h1 id="Eureka原理"><a href="#Eureka原理" class="headerlink" title="Eureka原理"></a>Eureka原理</h1><p><img src="https://i.imgur.com/QWmPo0c.png" alt></p>
 <blockquote>
 <p>上图简要描述了Eureka的基本架构，由3个角色组成：</p>
 </blockquote>
@@ -199,7 +199,7 @@
 <li>Service Provider：服务提供方，将自身服务注册到Eureka，从而使服务消费方能够找到</li>
 <li>Service Consumer：服务消费方，从Eureka获取注册服务列表，从而能够消费服务。</li>
 </ul>
-<p><img src="https://i.imgur.com/olTwZbA.png" alt=""></p>
+<p><img src="https://i.imgur.com/olTwZbA.png" alt></p>
 <blockquote>
 <p>上图更进一步的展示了3个角色之间的交互</p>
 </blockquote>
@@ -330,8 +330,8 @@
     </a>
   
   
-    <a href="/2018/01/18/白鹭引擎创建EUI程序-HelloWorld编写/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">白鹭引擎创建EUI程序-HelloWorld编写</div>
+    <a href="/2018/01/18/SpringCloud微服务笔记-Sidecar学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringCloud微服务笔记-Sidecar学习</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -628,18 +628,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
@@ -653,6 +641,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
   <title>Docker学习笔记-windows上镜像推送到虚拟机中的docker服务 | 半度微凉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -53,7 +53,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -192,13 +192,13 @@
       
         <h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><p>Docker 是一个容器工具，提供虚拟环境。很多人认为，它改变了我们对软件的认识。</p>
 <p>站在 Docker 的角度，软件就是容器的组合：业务逻辑容器、数据库容器、储存容器、队列容器……Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木一样组合起来。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021306.png" alt=""></p>
-<p>这正是微服务（microservices）的思想：软件把任务外包出去，让各种外部服务完成这些任务，软件本身只是底层服务的调度中心和组装层。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021302.png" alt=""></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021306.png" alt></p>
+<p>这正是微服务（microservices）的思想：软件把任务外包出去，让各种外部服务完成这些任务，软件本身只是底层服务的调度中心和组装层。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021302.png" alt></p>
 <p>微服务很适合用 Docker 容器实现，每个容器承载一个服务。一台计算机同时运行多个容器，从而就能很轻松地模拟出复杂的微服务架构。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021303.png" alt=""></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021303.png" alt></p>
 <a id="more"></a>
-<h2 id="Idea安装Docker插件"><a href="#Idea安装Docker插件" class="headerlink" title="Idea安装Docker插件"></a>Idea安装Docker插件</h2><p><img src="https://i.imgur.com/GSJpkXS.png" alt=""></p>
-<h2 id="配置Idea中Docker服务"><a href="#配置Idea中Docker服务" class="headerlink" title="配置Idea中Docker服务"></a>配置Idea中Docker服务</h2><p><img src="https://i.imgur.com/9191m5w.png" alt=""></p>
+<h2 id="Idea安装Docker插件"><a href="#Idea安装Docker插件" class="headerlink" title="Idea安装Docker插件"></a>Idea安装Docker插件</h2><p><img src="https://i.imgur.com/GSJpkXS.png" alt></p>
+<h2 id="配置Idea中Docker服务"><a href="#配置Idea中Docker服务" class="headerlink" title="配置Idea中Docker服务"></a>配置Idea中Docker服务</h2><p><img src="https://i.imgur.com/9191m5w.png" alt></p>
 <h2 id="开启Docker远程访问"><a href="#开启Docker远程访问" class="headerlink" title="开启Docker远程访问"></a>开启Docker远程访问</h2><ul>
 <li>编辑docker宿主机文件 /systemd/system/docker.service</li>
 <li>修改以ExecStart为开头的行</li>
@@ -210,20 +210,20 @@
 <li>重启docker服务</li>
 <li>测试连接docker api</li>
 </ul>
-<p><img src="https://i.imgur.com/piNRkIC.png" alt=""></p>
+<p><img src="https://i.imgur.com/piNRkIC.png" alt></p>
 <p>重新加载配置文件#systemctl daemon-reload   ,启动docker #systemctl start docker  ,</p>
 <p>输入#netstat -anp|grep 2375 显示docker正在监听2375端口，输入#<strong>curl 127.0.0.1:2375/info</strong>  显示一大堆信息，证明远程api就弄好了</p>
-<p><img src="https://i.imgur.com/QQtsDn2.png" alt=""></p>
+<p><img src="https://i.imgur.com/QQtsDn2.png" alt></p>
 <p>如果连接不上注意检查Linux的安全策略和防火墙</p>
 <p>在物理机上测试是否能够访问2375端口</p>
-<p><img src="https://i.imgur.com/njeTtH7.png" alt=""></p>
-<p><img src="https://i.imgur.com/TvIjPdd.png" alt=""></p>
-<h2 id="创建Dockerfile文件，并且添加文件内容"><a href="#创建Dockerfile文件，并且添加文件内容" class="headerlink" title="创建Dockerfile文件，并且添加文件内容"></a>创建Dockerfile文件，并且添加文件内容</h2><p><img src="https://i.imgur.com/G9f0LNt.png" alt=""></p>
-<h2 id="配置docker插件"><a href="#配置docker插件" class="headerlink" title="配置docker插件"></a>配置docker插件</h2><p><img src="https://i.imgur.com/eFEZEfb.png" alt=""></p>
+<p><img src="https://i.imgur.com/njeTtH7.png" alt></p>
+<p><img src="https://i.imgur.com/TvIjPdd.png" alt></p>
+<h2 id="创建Dockerfile文件，并且添加文件内容"><a href="#创建Dockerfile文件，并且添加文件内容" class="headerlink" title="创建Dockerfile文件，并且添加文件内容"></a>创建Dockerfile文件，并且添加文件内容</h2><p><img src="https://i.imgur.com/G9f0LNt.png" alt></p>
+<h2 id="配置docker插件"><a href="#配置docker插件" class="headerlink" title="配置docker插件"></a>配置docker插件</h2><p><img src="https://i.imgur.com/eFEZEfb.png" alt></p>
 <h2 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h2><p>开始运行docker并构建镜像</p>
-<p><img src="https://i.imgur.com/m1PDI1N.png" alt=""></p>
-<p><img src="https://i.imgur.com/PAKte6q.png" alt=""></p>
-<p><img src="https://i.imgur.com/hVOTvXE.png" alt=""></p>
+<p><img src="https://i.imgur.com/m1PDI1N.png" alt></p>
+<p><img src="https://i.imgur.com/PAKte6q.png" alt></p>
+<p><img src="https://i.imgur.com/hVOTvXE.png" alt></p>
 <p>访问成功！！！！</p>
 <h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
 <li><a href="https://cloud.tencent.com/developer/article/1005172" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1005172</a></li>
@@ -645,18 +645,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
@@ -670,6 +658,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
               </li>
              
               <li class="article-tag-list-item">

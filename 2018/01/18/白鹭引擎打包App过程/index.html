@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
   <title>白鹭引擎打包APP过程 | 半度微凉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -51,7 +51,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -209,25 +209,25 @@
 <li>注意Gradle的版本;</li>
 <li>注意As Support选择和项目平台相对应;</li>
 </ul>
-<p><img src="https://i.imgur.com/1xiTkFn.png" alt=""></p>
+<p><img src="https://i.imgur.com/1xiTkFn.png" alt></p>
 <blockquote>
 <p>此时，在打包的过程中发生报错，但是android工程已经生成，这个是在编译成APP的时候报错，因为不影响后续操作。</p>
 </blockquote>
-<p><img src="https://i.imgur.com/vdkdxVM.png" alt=""></p>
+<p><img src="https://i.imgur.com/vdkdxVM.png" alt></p>
 <blockquote>
 <p>此时可以到【输出项目路径】查看生成的工程。</p>
 </blockquote>
-<p><img src="https://i.imgur.com/X3hc8ob.png" alt=""></p>
-<h3 id="Android-Studio打包APK文件"><a href="#Android-Studio打包APK文件" class="headerlink" title="Android Studio打包APK文件"></a>Android Studio打包APK文件</h3><p><img src="https://i.imgur.com/B59ENH6.png" alt=""></p>
+<p><img src="https://i.imgur.com/X3hc8ob.png" alt></p>
+<h3 id="Android-Studio打包APK文件"><a href="#Android-Studio打包APK文件" class="headerlink" title="Android Studio打包APK文件"></a>Android Studio打包APK文件</h3><p><img src="https://i.imgur.com/B59ENH6.png" alt></p>
 <p><strong>注意：</strong></p>
 <ul>
 <li>导入工程之后Gradle会自动进行工程构建，此时可能存在多个错误，等Gradle自动构建完毕之后进行Clean Project工程清理，然后手动Bulid一次；</li>
 </ul>
-<p><img src="https://i.imgur.com/1wkEN9H.png" alt=""> </p>
+<p><img src="https://i.imgur.com/1wkEN9H.png" alt> </p>
 <blockquote>
 <p>等工程编译没有错误时，选择Build-&gt;Generate Signed APK,选择相关配置，点击Finish,开始生成，此时生成是报错的，报错信息如下：</p>
 </blockquote>
-<p><img src="https://i.imgur.com/iVKpiDX.png" alt=""></p>
+<p><img src="https://i.imgur.com/iVKpiDX.png" alt></p>
 <p><strong>注意:</strong></p>
 <blockquote>
 <p>此处报错的原因是：Android6.0(API 23)SDK，不再提供org.apache.http.*(只保留几个类)，目前发现编译时使用的版本为：Android8.0 (API 27),所以转换之后的工程中不包含这几个类。</p>
@@ -238,17 +238,17 @@
 //添加此项，声明编译时的依赖项
 useLibrary &apos;org.apache.http.legacy&apos;
 }
-</code></pre><p><img src="https://i.imgur.com/oEeur4x.png" alt=""></p>
+</code></pre><p><img src="https://i.imgur.com/oEeur4x.png" alt></p>
 <ul>
 <li>对工程再次进行Clean Priject，Bulid无任何报错信息之后进行打包操作</li>
 </ul>
-<p><img src="https://i.imgur.com/CXqWmr0.png" alt=""></p>
-<p><img src="https://i.imgur.com/1gNspcc.png" alt=""></p>
-<p><img src="https://i.imgur.com/NFXiemM.png" alt=""></p>
+<p><img src="https://i.imgur.com/CXqWmr0.png" alt></p>
+<p><img src="https://i.imgur.com/1gNspcc.png" alt></p>
+<p><img src="https://i.imgur.com/NFXiemM.png" alt></p>
 <blockquote>
 <p>打开文件路径，查看打包好的APK文件(路径在工程里的app目录中)</p>
 </blockquote>
-<p><img src="https://i.imgur.com/blXmdWM.png" alt=""></p>
+<p><img src="https://i.imgur.com/blXmdWM.png" alt></p>
 <hr>
 <p>2018/1/16 8:31:10 </p>
 <p>陶伟东</p>
@@ -370,8 +370,8 @@ useLibrary &apos;org.apache.http.legacy&apos;
     </a>
   
   
-    <a href="/2018/01/18/SpringCloud微服务笔记-Sidecar学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SpringCloud微服务笔记-Sidecar学习</div>
+    <a href="/2018/01/18/ngrok反向代理工具/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ngrok反向代理工具</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -668,18 +668,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
@@ -693,6 +681,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">服务端负载均衡</a>
               </li>
              
               <li class="article-tag-list-item">
