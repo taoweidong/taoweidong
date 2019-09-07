@@ -77,7 +77,7 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 	        
-				<li><a href="/tags/随笔/" target="_blank">随笔</a></li>
+				<li><a href="/随笔/" target="_blank">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -166,7 +166,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/随笔/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -183,6 +183,99 @@
           </div>
           <div id="js-content" class="content-ll">
             
+
+  
+    <article id="post-SpringCloud微服务笔记-Sidecar学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/01/18/SpringCloud微服务笔记-Sidecar学习/" target="_blank">SpringCloud微服务笔记-Sidecar学习</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/01/18/SpringCloud微服务笔记-Sidecar学习/" class="archive-article-date">
+        <time datetime="2018-01-17T19:45:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Sidecar简介"><a href="#Sidecar简介" class="headerlink" title="Sidecar简介"></a>Sidecar简介</h1><p>Sidecar是作为一个代理的服务来间接性的让其他语言可以使用Eureka等相关组件。通过与Zuul的来进行路由的映射，从而可以做到服务的获取，然后可以使用Ribbon，Feign对服务进行消费，以及对Config Server的间接性调用。</p>
+<h1 id="官网介绍"><a href="#官网介绍" class="headerlink" title="官网介绍"></a>官网介绍</h1><p>你是否想要在非jvm的语言中利用（间接性使用）Eureka，Ribbon以及Config Server？Spring Cloud Netflix Sidecar的设计灵感来自Netflix Prana。它包含一个简单的http api去获取一个已知服务的所有实例(例如主机和端口)。你也可以通过嵌入的Zuul代理(Zuul中有一个代理功能)对代理的服务进行调用，Zuul从Eureka服务注册中心获取所有的路由记录(route entries)。通过host发现(host lookup)或者Zuul代理可以直接访问Spring Cloud Config。非jvm需要应该实现一个健康检查，Sidecar能够以此来报告给Eureka注册中心该应用是up还是down状态。</p>
+    
+    <a class="article-more-a" href="/2018/01/18/SpringCloud微服务笔记-Sidecar学习/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">SpringCloud</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Sidecar</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/01/18/SpringCloud微服务笔记-Sidecar学习/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
 
   
     <article id="post-白鹭引擎创建EUI程序-HelloWorld编写" class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -292,7 +385,7 @@
 
 
   
-    <article id="post-白鹭引擎打包App过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringCloud微服务笔记-微服务架构概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -300,7 +393,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/01/18/白鹭引擎打包App过程/" target="_blank">白鹭引擎打包APP过程</a>
+	  <a class="article-title" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/" target="_blank">SpringCloud微服务笔记-微服务架构概述</a>
   
     </h1>
   
@@ -308,8 +401,8 @@
 
   
   
-<a href="/2018/01/18/白鹭引擎打包App过程/" class="archive-article-date">
-        <time datetime="2018-01-17T19:45:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+<a href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/" class="archive-article-date">
+        <time datetime="2018-01-16T19:28:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
 </a>
 
   
@@ -321,71 +414,29 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="打包所需软件："><a href="#打包所需软件：" class="headerlink" title="打包所需软件："></a>打包所需软件：</h2><ol>
-<li>Android SDK.zip  需下载对应的Android平台  Android7.0(跟白鹭引擎版本有关)</li>
-<li>gradle-2.2-all.zip   白鹭引擎5.0.9 需2.2版本 否则打包报错</li>
-<li>egret-android-support-4.0.0.zip   白鹭插件</li>
-<li>android-studio-ide-171.4408382-windows.exe  Android开发工具</li>
-<li>EgretWing  白鹭开发工具</li>
-</ol>
-<h2 id="打包流程"><a href="#打包流程" class="headerlink" title="打包流程"></a>打包流程</h2><ol>
-<li>一切OK的情况下使用Egret Wing工具直接使用移动打包，设置相关路径，点击生成，则会打包成功，生成APK文件。</li>
-<li>打包的原理是：先使用egret-android-support-4.0.0工具将Egret工程转换成对应的Android工程(Eclipse和Android Studio),然后使用gradle，SDK，Jdk将对应的Android工程编译打包成APK安装文件。</li>
-<li>注意：（Android SDK、gradle、egret-android-support）这些文件的所有安装路径中不能包含空格、汉字等特殊字符，因为后台在进行打包时，其实是在进行命令行的操作，如果存在空格则会将命令隔断导致打包失败。</li>
-<li>注意：SDK最好将Android4.0之上的版本以及Bulid Tools工具全部进行下载(文件大概76G左右)；</li>
-<li>我用流程1没有打包成功过，传说是跟系统等等环境有关系，一直没有搞定，我的流程是：使用egretWing进行打包，此时打包肯定报错，但是已经将egret工程转换成了Android工程，然后将Android工程导入到Android Studio中，导入后项目也存在问题，需要进行修改完善，主要是修改配置文件build.gradle，此问题后面会详细描述；工程bulid成功后按照Android Studio打包流程进行即可。</li>
-</ol>
-<h2 id="图解打包流程"><a href="#图解打包流程" class="headerlink" title="图解打包流程"></a>图解打包流程</h2><h3 id="EgretWing-将项目转换为android-studio工程"><a href="#EgretWing-将项目转换为android-studio工程" class="headerlink" title="EgretWing 将项目转换为android studio工程"></a>EgretWing 将项目转换为android studio工程</h3><p><img src="https://i.imgur.com/KPKmGCW.png" alt="EgretWing|center"></p>
-<p><strong>注意</strong>   </p>
-<ul>
-<li>图中路径不能含有空格和中文字符;</li>
-<li>注意Gradle的版本;</li>
-<li>注意As Support选择和项目平台相对应;</li>
+    <h1 id="单体架构是什么"><a href="#单体架构是什么" class="headerlink" title="单体架构是什么"></a>单体架构是什么</h1><ul>
+<li>一个归档包包含了应用所有功能的应用程序，我们通常称为单体应用。</li>
+<li>架构单体应用的架构风格，我们称为单体架构，这是一种比较传统的架构风格。</li>
 </ul>
-<p><img src="https://i.imgur.com/1xiTkFn.png" alt></p>
-<blockquote>
-<p>此时，在打包的过程中发生报错，但是android工程已经生成，这个是在编译成APP的时候报错，因为不影响后续操作。</p>
-</blockquote>
-<p><img src="https://i.imgur.com/vdkdxVM.png" alt></p>
-<blockquote>
-<p>此时可以到【输出项目路径】查看生成的工程。</p>
-</blockquote>
-<p><img src="https://i.imgur.com/X3hc8ob.png" alt></p>
-<h3 id="Android-Studio打包APK文件"><a href="#Android-Studio打包APK文件" class="headerlink" title="Android Studio打包APK文件"></a>Android Studio打包APK文件</h3><p><img src="https://i.imgur.com/B59ENH6.png" alt></p>
-<p><strong>注意：</strong></p>
-<ul>
-<li>导入工程之后Gradle会自动进行工程构建，此时可能存在多个错误，等Gradle自动构建完毕之后进行Clean Project工程清理，然后手动Bulid一次；</li>
+<h1 id="单体架构存在的缺点"><a href="#单体架构存在的缺点" class="headerlink" title="单体架构存在的缺点"></a>单体架构存在的缺点</h1><ul>
+<li>复杂性逐渐变高</li>
 </ul>
-<p><img src="https://i.imgur.com/1wkEN9H.png" alt> </p>
-<blockquote>
-<p>等工程编译没有错误时，选择Build-&gt;Generate Signed APK,选择相关配置，点击Finish,开始生成，此时生成是报错的，报错信息如下：</p>
-</blockquote>
-<p><img src="https://i.imgur.com/iVKpiDX.png" alt></p>
-<p><strong>注意:</strong></p>
-<blockquote>
-<p>此处报错的原因是：Android6.0(API 23)SDK，不再提供org.apache.http.*(只保留几个类)，目前发现编译时使用的版本为：Android8.0 (API 27),所以转换之后的工程中不包含这几个类。</p>
-</blockquote>
-<p><strong>解决方案：</strong></p>
-<p>build.gradle中 在buildToolsVersion下边 defaultConfig上边</p>
-<pre><code>android {
-//添加此项，声明编译时的依赖项
-useLibrary &apos;org.apache.http.legacy&apos;
-}
-</code></pre><p><img src="https://i.imgur.com/oEeur4x.png" alt></p>
+<p>成功的应用最终会随着时间变得巨大。在每个 sprint 阶段，开发团队都会新加许多行代码。几年后，原本小而简单的应用会变得臃肿。举个极端的例子，我最近与一位开发者交流，他正在开发一款小工具，来分析他们应用（包括几百万行代码）中的几千个 JARs 的依赖。我相信每年都会有大量开发者不遗余力地对付这种麻烦。</p>
 <ul>
-<li>对工程再次进行Clean Priject，Bulid无任何报错信息之后进行打包操作</li>
+<li>技术债务逐渐上升</li>
 </ul>
-<p><img src="https://i.imgur.com/CXqWmr0.png" alt></p>
-<p><img src="https://i.imgur.com/1gNspcc.png" alt></p>
-<p><img src="https://i.imgur.com/NFXiemM.png" alt></p>
-<blockquote>
-<p>打开文件路径，查看打包好的APK文件(路径在工程里的app目录中)</p>
-</blockquote>
-<p><img src="https://i.imgur.com/blXmdWM.png" alt></p>
-<hr>
-<p>2018/1/16 8:31:10 </p>
-<p>陶伟东</p>
-
+<p>一旦你的应用变得庞大、复杂，你的开发团队将饱受折磨，苦苦挣扎于敏捷开发和交付。一大原因就是应用已经格外复杂，庞大到任何一个开发者都无法完全理解。最后，修复 bug 和实施新功能也就极其困难且耗时颇多。更可怕的是，这是一个向下的螺旋发展。代码库越难理解，正确的修改就越难。最后你会深陷庞大的、无法估量的泥淖之中。</p>
+<ul>
+<li>部署速度逐渐变慢</li>
+</ul>
+<p>而这种应用的尺寸也会拖慢开发进度。应用越大，启动时间越长。譬如在最近的调查中，不少开发者指出启动时间长达 12 分钟。我也听说有的应用启动时间居然得 40 分钟。如果开发者不得不频繁重启应用服务器，那大量时间就被浪费，生产效率也饱受其害。</p>
+<ul>
+<li>阻碍技术创新</li>
+</ul>
+<p>庞大且复杂的单体应用的另一大问题就是难以进行持续部署。现在， SaaS 应用的发展水平足以在单日内多次将修改推送到生产环境。然而要让复杂的单个应用达到此水平却极为棘手。想更新应用的单个部分，必须重新部署整个应用，漫长的启动时间更是雪上加霜。另外，由于不能完全预见修改的影响，你不得不提前进行大量人工测试。结果就是，持续部署变得不可能。</p>
+    
+    <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/#more">more >></a>
+    
     
 
     
@@ -401,11 +452,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">白鹭引擎</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Egret</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
         		</li>
       		
 		</ul>
@@ -415,7 +462,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2018/01/18/白鹭引擎打包App过程/">展开全文 >></a>
+      <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/">展开全文 >></a>
     </p>
     
 
@@ -528,113 +575,6 @@ useLibrary &apos;org.apache.http.legacy&apos;
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-SpringCloud学习/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SpringCloud微服务笔记-微服务架构概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/" target="_blank">SpringCloud微服务笔记-微服务架构概述</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/" class="archive-article-date">
-        <time datetime="2018-01-16T19:28:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="单体架构是什么"><a href="#单体架构是什么" class="headerlink" title="单体架构是什么"></a>单体架构是什么</h1><ul>
-<li>一个归档包包含了应用所有功能的应用程序，我们通常称为单体应用。</li>
-<li>架构单体应用的架构风格，我们称为单体架构，这是一种比较传统的架构风格。</li>
-</ul>
-<h1 id="单体架构存在的缺点"><a href="#单体架构存在的缺点" class="headerlink" title="单体架构存在的缺点"></a>单体架构存在的缺点</h1><ul>
-<li>复杂性逐渐变高</li>
-</ul>
-<p>成功的应用最终会随着时间变得巨大。在每个 sprint 阶段，开发团队都会新加许多行代码。几年后，原本小而简单的应用会变得臃肿。举个极端的例子，我最近与一位开发者交流，他正在开发一款小工具，来分析他们应用（包括几百万行代码）中的几千个 JARs 的依赖。我相信每年都会有大量开发者不遗余力地对付这种麻烦。</p>
-<ul>
-<li>技术债务逐渐上升</li>
-</ul>
-<p>一旦你的应用变得庞大、复杂，你的开发团队将饱受折磨，苦苦挣扎于敏捷开发和交付。一大原因就是应用已经格外复杂，庞大到任何一个开发者都无法完全理解。最后，修复 bug 和实施新功能也就极其困难且耗时颇多。更可怕的是，这是一个向下的螺旋发展。代码库越难理解，正确的修改就越难。最后你会深陷庞大的、无法估量的泥淖之中。</p>
-<ul>
-<li>部署速度逐渐变慢</li>
-</ul>
-<p>而这种应用的尺寸也会拖慢开发进度。应用越大，启动时间越长。譬如在最近的调查中，不少开发者指出启动时间长达 12 分钟。我也听说有的应用启动时间居然得 40 分钟。如果开发者不得不频繁重启应用服务器，那大量时间就被浪费，生产效率也饱受其害。</p>
-<ul>
-<li>阻碍技术创新</li>
-</ul>
-<p>庞大且复杂的单体应用的另一大问题就是难以进行持续部署。现在， SaaS 应用的发展水平足以在单日内多次将修改推送到生产环境。然而要让复杂的单个应用达到此水平却极为棘手。想更新应用的单个部分，必须重新部署整个应用，漫长的启动时间更是雪上加霜。另外，由于不能完全预见修改的影响，你不得不提前进行大量人工测试。结果就是，持续部署变得不可能。</p>
-    
-    <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/">展开全文 >></a>
     </p>
     
 
@@ -821,7 +761,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -829,7 +769,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,7 +781,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -849,7 +789,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -905,6 +845,10 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
              
@@ -917,7 +861,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -925,7 +869,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -950,10 +894,6 @@ useLibrary &apos;org.apache.http.legacy&apos;
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Zuul</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -985,6 +925,14 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitLab</a>
               </li>
              
@@ -998,14 +946,6 @@ useLibrary &apos;org.apache.http.legacy&apos;
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">CI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1025,6 +965,10 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">白鹭引擎</a>
               </li>
              
@@ -1033,15 +977,11 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1101,7 +1041,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title" >
+              <a href="http://www.baeldung.com/java-stack" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -1110,7 +1050,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
             </li>
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title" >
+              <a href="https://www.liaoxuefeng.com/" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -1119,7 +1059,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
             </li>
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title" >
+              <a href="http://www.oschina.net/question/12_72250" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -1128,7 +1068,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
             </li>
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title" >
+              <a href="http://www.taoweidong.com" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -1137,7 +1077,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
             </li>
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title" >
+              <a href="https://www.cnblogs.com/liuning8023/p/4493156.html" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -1146,7 +1086,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
             </li>
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title" >
+              <a href="https://hexo.io/zh-cn/" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -1155,7 +1095,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
             </li>
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title" >
+              <a href="http://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
