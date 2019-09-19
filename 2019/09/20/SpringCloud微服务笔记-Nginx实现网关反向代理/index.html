@@ -6,27 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
-  <title>SpringBoot学习笔记-集成Spring AOP | 半度微凉</title>
+  <title>SpringCloud微服务笔记-Nginx实现网关反向代理 | 半度微凉</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="学习计划 在SpringBoot集成Mybatis之后的项目上进行Spring AOP的集成 实现对于Controller的请求拦截，打印请求以及相关返回的日志 gitHub源码位置：https://github.com/TaciturnK/springboot-learning  创建学习工程此处略过，使用集成Mybatis的工程，https://github.com/TaciturnK/spr">
-<meta name="keywords" content="SpringBoot,Spring AOP">
+  <meta name="description" content="背景当前在SpringCloud微服务架构下，网关作为服务的入口尤为重要，一旦网关发生单点故障会导致整个服务集群瘫痪，为了保证网关的高可用可以通过Nginx的反向代理功能实现网关的高可用。 项目源码：https://github.com/taoweidong/Micro-service-learning/tree/SpringCloud-branch 项目架构图  Nginx作为反向代理服务器，代">
+<meta name="keywords" content="Nginx,微服务,SpringCloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot学习笔记-集成Spring AOP">
-<meta property="og:url" content="http://www.taoweidong.com/2018/04/26/SpringBoot学习笔记-集成Spring AOP/index.html">
+<meta property="og:title" content="SpringCloud微服务笔记-Nginx实现网关反向代理">
+<meta property="og:url" content="http://www.taoweidong.com/2019/09/20/SpringCloud微服务笔记-Nginx实现网关反向代理/index.html">
 <meta property="og:site_name" content="半度微凉">
-<meta property="og:description" content="学习计划 在SpringBoot集成Mybatis之后的项目上进行Spring AOP的集成 实现对于Controller的请求拦截，打印请求以及相关返回的日志 gitHub源码位置：https://github.com/TaciturnK/springboot-learning  创建学习工程此处略过，使用集成Mybatis的工程，https://github.com/TaciturnK/spr">
+<meta property="og:description" content="背景当前在SpringCloud微服务架构下，网关作为服务的入口尤为重要，一旦网关发生单点故障会导致整个服务集群瘫痪，为了保证网关的高可用可以通过Nginx的反向代理功能实现网关的高可用。 项目源码：https://github.com/taoweidong/Micro-service-learning/tree/SpringCloud-branch 项目架构图  Nginx作为反向代理服务器，代">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/JQXwyaG.png">
-<meta property="og:image" content="https://i.imgur.com/I3ulNlx.png">
-<meta property="og:image" content="https://i.imgur.com/ZG8lFHh.png">
-<meta property="og:image" content="https://i.imgur.com/OHL51MI.png">
-<meta property="og:updated_time" content="2019-09-07T04:34:29.958Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190919231711613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190919232109812.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190919232230704.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190919232545406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190919233930869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190919234035730.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190919234159541.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190919234321552.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190919234625182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-09-19T15:49:36.764Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot学习笔记-集成Spring AOP">
-<meta name="twitter:description" content="学习计划 在SpringBoot集成Mybatis之后的项目上进行Spring AOP的集成 实现对于Controller的请求拦截，打印请求以及相关返回的日志 gitHub源码位置：https://github.com/TaciturnK/springboot-learning  创建学习工程此处略过，使用集成Mybatis的工程，https://github.com/TaciturnK/spr">
-<meta name="twitter:image" content="https://i.imgur.com/JQXwyaG.png">
+<meta name="twitter:title" content="SpringCloud微服务笔记-Nginx实现网关反向代理">
+<meta name="twitter:description" content="背景当前在SpringCloud微服务架构下，网关作为服务的入口尤为重要，一旦网关发生单点故障会导致整个服务集群瘫痪，为了保证网关的高可用可以通过Nginx的反向代理功能实现网关的高可用。 项目源码：https://github.com/taoweidong/Micro-service-learning/tree/SpringCloud-branch 项目架构图  Nginx作为反向代理服务器，代">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190919231711613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="半度微凉" type="application/atom+xml">
   
@@ -186,14 +191,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-SpringBoot学习笔记-集成Spring AOP" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SpringCloud微服务笔记-Nginx实现网关反向代理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      SpringBoot学习笔记-集成Spring AOP
+      SpringCloud微服务笔记-Nginx实现网关反向代理
     </h1>
   
 
@@ -205,8 +210,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2018/04/26/SpringBoot学习笔记-集成Spring AOP/" class="archive-article-date">
-        <time datetime="2018-04-26T14:16:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
+<a href="/2019/09/20/SpringCloud微服务笔记-Nginx实现网关反向代理/" class="archive-article-date">
+        <time datetime="2019-09-19T23:48:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
 </a>
 
   
@@ -219,7 +224,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">652字</span>
+      <span class="post-count">672字</span>
     </span>
   </span>
 
@@ -239,26 +244,125 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="学习计划"><a href="#学习计划" class="headerlink" title="学习计划"></a>学习计划</h1><ul>
-<li>在SpringBoot集成Mybatis之后的项目上进行Spring AOP的集成</li>
-<li>实现对于Controller的请求拦截，打印请求以及相关返回的日志</li>
-<li>gitHub源码位置：<a href="https://github.com/TaciturnK/springboot-learning" target="_blank" rel="noopener">https://github.com/TaciturnK/springboot-learning</a></li>
+    <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>当前在SpringCloud微服务架构下，网关作为服务的入口尤为重要，一旦网关发生单点故障会导致整个服务集群瘫痪，为了保证网关的高可用可以通过Nginx的反向代理功能实现网关的高可用。</p>
+<p>项目源码：<a href="https://github.com/taoweidong/Micro-service-learning/tree/SpringCloud-branch" target="_blank" rel="noopener">https://github.com/taoweidong/Micro-service-learning/tree/SpringCloud-branch</a></p>
+<h1 id="项目架构图"><a href="#项目架构图" class="headerlink" title="项目架构图"></a>项目架构图</h1><p><img src="https://img-blog.csdnimg.cn/20190919231711613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>Nginx作为反向代理服务器，代理后端网关服务，通过Nginx自带的负载均衡算法进行转发</li>
+<li>Zull网关部署集群时，如果一台服务器发生故障，就会转发到另外一台机器上，服务正常访问，保证网关的高可用</li>
 </ul>
-<h1 id="创建学习工程"><a href="#创建学习工程" class="headerlink" title="创建学习工程"></a>创建学习工程</h1><p>此处略过，使用集成Mybatis的工程，<a href="https://github.com/TaciturnK/springboot-learning/tree/master/SpringBoot-mybatis" target="_blank" rel="noopener">https://github.com/TaciturnK/springboot-learning/tree/master/SpringBoot-mybatis</a></p>
-<p>项目结构</p>
-<p><img src="https://i.imgur.com/JQXwyaG.png" alt></p>
-<h1 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;  </span><br><span class="line">   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  </span><br><span class="line">   &lt;artifactId&gt;spring-boot-starter-aop&lt;/artifactId&gt;  </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="创建Aspect切面类"><a href="#创建Aspect切面类" class="headerlink" title="创建Aspect切面类"></a>创建Aspect切面类</h1><p>AOP的通知类型有：前置通知、后置最终通知、后置返回通知、后置异常通知、环绕通知等，此处对这些通知的添加举例学习下。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>  </span><br><span class="line"><span class="meta">@Aspect</span>  <span class="comment">//注意添加对应的注解</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebControllerAop</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h1 id="指定切点"><a href="#指定切点" class="headerlink" title="指定切点"></a>指定切点</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 指定切点:匹配com.taowd.controller包及其子包下的所有类的所有方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Pointcut</span>(<span class="string">"execution(* com.taowd.controller..*.*(..))"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">executeService</span><span class="params">()</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="前置通知"><a href="#前置通知" class="headerlink" title="前置通知"></a>前置通知</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 前置通知，方法调用前被调用</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * 通过JoinPoint可以获得通知的签名信息，如目标方法名、目标方法参数信息等。通过RequestContextHolder来获取请求信息，Session信息。</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> joinpoint</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="meta">@Before</span>(<span class="string">"executeService()"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doBeforeAdvice</span><span class="params">(JoinPoint joinPoint)</span> </span>&#123;</span><br><span class="line">       logger.info(<span class="string">"这里是前置通知"</span>);</span><br><span class="line">       <span class="comment">//获取目标方法的参数信息</span></span><br><span class="line">       Object[] obj = joinPoint.getArgs();</span><br><span class="line">       <span class="comment">//Aop代理类的信息</span></span><br><span class="line">       joinPoint.getThis();</span><br><span class="line">       <span class="comment">//代理的目标对象</span></span><br><span class="line">       joinPoint.getTarget();</span><br><span class="line">       <span class="comment">//用的最多 通知的签名</span></span><br><span class="line">       Signature signature = joinPoint.getSignature();</span><br><span class="line">       <span class="comment">//代理的是哪个方法</span></span><br><span class="line">       logger.info(<span class="string">"代理的方法："</span> + signature.getName());</span><br><span class="line">       <span class="comment">//AOP代理类的名字</span></span><br><span class="line">       logger.info(<span class="string">"AOP代理类的名字："</span> + signature.getDeclaringTypeName());</span><br><span class="line">       <span class="comment">//AOP代理类的信息</span></span><br><span class="line">       signature.getDeclaringType();</span><br><span class="line">       <span class="comment">//获取RequestAttributes  通过RequestContextHolder来获取请求信息，Session信息。</span></span><br><span class="line">       RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();</span><br><span class="line">       <span class="comment">//获取RequestAttributes中HttpServletRequest的信息</span></span><br><span class="line">       HttpServletRequest request = (HttpServletRequest) requestAttributes.resolveReference(RequestAttributes.REFERENCE_REQUEST);</span><br><span class="line">       <span class="comment">//如果要获取Session信息的话，可以这样写：</span></span><br><span class="line">       <span class="comment">//HttpSession session = (HttpSession) requestAttributes.resolveReference(RequestAttributes.REFERENCE_SESSION);</span></span><br><span class="line">       Enumeration&lt;String&gt; enumeration = request.getParameterNames();</span><br><span class="line">       Map&lt;String, String&gt; parameterMap = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">       <span class="keyword">while</span> (enumeration.hasMoreElements()) &#123;</span><br><span class="line">           String parameter = enumeration.nextElement();</span><br><span class="line">           parameterMap.put(parameter, request.getParameter(parameter));</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//使用fastjson将Map对象转成JSON字符串</span></span><br><span class="line">       String str = JSONUtils.toJSONString(parameterMap);</span><br><span class="line"></span><br><span class="line">       logger.info(<span class="string">"请求的参数信息为："</span> + str);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>注意：这里用到了JoinPoint和RequestContextHolder。通过JoinPoint可以获得通知的签名信息，如目标方法名、目标方法参数信息等。通过RequestContextHolder来获取请求信息，Session信息。</p>
-<p>启动工程，访问Controller:<a href="http://127.0.0.1:8090//mybatis/queryUserList?nameTest=231313" target="_blank" rel="noopener">http://127.0.0.1:8090//mybatis/queryUserList?nameTest=231313</a></p>
-<p><img src="https://i.imgur.com/I3ulNlx.png" alt></p>
-<p><img src="https://i.imgur.com/ZG8lFHh.png" alt></p>
-<h1 id="后置返回通知"><a href="#后置返回通知" class="headerlink" title="后置返回通知"></a>后置返回通知</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AfterReturning</span>(value = <span class="string">"execution(* com.taowd.controller..*.*(..))"</span>, returning = <span class="string">"keys"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfterReturningAdvice1</span><span class="params">(JoinPoint joinPoint, Object keys)</span> </span>&#123;</span><br><span class="line">logger.info(<span class="string">"第一个后置通知的返回值："</span> + keys);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@AfterReturning</span>(value = <span class="string">"execution(* com.taowd.controller..*.*(..))"</span>, returning = <span class="string">"keys"</span>, argNames = <span class="string">"keys"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfterReturningAdvice2</span><span class="params">(String keys)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"第二个后置返回通知的返回值："</span> + keys);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/OHL51MI.png" alt></p>
+<h1 id="具体部署"><a href="#具体部署" class="headerlink" title="具体部署"></a>具体部署</h1><h2 id="修改本地Host文件"><a href="#修改本地Host文件" class="headerlink" title="修改本地Host文件"></a>修改本地Host文件</h2><p>（C:\Windows\System32\drivers\etc）编辑下面这个文件,修改里面ip对应的地址,因为要使用域名的不同来实现反向代理.<br><img src="https://img-blog.csdnimg.cn/20190919232109812.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20190919232230704.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="Nginx配置"><a href="#Nginx配置" class="headerlink" title="Nginx配置"></a>Nginx配置</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Nginx下载地址(Windows和Linux的配置一样)：<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>解压后，找到配置文件\nginx-1.12.2\conf\nginx.conf<br><img src="https://img-blog.csdnimg.cn/20190919232545406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">详细配置</p>
+<pre><code>#user  nobody;
+worker_processes  1;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    #log_format  main  &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;
+    #                  &apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;
+    #                  &apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;
+
+    #access_log  logs/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    #配置上游服务器网关端口集群
+    upstream  backServer{
+        # weight 权重：谁的的权重多，访问到哪个服务的几率就大
+        server 127.0.0.1:8040 weight=1;
+        server 127.0.0.1:8041 weight=1;
+    }
+
+    server {
+        # 注意：如果使用域名进行反向代理的话，Nginx的端口必须是80
+        listen       80;
+        # 入口地址-对应域名地址
+        server_name  www.taowd123.com;  
+
+        location /ms {
+            ### 指定上游服务器负载均衡服务器
+            proxy_pass http://backServer/;
+            index  index.html index.htm;
+        }
+
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        # 错误页面
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+    }
+    # another virtual host using mix of IP-, name-, and port-based configuration
+    #
+    #server {
+    #    listen       8000;
+    #    listen       somename:8080;
+    #    server_name  somename  alias  another.alias;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+
+    # HTTPS server
+    #
+    #server {
+    #    listen       443 ssl;
+    #    server_name  localhost;
+
+    #    ssl_certificate      cert.pem;
+    #    ssl_certificate_key  cert.key;
+
+    #    ssl_session_cache    shared:SSL:1m;
+    #    ssl_session_timeout  5m;
+
+    #    ssl_ciphers  HIGH:!aNULL:!MD5;
+    #    ssl_prefer_server_ciphers  on;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+}
+</code></pre><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><ul>
+<li>启动注册中心服务：<a href="http://127.0.0.1:8761/" target="_blank" rel="noopener">http://127.0.0.1:8761/</a></li>
+<li>启动两个网关，端口分别为：8041，8040</li>
+<li>启动服务提供者，端口为：9000  已经在Zuul中配置</li>
+<li>启动Nginx服务<br><img src="https://img-blog.csdnimg.cn/20190919233930869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>访问注册中心检查服务<br><img src="https://img-blog.csdnimg.cn/20190919234035730.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>使用网关端口直接访问正常<br><img src="https://img-blog.csdnimg.cn/20190919234159541.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>使用host中配置的域名直接访问，测试反向代理功能<br><img src="https://img-blog.csdnimg.cn/20190919234321552.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">访问多次，检查网关后台输出结果<br><img src="https://img-blog.csdnimg.cn/20190919234625182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/kxj19980524/article/details/87868108" target="_blank" rel="noopener">https://blog.csdn.net/kxj19980524/article/details/87868108</a></p>
 
     
 
@@ -300,7 +404,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.taoweidong.com/2018/04/26/SpringBoot学习笔记-集成Spring AOP/" title="SpringBoot学习笔记-集成Spring AOP" target="_blank">http://www.taoweidong.com/2018/04/26/SpringBoot学习笔记-集成Spring AOP/</a>
+          <a href="http://www.taoweidong.com/2019/09/20/SpringCloud微服务笔记-Nginx实现网关反向代理/" title="SpringCloud微服务笔记-Nginx实现网关反向代理" target="_blank">http://www.taoweidong.com/2019/09/20/SpringCloud微服务笔记-Nginx实现网关反向代理/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -319,11 +423,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spring AOP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">SpringCloud</a>
         		</li>
       		
 		</ul>
@@ -379,7 +487,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.taoweidong.com/2018/04/26/SpringBoot学习笔记-集成Spring AOP/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.taoweidong.com/2019/09/20/SpringCloud微服务笔记-Nginx实现网关反向代理/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -394,18 +502,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/04/27/Oracle学习笔记-修改用户密码/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Oracle学习笔记-修改用户密码
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/26/CentOS相关-搭建 FTP 文件服务/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CentOS相关-搭建 FTP 文件服务</div>
+    <a href="/2019/09/07/多线程学习-CountDownLatch闭锁的分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">多线程学习-CountDownLatch闭锁的分析</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -432,7 +531,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#学习计划"><span class="toc-number">1.</span> <span class="toc-text">学习计划</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建学习工程"><span class="toc-number">2.</span> <span class="toc-text">创建学习工程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加依赖"><span class="toc-number">3.</span> <span class="toc-text">添加依赖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建Aspect切面类"><span class="toc-number">4.</span> <span class="toc-text">创建Aspect切面类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#指定切点"><span class="toc-number">5.</span> <span class="toc-text">指定切点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前置通知"><span class="toc-number">6.</span> <span class="toc-text">前置通知</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后置返回通知"><span class="toc-number">7.</span> <span class="toc-text">后置返回通知</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目架构图"><span class="toc-number">2.</span> <span class="toc-text">项目架构图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#具体部署"><span class="toc-number">3.</span> <span class="toc-text">具体部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改本地Host文件"><span class="toc-number">3.1.</span> <span class="toc-text">修改本地Host文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx配置"><span class="toc-number">3.2.</span> <span class="toc-text">Nginx配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载"><span class="toc-number">3.2.1.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-number">3.2.2.</span> <span class="toc-text">配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-number">4.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
                     </div>
                 </span>
             </div>

@@ -185,6 +185,104 @@
             
 
   
+    <article id="post-SpringBoot学习笔记-整合JdbcTemplate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/04/12/SpringBoot学习笔记-整合JdbcTemplate/" target="_blank">SpringBoot学习笔记-整合JdbcTemplate</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/04/12/SpringBoot学习笔记-整合JdbcTemplate/" class="archive-article-date">
+        <time datetime="2018-04-11T19:44:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="SpringBoot学习笔记-整合JdbcTemplate"><a href="#SpringBoot学习笔记-整合JdbcTemplate" class="headerlink" title="SpringBoot学习笔记-整合JdbcTemplate"></a>SpringBoot学习笔记-整合JdbcTemplate</h1><h2 id="JdbcTemplate"><a href="#JdbcTemplate" class="headerlink" title="JdbcTemplate"></a>JdbcTemplate</h2><p>为了使 JDBC 更加易于使用,Spring 在 JDBCAPI 上定义了一个抽象层, 以此建立一个JDBC存取框架.作为 SpringJDBC 框架的核心, JDBC 模板的设计目的是为不同类型的JDBC操作提供模板方法. 每个模板方法都能控制整个过程,并允许覆盖过程中的特定任务.通过这种方式,可以在尽可能保留灵活性的情况下,将数据库存取的工作量降到最低.</p>
+<h2 id="JdbcTemplate主要方法："><a href="#JdbcTemplate主要方法：" class="headerlink" title="JdbcTemplate主要方法："></a>JdbcTemplate主要方法：</h2><ul>
+<li>execute方法：可以用于执行任何SQL语句，一般用于执行DDL语句；</li>
+<li>update方法及batchUpdate方法：update方法用于执行新增、修改、删除等语句；batchUpdate方法用于执行批处理相关语句；</li>
+<li>query方法及queryForXXX方法：用于执行查询相关语句；</li>
+<li>call方法：用于执行存储过程、函数相关语句。</li>
+</ul>
+    
+    <a class="article-more-a" href="/2018/04/12/SpringBoot学习笔记-整合JdbcTemplate/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JdbcTemplate</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/04/12/SpringBoot学习笔记-整合JdbcTemplate/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Docker学习笔记-使用Dockerfile构建Docker镜像" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -562,110 +660,6 @@
 
 
   
-    <article id="post-Docker学习笔记-Docker初识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/04/10/Docker学习笔记-Docker初识/" target="_blank">Docker学习笔记-Docker初识2</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/04/10/Docker学习笔记-Docker初识/" class="archive-article-date">
-        <time datetime="2018-04-09T20:21:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="http://i.imgur.com/eMqKkzM.png" alt></p>
-<h1 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h1><p>是一个开源的应用容器引擎，可以轻松的为任何应用创建一个轻量级的、可移植的、自给自足的容器。利用Linux的LXC、AUFS、Go语言、cgroup实现了资源的独立，可以很轻松的实现文件、资源、网络等隔离，其最终的目标是实现类似PaaS平台的应用隔离。</p>
-<hr>
-<h1 id="docker值得关注的特性："><a href="#docker值得关注的特性：" class="headerlink" title="docker值得关注的特性："></a>docker值得关注的特性：</h1><ol>
-<li>文件系统隔离：每个进程容器运行在一个完全独立的根文件系统里。</li>
-<li>资源隔离：系统资源，像CPU和内存等可以分配到不同的容器中，使用cgroup。</li>
-<li>网络隔离：每个进程容器运行在自己的网络空间，虚拟接口和IP地址。</li>
-<li>日志记录：Docker将会收集和记录每个进程容器的标准流（stdout/stderr/stdin），用于实时检索或批量检索。</li>
-<li>变更管理：容器文件系统的变更可以提交到新的映像中，并可重复使用以创建更多的容器。无需使用模板或手动配置。</li>
-<li>交互式shell：Docker可以分配一个虚拟终端并关联到任何容器的标准输入上，例如运行一个一次***互shell。</li>
-</ol>
-<h1 id="Docker通常用于如下场景"><a href="#Docker通常用于如下场景" class="headerlink" title="Docker通常用于如下场景"></a>Docker通常用于如下场景</h1><ul>
-<li>web应用的自动化打包和发布；</li>
-<li>自动化测试和持续集成、发布；</li>
-<li>在服务型环境中部署和调整数据库或其他的后台应用；</li>
-<li>从头编译或者扩展现有的OpenShift或Cloud Foundry平台来搭建自己的PaaS环境。</li>
-</ul>
-    
-    <a class="article-more-a" href="/2018/04/10/Docker学习笔记-Docker初识/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/10/Docker学习笔记-Docker初识/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -883,6 +877,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
               </li>
              
@@ -895,19 +893,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
+                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -983,15 +977,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
