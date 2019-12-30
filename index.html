@@ -216,20 +216,9 @@
     
     <h1 id="Eureka-简要介绍"><a href="#Eureka-简要介绍" class="headerlink" title="Eureka 简要介绍"></a>Eureka 简要介绍</h1><p>Eureka 是 Netflix 开发的，一个基于 REST 服务的，服务注册与发现的组件</p>
 <h1 id="Eureka集群高可用配置"><a href="#Eureka集群高可用配置" class="headerlink" title="Eureka集群高可用配置"></a>Eureka集群高可用配置</h1><p>一般生产的环境中，一定要确保服务的正常使用，不能出现服务宕机的情况；在微服务架构下这种要求更加重要，注册中心作为微服务架构中的重要一环，在设计之初就已经考虑到服务的单点问题；单节点的eureka服务很难保证服务的不间断，如果eureka服务宕机，则会导致整个项目应用都会出现问题，基于单点故障的问题，最好的解决方案就是采用eureka集群部署方式搭建eureka的高可用，再多个注册中心的模式下，多个eureka服务之间相关注册，同步注册数据，在一个eureka宕机的情况下，其他服务仍然可以提供服务注册和服务发现功能，从而保证注册中心的高可用。<br><img src="https://img-blog.csdnimg.cn/20191230224738627.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h1><h2 id="POM依赖"><a href="#POM依赖" class="headerlink" title="POM依赖"></a>POM依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--添加Eureka server的jar包 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--添加安全认证的jar包 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-security<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- actuator监控信息完善 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--注意此处如果不配置这个打包插件的话，可能会导致spring-boot-starter-actuator /info获取空信息--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--参考：https://blog.csdn.net/weixin_34402408/article/details/86001236--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="启动类增加注解"><a href="#启动类增加注解" class="headerlink" title="启动类增加注解"></a>启动类增加注解</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Eureka服务注册中心</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Taoweidong</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EurekaApp</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 启动类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(EurekaApp.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="增加配置文件application-properties"><a href="#增加配置文件application-properties" class="headerlink" title="增加配置文件application.properties"></a>增加配置文件application.properties</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 应用启动的端口号</span><br><span class="line">server.port=8762</span><br><span class="line">#激活配置文件，默认为master</span><br><span class="line">spring.profiles.active=slave</span><br><span class="line">#服务名称</span><br><span class="line">spring.application.name=eureka-service</span><br><span class="line"></span><br><span class="line">#安全认证相关配置</span><br><span class="line">#开启安全认证</span><br><span class="line">security.basic.enabled=false</span><br><span class="line">#安全认证用户名</span><br><span class="line">security.user.name=admin</span><br><span class="line">#安全认证密码</span><br><span class="line">security.user.password=admin123</span><br></pre></td></tr></table></figure>
-<h2 id="增加主注册中心配置文件application-master-properties"><a href="#增加主注册中心配置文件application-master-properties" class="headerlink" title="增加主注册中心配置文件application-master.properties"></a>增加主注册中心配置文件application-master.properties</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#Eureka的相关配置</span><br><span class="line">#应用的主机名称</span><br><span class="line">eureka.instance.hostname=master</span><br><span class="line"># 通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server.  这两个参数的默认值都是True，因此作为客户端是可不进行配置，使用默认值就可以了</span><br><span class="line">#值为false意味着自身仅作为服务器，不作为客户端,进行集群式设置为true</span><br><span class="line">eureka.client.register-with-eureka=false</span><br><span class="line"># 值为false意味着无需注册自身</span><br><span class="line">eureka.client.fetch-registry=false</span><br><span class="line">#Eureka的自我保护机制，True表示开启，false表示关闭，默认为开启状态</span><br><span class="line">eureka.server.enable-self-preservation=true</span><br><span class="line">#清理间隔(单位毫秒)驱逐下线的服务，间隔是5秒，默认是60</span><br><span class="line">eureka.server.eviction-interval-timer-in-ms=5000</span><br><span class="line">#</span><br><span class="line"># 指明了本应用的URL</span><br><span class="line">eureka.client.serviceUrl.defaultZone=http://admin:admin123@$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span><br></pre></td></tr></table></figure>
-<h2 id="增加从注册中心配置application-slave-properties"><a href="#增加从注册中心配置application-slave-properties" class="headerlink" title="增加从注册中心配置application-slave.properties"></a>增加从注册中心配置application-slave.properties</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#Eureka的相关配置</span><br><span class="line">#应用的主机名称</span><br><span class="line">eureka.instance.hostname=slave</span><br><span class="line"># 通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server.  这两个参数的默认值都是True，因此作为客户端是可不进行配置，使用默认值就可以了</span><br><span class="line">#值为false意味着自身仅作为服务器，不作为客户端,进行集群式设置为true</span><br><span class="line">eureka.client.register-with-eureka=false</span><br><span class="line"># 值为false意味着无需注册自身</span><br><span class="line">eureka.client.fetch-registry=false</span><br><span class="line">#Eureka的自我保护机制，True表示开启，false表示关闭，默认为开启状态</span><br><span class="line">eureka.server.enable-self-preservation=true</span><br><span class="line">#清理间隔(单位毫秒)驱逐下线的服务，间隔是5秒，默认是60</span><br><span class="line">eureka.server.eviction-interval-timer-in-ms=5000</span><br><span class="line">#</span><br><span class="line"># 指明了本应用的URL</span><br><span class="line">eureka.client.serviceUrl.defaultZone=http://admin:admin123@$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span><br></pre></td></tr></table></figure>
-<h2 id="修改host文件"><a href="#修改host文件" class="headerlink" title="修改host文件"></a>修改host文件</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># Copyright (c) <span class="number">1993</span>-<span class="number">2009</span> Microsoft Corp.</span><br><span class="line">#</span><br><span class="line"># This is a sample HOSTS file used by Microsoft TCP/IP <span class="keyword">for</span> Windows.</span><br><span class="line">#</span><br><span class="line"># This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"># entry should be kept on an individual line. The IP address should</span><br><span class="line"># be placed <span class="keyword">in</span> the first column followed by the corresponding host name.</span><br><span class="line"># The IP address and the host name should be separated by <span class="built_in">at</span> least one</span><br><span class="line"># space.</span><br><span class="line">#</span><br><span class="line"># Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"># lines or following the machine name denoted by a '#' symbol.</span><br><span class="line">#</span><br><span class="line"># <span class="keyword">For</span> example:</span><br><span class="line">#</span><br><span class="line">#      <span class="number">102</span>.<span class="number">54</span>.<span class="number">94</span>.<span class="number">97</span>     rhino.acme.com          # source server</span><br><span class="line">#       <span class="number">38</span>.<span class="number">25</span>.<span class="number">63</span>.<span class="number">10</span>     x.acme.com              # x client host</span><br><span class="line"></span><br><span class="line"># localhost name resolution is handled within DNS itself.</span><br><span class="line">#	<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>       localhost</span><br><span class="line">#	::<span class="number">1</span>             localhost</span><br><span class="line">	<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>       master</span><br><span class="line">	<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>       slave</span><br></pre></td></tr></table></figure>
-<h2 id="结构图"><a href="#结构图" class="headerlink" title="结构图"></a>结构图</h2><p><img src="https://img-blog.csdnimg.cn/20191230225952251.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="使用两个端口启动master和slave"><a href="#使用两个端口启动master和slave" class="headerlink" title="使用两个端口启动master和slave"></a>使用两个端口启动master和slave</h2><p><img src="https://img-blog.csdnimg.cn/20191230230041122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20191230230059679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li><a href="https://blog.csdn.net/qq_38455201/article/details/80898045" target="_blank" rel="noopener">https://blog.csdn.net/qq_38455201/article/details/80898045</a></li>
-<li><a href="https://blog.csdn.net/sofeware333/article/details/90049898" target="_blank" rel="noopener">https://blog.csdn.net/sofeware333/article/details/90049898</a></li>
-<li><a href="https://www.cnblogs.com/knowledgesea/p/11208000.html" target="_blank" rel="noopener">https://www.cnblogs.com/knowledgesea/p/11208000.html</a></li>
-</ul>
-
+    
+    <a class="article-more-a" href="/2019/12/31/SpringCloud学习笔记-Eureka集群高可用注册中心配置/#more">more >></a>
+    
     
 
     
@@ -839,7 +828,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -851,19 +844,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -871,11 +852,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -883,15 +868,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -903,6 +888,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
               </li>
              
@@ -911,7 +904,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -920,14 +917,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -955,15 +944,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -975,7 +960,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -983,11 +972,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Dashboard</a>
+                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
+                <a href="javascript:void(0)" class="js-tag color5">Dashboard</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1007,11 +996,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
+                <a href="javascript:void(0)" class="js-tag color5">Zuul</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Zuul</a>
+                <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1035,6 +1024,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
               </li>
              
@@ -1043,23 +1036,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1079,15 +1060,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1096,6 +1081,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
               </li>
              
               <li class="article-tag-list-item">
