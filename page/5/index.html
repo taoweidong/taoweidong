@@ -185,6 +185,229 @@
             
 
   
+    <article id="post-SpringBoot学习笔记-整合Mybatis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/04/26/SpringBoot学习笔记-整合Mybatis/" target="_blank">SpringBoot学习笔记-整合Mybatis</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/04/26/SpringBoot学习笔记-整合Mybatis/" class="archive-article-date">
+        <time datetime="2018-04-26T00:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="学习计划"><a href="#学习计划" class="headerlink" title="学习计划"></a>学习计划</h1><ul>
+<li>使用generateConfig生成Mapper以及Pojo</li>
+<li>实现基于Mybatis的CRUD功能</li>
+<li>整合mybatis-pagehelper实现分页</li>
+<li>自定义mapper的实现</li>
+<li>慕课网源码：<a href="https://github.com/leechenxiang/imooc-springboot-starter" target="_blank" rel="noopener">https://github.com/leechenxiang/imooc-springboot-starter</a></li>
+<li><a href="https://github.com/abel533/MyBatis-Spring-Boot" target="_blank" rel="noopener">https://github.com/abel533/MyBatis-Spring-Boot</a></li>
+</ul>
+<h1 id="使用generateConfig生成Mapper以及Pojo"><a href="#使用generateConfig生成Mapper以及Pojo" class="headerlink" title="使用generateConfig生成Mapper以及Pojo"></a>使用generateConfig生成Mapper以及Pojo</h1><blockquote>
+<p>使用org.mybatis.generator来生成Mapper和数据库表对应的pojo类，加快开发速度。</p>
+</blockquote>
+    
+    <a class="article-more-a" href="/2018/04/26/SpringBoot学习笔记-整合Mybatis/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Mybatis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/04/26/SpringBoot学习笔记-整合Mybatis/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Docker学习笔记-Docker Compose编排微服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/" target="_blank">Docker学习笔记-Docker Compose编排微服务</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/" class="archive-article-date">
+        <time datetime="2018-04-16T21:26:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-16</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Docker-Compose编排工具简介"><a href="#Docker-Compose编排工具简介" class="headerlink" title="Docker Compose编排工具简介"></a>Docker Compose编排工具简介</h1><p>Compose是一个用于定义和运行多容器Docker应用程序的工具，前身是Fig，它非常适合用在开发、测试、构建CI（持续集成）工作流等场景中。</p>
+<p>Docker Compose是一个用来定义和运行复杂应用的Docker工具。一个使用Docker容器的应用，通常由多个容器组成。使用Docker Compose不再需要使用shell脚本来启动容器。 </p>
+<p>Compose 通过一个配置文件来管理多个Docker容器，在配置文件中，所有的容器通过services来定义，然后使用docker-compose脚本来启动，停止和重启应用，和应用中的服务以及所有依赖服务的容器，非常适合组合使用多个容器进行开发的场景。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021311.jpg" alt></p>
+<p><a href="https://docs.docker.com/compose/" target="_blank" rel="noopener">Compose</a> 是 Docker 公司推出的一个工具软件，可以管理多个 Docker 容器组成一个应用。你需要定义一个 <a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html" target="_blank" rel="noopener">YAML</a> 格式的配置文件<code>docker-compose.yml</code>，写好多个容器之间的调用关系。然后，只要一个命令，就能同时启动/关闭这些容器。</p>
+<p>Docker Compose将所管理的容器分为三层，分别是工程(Project)，服务(Service)以及容器(Container).Docker Compose运行目录下的所有文件(docker-compose.yml,extends文件或环境变量文件等)组成一个工程(默认为docker-compose.yml所在目录的目录名称)。一个工程可以包含多个服务，每个服务中定义了容器运行的镜像、参数和依赖，一个服务可包含多个容器实例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 启动所有服务</span><br><span class="line">$ docker-compose up</span><br><span class="line"># 关闭所有服务</span><br><span class="line">$ docker-compose stop</span><br></pre></td></tr></table></figure>
+<h1 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h1><p>在<a href="https://github.com/TaciturnK/Micro-service-learning" target="_blank" rel="noopener"><strong>Micro-service-learning</strong></a> 工程的学习基础之上，使用docker工具进行服务的发布，主要利用其中的6个子工程来进行学习，工程列表如下：</p>
+<ul>
+<li>microservice-consume-movie-feign-hystrix：服务消费者(整合ribbon.feign,hystrix)</li>
+<li>microservice-discovery-eureka：服务注册中心(Eureak)</li>
+<li>microservice-getway-zuul：路由网关(Zuul)</li>
+<li>microservice-hystrix-dashboard：hystrix可视化监控工具(独立项目，不依赖服务注册中心)</li>
+<li>microservice-hystrix-turbine：turbine聚合监控数据(供microservice-hystrix-dashboard调用)</li>
+<li>microservice-provider-user：服务提供者</li>
+</ul>
+<p><strong>环境：</strong></p>
+<ul>
+<li>虚拟机上已经搭建了docker服务，并可以进行正常的镜像拉取，上传阿里云镜像仓库操作，相关功能已经经过测试，达到了实验的条件。</li>
+<li>idea开发工具上面已经安装了docker开发插件，并且虚拟机的docker开启了api2375端口，远程传输的功能，并且已经单独进行了测试，达到了在idea上发布镜像到虚拟中的条件。</li>
+</ul>
+<p><strong>学习目的：</strong></p>
+<blockquote>
+<p>在Idea工具上编排微服务的各个服务，并使用docker插件发布到虚拟机中的docker服务中，然后进入虚拟机，在虚拟机中将镜像发布到远程阿里云docker镜像仓库，供其他主机使用时拉取。</p>
+</blockquote>
+<p><strong>学习计划：</strong></p>
+<ol>
+<li>docker compose快速入门：使用microservice-discovery-eureka作为学习目标，使用compose工具进行编排发布，并可进行访问；</li>
+<li>编排这6个微服务，并最终可进行访问；</li>
+</ol>
+    
+    <a class="article-more-a" href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Docker Compose</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Docker学习笔记-Dockerfile构建Docker镜像" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -265,99 +488,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2018/04/13/Docker学习笔记-Dockerfile构建Docker镜像/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Docker学习笔记-Idea推送镜像到虚拟机中的docker服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/" target="_blank">Docker学习笔记-Idea推送镜像到虚拟机中的docker服务</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/" class="archive-article-date">
-        <time datetime="2018-04-12T22:17:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><p>Docker 是一个容器工具，提供虚拟环境。很多人认为，它改变了我们对软件的认识。</p>
-<p>站在 Docker 的角度，软件就是容器的组合：业务逻辑容器、数据库容器、储存容器、队列容器……Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木一样组合起来。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021306.png" alt></p>
-<p>这正是微服务（microservices）的思想：软件把任务外包出去，让各种外部服务完成这些任务，软件本身只是底层服务的调度中心和组装层。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021302.png" alt></p>
-<p>微服务很适合用 Docker 容器实现，每个容器承载一个服务。一台计算机同时运行多个容器，从而就能很轻松地模拟出复杂的微服务架构。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021303.png" alt></p>
-    
-    <a class="article-more-a" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/">展开全文 >></a>
     </p>
     
 
@@ -480,7 +610,7 @@
 
 
   
-    <article id="post-Docker学习笔记-自建容器搭建WordPress" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Docker学习笔记-Idea推送镜像到虚拟机中的docker服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -488,7 +618,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/04/12/Docker学习笔记-自建容器搭建WordPress/" target="_blank">Docker学习笔记-自建容器搭建wordpress</a>
+	  <a class="article-title" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/" target="_blank">Docker学习笔记-Idea推送镜像到虚拟机中的docker服务</a>
   
     </h1>
   
@@ -496,8 +626,8 @@
 
   
   
-<a href="/2018/04/12/Docker学习笔记-自建容器搭建WordPress/" class="archive-article-date">
-        <time datetime="2018-04-12T13:01:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
+<a href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/" class="archive-article-date">
+        <time datetime="2018-04-12T22:17:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
 </a>
 
   
@@ -509,33 +639,15 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="Dockerfile-文件简介"><a href="#Dockerfile-文件简介" class="headerlink" title="Dockerfile 文件简介"></a>Dockerfile 文件简介</h2><p>Docker 是一个容器工具，提供虚拟环境。很多人认为，它改变了我们对软件的认识。</p>
+    <h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><p>Docker 是一个容器工具，提供虚拟环境。很多人认为，它改变了我们对软件的认识。</p>
 <p>站在 Docker 的角度，软件就是容器的组合：业务逻辑容器、数据库容器、储存容器、队列容器……Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木一样组合起来。</p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021306.png" alt></p>
 <p>这正是微服务（microservices）的思想：软件把任务外包出去，让各种外部服务完成这些任务，软件本身只是底层服务的调度中心和组装层。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021302.png" alt></p>
 <p>微服务很适合用 Docker 容器实现，每个容器承载一个服务。一台计算机同时运行多个容器，从而就能很轻松地模拟出复杂的微服务架构。</p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021303.png" alt></p>
-<h1 id="目的："><a href="#目的：" class="headerlink" title="目的："></a>目的：</h1><p>学习使用Docker搭建一个网站，开始运行</p>
-<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><ul>
-<li>下载官方的php images</li>
-</ul>
-<p><img src="C:\Users\Taowd\AppData\Local\Temp\1523509981212.png" alt="52350998121"></p>
-<p>上面的命令基于<code>php</code>的 image 文件新建一个容器，并且运行该容器。<code>php</code>的标签是<code>5.6-apache</code>，说明装的是 PHP 5.6，并且自带 Apache 服务器。该命令的三个参数含义如下。</p>
-<blockquote>
-<ul>
-<li><code>--rm</code>：停止运行后，自动删除容器文件。</li>
-<li><code>--name wordpress</code>：容器的名字叫做<code>wordpress</code>。</li>
-<li><code>--volume &quot;$PWD/&quot;:/var/www/html</code>：将当前目录（<code>$PWD</code>）映射到容器的<code>/var/www/html</code>（Apache 对外访问的默认目录）。因此，当前目录的任何修改，都会反映到容器里面，进而被外部访问到。</li>
-</ul>
-</blockquote>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
-<li><a href="https://cloud.tencent.com/developer/article/1005172" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1005172</a></li>
-<li><a href="https://www.zhihu.com/question/28300645" target="_blank" rel="noopener">https://www.zhihu.com/question/28300645</a></li>
-<li><a href="https://www.docker.com/" target="_blank" rel="noopener">https://www.docker.com/</a></li>
-<li><a href="http://www.docker.org.cn/book/docker/what-is-docker-16.html" target="_blank" rel="noopener">http://www.docker.org.cn/book/docker/what-is-docker-16.html</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html</a></li>
-</ul>
-
+    
+    <a class="article-more-a" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/#more">more >></a>
+    
     
 
     
@@ -561,105 +673,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/12/Docker学习笔记-自建容器搭建WordPress/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SpringBoot学习笔记-整合JdbcTemplate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/04/12/SpringBoot学习笔记-整合JdbcTemplate/" target="_blank">SpringBoot学习笔记-整合JdbcTemplate</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/04/12/SpringBoot学习笔记-整合JdbcTemplate/" class="archive-article-date">
-        <time datetime="2018-04-11T19:44:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="SpringBoot学习笔记-整合JdbcTemplate"><a href="#SpringBoot学习笔记-整合JdbcTemplate" class="headerlink" title="SpringBoot学习笔记-整合JdbcTemplate"></a>SpringBoot学习笔记-整合JdbcTemplate</h1><h2 id="JdbcTemplate"><a href="#JdbcTemplate" class="headerlink" title="JdbcTemplate"></a>JdbcTemplate</h2><p>为了使 JDBC 更加易于使用,Spring 在 JDBCAPI 上定义了一个抽象层, 以此建立一个JDBC存取框架.作为 SpringJDBC 框架的核心, JDBC 模板的设计目的是为不同类型的JDBC操作提供模板方法. 每个模板方法都能控制整个过程,并允许覆盖过程中的特定任务.通过这种方式,可以在尽可能保留灵活性的情况下,将数据库存取的工作量降到最低.</p>
-<h2 id="JdbcTemplate主要方法："><a href="#JdbcTemplate主要方法：" class="headerlink" title="JdbcTemplate主要方法："></a>JdbcTemplate主要方法：</h2><ul>
-<li>execute方法：可以用于执行任何SQL语句，一般用于执行DDL语句；</li>
-<li>update方法及batchUpdate方法：update方法用于执行新增、修改、删除等语句；batchUpdate方法用于执行批处理相关语句；</li>
-<li>query方法及queryForXXX方法：用于执行查询相关语句；</li>
-<li>call方法：用于执行存储过程、函数相关语句。</li>
-</ul>
-    
-    <a class="article-more-a" href="/2018/04/12/SpringBoot学习笔记-整合JdbcTemplate/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JdbcTemplate</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/12/SpringBoot学习笔记-整合JdbcTemplate/">展开全文 >></a>
+      <a class="article-more-a" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/">展开全文 >></a>
     </p>
     
 
@@ -691,7 +705,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -822,11 +836,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -838,11 +848,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -850,11 +860,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -870,15 +884,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -895,6 +905,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -935,6 +949,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -994,11 +1016,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
+                <a href="javascript:void(0)" class="js-tag color2">服务发现组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1007,10 +1029,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">服务消费者</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">服务发现组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1023,6 +1041,22 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1042,23 +1076,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1185,6 +1211,15 @@
                   <i class="icon-link icon"></i>
                 
                 Hadoop
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://123.206.74.225/#/" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                个人学习
               </a>
             </li>
           

@@ -185,6 +185,216 @@
             
 
   
+    <article id="post-SpringBoot学习笔记-application.yml与bootstrap.yml的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/03/05/SpringBoot学习笔记-application.yml与bootstrap.yml的区别/" target="_blank">Spring Boot中application.yml与bootstrap.yml的区别</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/03/05/SpringBoot学习笔记-application.yml与bootstrap.yml的区别/" class="archive-article-date">
+        <time datetime="2018-03-05T10:04:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>Spring Boot中application.yml与bootstrap.yml的区别（转）</p>
+<blockquote>
+<p>说明：其实yml和properties文件是一样的原理，主要是说明application和bootstrap的加载顺序。且一个项目上要么yml或者properties，二选一的存在。</p>
+</blockquote>
+<p>Bootstrap.yml（bootstrap.properties）在application.yml（application.properties）之前加载，就像application.yml一样，但是用于应用程序上下文的引导阶段。它通常用于“使用Spring Cloud Config Server时，应在bootstrap.yml中指定spring.application.name和spring.cloud.config.server.git.uri”以及一些加密/解密信息。技术上，bootstrap.yml由父Spring ApplicationContext加载。父ApplicationContext被加载到使用application.yml的之前。</p>
+<p>例如，当使用Spring Cloud时，通常从服务器加载“real”配置数据。为了获取URL（和其他连接配置，如密码等），您需要一个较早的或“bootstrap”配置。因此，您将配置服务器属性放在bootstrap.yml中，该属性用于加载实际配置数据（通常覆盖application.yml [如果存在]中的内容）。</p>
+<p>当然，在一些情况上不用那么区分这两个文件，你只需要使用application文件即可，把全部选项都写在这里，效果基本是一致的，在不考虑上面的加载顺序覆盖的问题上。</p>
+    
+    <a class="article-more-a" href="/2018/03/05/SpringBoot学习笔记-application.yml与bootstrap.yml的区别/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">application.yml</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bootstrap.yml</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/03/05/SpringBoot学习笔记-application.yml与bootstrap.yml的区别/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-白鹭引擎创建EUI程序-List控件数据绑定" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/02/08/白鹭引擎创建EUI程序-List控件数据绑定/" target="_blank">白鹭引擎创建EUI程序-List控件进行数据绑定</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/02/08/白鹭引擎创建EUI程序-List控件数据绑定/" class="archive-article-date">
+        <time datetime="2018-02-08T15:55:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <blockquote>
+<p>编写一个EUI界面，添加List控件，并在后台给List绑定相关数据。</p>
+</blockquote>
+<h1 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h1><ol>
+<li>开发工具EgretWing和Egret Launcher</li>
+<li>创建工程</li>
+</ol>
+<p><img src="https://i.imgur.com/okqRYNt.png" alt="创建工程|center"></p>
+<ol start="3">
+<li>工程结构</li>
+</ol>
+<p><img src="https://i.imgur.com/ZH8o5tJ.png" alt="工程结构|center"></p>
+<ol start="4">
+<li>新建工程运行结果</li>
+</ol>
+<p><img src="https://i.imgur.com/Momu89W.png" alt="新建工程运行结果|center"></p>
+<h1 id="开发过程"><a href="#开发过程" class="headerlink" title="开发过程"></a>开发过程</h1><h2 id="创建EUI组件，注意exml文件的路径"><a href="#创建EUI组件，注意exml文件的路径" class="headerlink" title="创建EUI组件，注意exml文件的路径"></a>创建EUI组件，注意exml文件的路径</h2><p><img src="https://i.imgur.com/fl36o6T.png" alt></p>
+    
+    <a class="article-more-a" href="/2018/02/08/白鹭引擎创建EUI程序-List控件数据绑定/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">白鹭引擎</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">List控件数据绑定</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/02/08/白鹭引擎创建EUI程序-List控件数据绑定/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-RabbitMQ学习笔记-初识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -484,229 +694,9 @@
 
 
   
-    <article id="post-MySql用户密码忘记的处理方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/01/25/MySql用户密码忘记的处理方式/" target="_blank">MySql用户密码忘记的处理方式</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/01/25/MySql用户密码忘记的处理方式/" class="archive-article-date">
-        <time datetime="2018-01-25T11:26:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="windows："><a href="#windows：" class="headerlink" title="windows："></a>windows：</h1><ol>
-<li>停止MYSQL服务，CMD打开DOS窗口，输入 net stop mysql </li>
-<li>在CMD命令行窗口，进入MYSQL安装目录 比如E:\Program Files\MySQL\MySQL Server 5.0\bin<br>示范命令:<br>输入 e:回车,<br>输入cd “E:\Program Files\MySQL\MySQL Server 5.0\bin”<br>注意双引号也要输入,这样就可以进入Mysql安装目录了. </li>
-<li>进入mysql安全模式，即当mysql起来后，不用输入密码就能进入数据库。<br>命令为： mysqld -nt –skip-grant-tables (注意-nt前面的空格!)</li>
-<li>重新打开一个CMD命令行窗口，输入mysql -u root -p，使用空密码的方式登录MySQL（不用输入密码，直接按回车） </li>
-<li>输入以下命令开始修改root用户的密码（注意：命令中mysql.user中间有个“点”）<br> mysql&gt; update mysql.user set password=PASSWORD(‘新密码’) where User=’root’;</li>
-<li>刷新权限表<br> mysql&gt; flush privileges;</li>
-<li>退出<br> mysql&gt; quit</li>
-</ol>
-<p>这样MYSQL超级管理员账号 ROOT已经重新设置好了，接下来 在任务管理器里结束掉 mysql-nt.exe 这个进程，重新启动MYSQL即可！（也可以直接重新启动服务器）<br>MYSQL重新启动后，就可以用新设置的ROOT密码登陆MYSQL了！ </p>
-<p>如果报错，注销下机器。</p>
-<h1 id="Linux："><a href="#Linux：" class="headerlink" title="Linux："></a>Linux：</h1><blockquote>
-<p>如果忘记了 MySQL 的 root 密码，可以用以下方法重新设置：</p>
-<ol>
-<li>KILL掉系统里的MySQL进程；或者关闭Mysql的服务：<br> service mysqld stop</li>
-<li>用以下命令启动MySQL，以不检查权限的方式启动；<br> mysqld_safe –skip-grant-tables &amp;</li>
-<li>然后用空密码方式使用root用户登录 MySQL；<br> mysql -u root</li>
-<li>修改root用户的密码；<br> mysql&gt; update mysql.user set password=PASSWORD (‘taoweidong’) where User=’root’ and host=’localhost’;<br> mysql&gt; flush privileges；<br> mysql&gt; quit</li>
-<li>重新启动MySQL，就可以使用新密码登录了。<br> mysql -u root -p123456</li>
-</ol>
-</blockquote>
-<h1 id="远程登陆报错的处理方式"><a href="#远程登陆报错的处理方式" class="headerlink" title="远程登陆报错的处理方式"></a>远程登陆报错的处理方式</h1><blockquote>
-<p>user表中 Host列 ‘localhost’ 改成 ‘%’  (也可以是固定ip、本地登陆localhost、%指不限登陆地址)</p>
-</blockquote>
-<pre><code>//注意host为user表的主键，不能将所有的都改成%，后面的条件必须跟User和host
-update mysql.user set host=&apos;%&apos; where User=&apos;root&apos; and host=&apos;localhost&apos;;
-</code></pre>
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/01/25/MySql用户密码忘记的处理方式/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基于GitHub开发个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/01/20/基于GitHub开发个人博客/" target="_blank">基于GitHub开发个人博客</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/01/20/基于GitHub开发个人博客/" class="archive-article-date">
-        <time datetime="2018-01-20T14:54:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="所需软件"><a href="#所需软件" class="headerlink" title="所需软件"></a>所需软件</h1><p><img src="https://i.imgur.com/j2LXxPa.png" alt></p>
-<p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：</p>
-<ul>
-<li>Node.js</li>
-<li>Git</li>
-</ul>
-<p>使用 npm 即可完成 Hexo 的安装。</p>
-<pre><code>$ npm install -g hexo-cli
-$ npm install hexo-deployer-git --save
-</code></pre><p>解压图中的压缩包到本地</p>
-<p><img src="https://i.imgur.com/dSZgf2b.png" alt></p>
-<p>写好的博客位置：TaciturnK.github.io\source_posts</p>
-<p><img src="https://i.imgur.com/te0xLke.png" alt></p>
-<p>然后到根目录下打开命令窗口，依次执行三条命令：</p>
-<pre><code>$ hexo clean
-$ hexo g
-$ hexo d
-</code></pre><p>OK 这样博客发布完成</p>
-    
-    <a class="article-more-a" href="/2018/01/20/基于GitHub开发个人博客/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">个人博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/01/20/基于GitHub开发个人博客/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
     </nav>
   
 
@@ -837,11 +827,7 @@ $ hexo d
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,11 +839,11 @@ $ hexo d
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -865,11 +851,15 @@ $ hexo d
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -885,15 +875,11 @@ $ hexo d
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -910,6 +896,10 @@ $ hexo d
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -950,6 +940,14 @@ $ hexo d
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1009,11 +1007,11 @@ $ hexo d
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
+                <a href="javascript:void(0)" class="js-tag color2">服务发现组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1022,10 +1020,6 @@ $ hexo d
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">服务消费者</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">服务发现组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1038,6 +1032,22 @@ $ hexo d
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1057,23 +1067,15 @@ $ hexo d
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1200,6 +1202,15 @@ $ hexo d
                   <i class="icon-link icon"></i>
                 
                 Hadoop
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://123.206.74.225/#/" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                个人学习
               </a>
             </li>
           

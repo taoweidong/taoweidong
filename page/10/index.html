@@ -185,6 +185,211 @@
             
 
   
+    <article id="post-SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/03/19/SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix2/" target="_blank">SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix2</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/03/19/SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix2/" class="archive-article-date">
+        <time datetime="2018-03-18T17:23:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-18</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <blockquote>
+<p>本项目记录在Feign和Ribbon的基础上整合Hystrix,此处使用的是</p>
+</blockquote>
+<h1 id="Hystrix简介"><a href="#Hystrix简介" class="headerlink" title="Hystrix简介"></a>Hystrix简介</h1><p>Hystrix 能使你的系统在出现依赖服务失效的时候，通过隔离系统所依赖的服务，防止服务级联失败，同时提供失败回退机制，更优雅地应对失效，并使你的系统能更快地从异常中恢复。</p>
+<p>注意：此工程中使用的Hystrix中的方法回退方式为在FeignClient类中使用fallback属性指定当前类的回退类是哪一个，并且在回退类中必须全部实现FeignClient接口中的所有方法，并设置默认返回，<br>当做是访问方法异常时返回的默认数据</p>
+    
+    <a class="article-more-a" href="/2018/03/19/SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix2/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Feign</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Hystrix</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/03/19/SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix2/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/03/19/SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix3/" target="_blank">SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix3</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/03/19/SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix3/" class="archive-article-date">
+        <time datetime="2018-03-18T17:20:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-18</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <blockquote>
+<p>本项目记录在Feign和Ribbon的基础上整合Hystrix,此处使用的是</p>
+</blockquote>
+<h1 id="Hystrix简介"><a href="#Hystrix简介" class="headerlink" title="Hystrix简介"></a>Hystrix简介</h1><p>Hystrix 能使你的系统在出现依赖服务失效的时候，通过隔离系统所依赖的服务，防止服务级联失败，同时提供失败回退机制，更优雅地应对失效，并使你的系统能更快地从异常中恢复。</p>
+<p>注意：此工程中使用的Hystrix中的方法回退方式为在FeignClient类中使用fallbackFactory属性</p>
+<p>注意2： <strong>使用UserFeignClientFallbackFactory中捕获的异常时，注意判断是否为null</strong></p>
+    
+    <a class="article-more-a" href="/2018/03/19/SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix3/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Feign</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Hystrix</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">SpringCloud</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/03/19/SpringCloud微服务笔记-Feign和Ribbon的基础上整合Hystrix3/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SpringCloud微服务笔记-整合Hystrix熔断机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -343,11 +548,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">注册中心</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Eureka</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Eureka</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">注册中心</a>
         		</li>
       		
 		</ul>
@@ -486,219 +691,9 @@
 
 
   
-    <article id="post-SpringBoot学习笔记-application.yml与bootstrap.yml的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/03/05/SpringBoot学习笔记-application.yml与bootstrap.yml的区别/" target="_blank">Spring Boot中application.yml与bootstrap.yml的区别</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/03/05/SpringBoot学习笔记-application.yml与bootstrap.yml的区别/" class="archive-article-date">
-        <time datetime="2018-03-05T10:04:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Spring Boot中application.yml与bootstrap.yml的区别（转）</p>
-<blockquote>
-<p>说明：其实yml和properties文件是一样的原理，主要是说明application和bootstrap的加载顺序。且一个项目上要么yml或者properties，二选一的存在。</p>
-</blockquote>
-<p>Bootstrap.yml（bootstrap.properties）在application.yml（application.properties）之前加载，就像application.yml一样，但是用于应用程序上下文的引导阶段。它通常用于“使用Spring Cloud Config Server时，应在bootstrap.yml中指定spring.application.name和spring.cloud.config.server.git.uri”以及一些加密/解密信息。技术上，bootstrap.yml由父Spring ApplicationContext加载。父ApplicationContext被加载到使用application.yml的之前。</p>
-<p>例如，当使用Spring Cloud时，通常从服务器加载“real”配置数据。为了获取URL（和其他连接配置，如密码等），您需要一个较早的或“bootstrap”配置。因此，您将配置服务器属性放在bootstrap.yml中，该属性用于加载实际配置数据（通常覆盖application.yml [如果存在]中的内容）。</p>
-<p>当然，在一些情况上不用那么区分这两个文件，你只需要使用application文件即可，把全部选项都写在这里，效果基本是一致的，在不考虑上面的加载顺序覆盖的问题上。</p>
-    
-    <a class="article-more-a" href="/2018/03/05/SpringBoot学习笔记-application.yml与bootstrap.yml的区别/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">application.yml</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bootstrap.yml</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/03/05/SpringBoot学习笔记-application.yml与bootstrap.yml的区别/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-白鹭引擎创建EUI程序-List控件数据绑定" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/02/08/白鹭引擎创建EUI程序-List控件数据绑定/" target="_blank">白鹭引擎创建EUI程序-List控件进行数据绑定</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/02/08/白鹭引擎创建EUI程序-List控件数据绑定/" class="archive-article-date">
-        <time datetime="2018-02-08T15:55:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p>编写一个EUI界面，添加List控件，并在后台给List绑定相关数据。</p>
-</blockquote>
-<h1 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h1><ol>
-<li>开发工具EgretWing和Egret Launcher</li>
-<li>创建工程</li>
-</ol>
-<p><img src="https://i.imgur.com/okqRYNt.png" alt="创建工程|center"></p>
-<ol start="3">
-<li>工程结构</li>
-</ol>
-<p><img src="https://i.imgur.com/ZH8o5tJ.png" alt="工程结构|center"></p>
-<ol start="4">
-<li>新建工程运行结果</li>
-</ol>
-<p><img src="https://i.imgur.com/Momu89W.png" alt="新建工程运行结果|center"></p>
-<h1 id="开发过程"><a href="#开发过程" class="headerlink" title="开发过程"></a>开发过程</h1><h2 id="创建EUI组件，注意exml文件的路径"><a href="#创建EUI组件，注意exml文件的路径" class="headerlink" title="创建EUI组件，注意exml文件的路径"></a>创建EUI组件，注意exml文件的路径</h2><p><img src="https://i.imgur.com/fl36o6T.png" alt></p>
-    
-    <a class="article-more-a" href="/2018/02/08/白鹭引擎创建EUI程序-List控件数据绑定/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">白鹭引擎</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">List控件数据绑定</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/02/08/白鹭引擎创建EUI程序-List控件数据绑定/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
     </nav>
   
 
@@ -829,11 +824,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -845,11 +836,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -857,11 +848,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -877,15 +872,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -902,6 +893,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -942,6 +937,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1001,11 +1004,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
+                <a href="javascript:void(0)" class="js-tag color2">服务发现组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1014,10 +1017,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">服务消费者</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">服务发现组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1030,6 +1029,22 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1049,23 +1064,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1192,6 +1199,15 @@
                   <i class="icon-link icon"></i>
                 
                 Hadoop
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://123.206.74.225/#/" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                个人学习
               </a>
             </li>
           

@@ -185,6 +185,198 @@
             
 
   
+    <article id="post-SpringCloud微服务笔记-Sidecar学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/01/18/SpringCloud微服务笔记-Sidecar学习/" target="_blank">SpringCloud微服务笔记-Sidecar学习</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/01/18/SpringCloud微服务笔记-Sidecar学习/" class="archive-article-date">
+        <time datetime="2018-01-17T19:45:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Sidecar简介"><a href="#Sidecar简介" class="headerlink" title="Sidecar简介"></a>Sidecar简介</h1><p>Sidecar是作为一个代理的服务来间接性的让其他语言可以使用Eureka等相关组件。通过与Zuul的来进行路由的映射，从而可以做到服务的获取，然后可以使用Ribbon，Feign对服务进行消费，以及对Config Server的间接性调用。</p>
+<h1 id="官网介绍"><a href="#官网介绍" class="headerlink" title="官网介绍"></a>官网介绍</h1><p>你是否想要在非jvm的语言中利用（间接性使用）Eureka，Ribbon以及Config Server？Spring Cloud Netflix Sidecar的设计灵感来自Netflix Prana。它包含一个简单的http api去获取一个已知服务的所有实例(例如主机和端口)。你也可以通过嵌入的Zuul代理(Zuul中有一个代理功能)对代理的服务进行调用，Zuul从Eureka服务注册中心获取所有的路由记录(route entries)。通过host发现(host lookup)或者Zuul代理可以直接访问Spring Cloud Config。非jvm需要应该实现一个健康检查，Sidecar能够以此来报告给Eureka注册中心该应用是up还是down状态。</p>
+    
+    <a class="article-more-a" href="/2018/01/18/SpringCloud微服务笔记-Sidecar学习/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">SpringCloud</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Sidecar</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/01/18/SpringCloud微服务笔记-Sidecar学习/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringCloud微服务笔记-服务提供者和服务消费者" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/01/18/SpringCloud微服务笔记-服务提供者和服务消费者/" target="_blank">SpringCloud微服务笔记- 服务提供者和服务消费者</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/01/18/SpringCloud微服务笔记-服务提供者和服务消费者/" class="archive-article-date">
+        <time datetime="2018-01-17T19:45:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="服务消费者"><a href="#服务消费者" class="headerlink" title="服务消费者"></a>服务消费者</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>服务提供者：是指服务的被调用方（即：为其它服务提供服务的服务）</li>
+<li>服务消费者：是指服务的调用方（即：依赖其它服务的服务）</li>
+</ul>
+    
+    <a class="article-more-a" href="/2018/01/18/SpringCloud微服务笔记-服务提供者和服务消费者/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">服务提供者</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">服务消费者</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/01/18/SpringCloud微服务笔记-服务提供者和服务消费者/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ngrok反向代理工具" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -542,228 +734,9 @@ useLibrary &apos;org.apache.http.legacy&apos;
 
 
   
-    <article id="post-SpringCloud微服务笔记-SpringCloud学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/01/17/SpringCloud微服务笔记-SpringCloud学习/" target="_blank">SpringCloud微服务笔记-SpringCloud学习</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/01/17/SpringCloud微服务笔记-SpringCloud学习/" class="archive-article-date">
-        <time datetime="2018-01-16T19:28:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="SpringCloud是什么"><a href="#SpringCloud是什么" class="headerlink" title="SpringCloud是什么"></a>SpringCloud是什么</h1><h2 id="官网地址"><a href="#官网地址" class="headerlink" title="官网地址"></a>官网地址</h2><p><a href="http://projects.spring.io/spring-cloud/" title="SpringCloud" target="_blank" rel="noopener">http://projects.spring.io/spring-cloud/</a></p>
-<h2 id="是否与云计算有关？"><a href="#是否与云计算有关？" class="headerlink" title="是否与云计算有关？"></a>是否与云计算有关？</h2><p>不是</p>
-<h2 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h2><p>Spring Cloud是基于SpringBoot的快速构建分布式系统的工具集(全家桶，整合了各种工具便于开发)</p>
-<h1 id="SpringCloud的版本"><a href="#SpringCloud的版本" class="headerlink" title="SpringCloud的版本"></a>SpringCloud的版本</h1><p><img src="https://i.imgur.com/Z3WhXi9.png" alt="版本|center"></p>
-<h1 id="SpringCloud的特点"><a href="#SpringCloud的特点" class="headerlink" title="SpringCloud的特点"></a>SpringCloud的特点</h1><ul>
-<li>约定优于配置</li>
-<li>开箱即用，快速启动</li>
-<li>适用于各种环境</li>
-<li>轻量级的组件<ol>
-<li>服务发现—&gt;Eureka </li>
-</ol>
-</li>
-<li>组件的支持很丰富，功能很齐全<ol>
-<li>配置中心</li>
-<li>注册中心</li>
-<li>智能路由</li>
-</ol>
-</li>
-<li>选型中立<ol>
-<li>Eureka</li>
-<li>Zookeeper</li>
-<li>Consul</li>
-</ol>
-</li>
-</ul>
-    
-    <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-SpringCloud学习/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">SpringCloud</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-SpringCloud学习/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SpringCloud微服务笔记-微服务架构概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/" target="_blank">SpringCloud微服务笔记-微服务架构概述</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/" class="archive-article-date">
-        <time datetime="2018-01-16T19:28:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="单体架构是什么"><a href="#单体架构是什么" class="headerlink" title="单体架构是什么"></a>单体架构是什么</h1><ul>
-<li>一个归档包包含了应用所有功能的应用程序，我们通常称为单体应用。</li>
-<li>架构单体应用的架构风格，我们称为单体架构，这是一种比较传统的架构风格。</li>
-</ul>
-<h1 id="单体架构存在的缺点"><a href="#单体架构存在的缺点" class="headerlink" title="单体架构存在的缺点"></a>单体架构存在的缺点</h1><ul>
-<li>复杂性逐渐变高</li>
-</ul>
-<p>成功的应用最终会随着时间变得巨大。在每个 sprint 阶段，开发团队都会新加许多行代码。几年后，原本小而简单的应用会变得臃肿。举个极端的例子，我最近与一位开发者交流，他正在开发一款小工具，来分析他们应用（包括几百万行代码）中的几千个 JARs 的依赖。我相信每年都会有大量开发者不遗余力地对付这种麻烦。</p>
-<ul>
-<li>技术债务逐渐上升</li>
-</ul>
-<p>一旦你的应用变得庞大、复杂，你的开发团队将饱受折磨，苦苦挣扎于敏捷开发和交付。一大原因就是应用已经格外复杂，庞大到任何一个开发者都无法完全理解。最后，修复 bug 和实施新功能也就极其困难且耗时颇多。更可怕的是，这是一个向下的螺旋发展。代码库越难理解，正确的修改就越难。最后你会深陷庞大的、无法估量的泥淖之中。</p>
-<ul>
-<li>部署速度逐渐变慢</li>
-</ul>
-<p>而这种应用的尺寸也会拖慢开发进度。应用越大，启动时间越长。譬如在最近的调查中，不少开发者指出启动时间长达 12 分钟。我也听说有的应用启动时间居然得 40 分钟。如果开发者不得不频繁重启应用服务器，那大量时间就被浪费，生产效率也饱受其害。</p>
-<ul>
-<li>阻碍技术创新</li>
-</ul>
-<p>庞大且复杂的单体应用的另一大问题就是难以进行持续部署。现在， SaaS 应用的发展水平足以在单日内多次将修改推送到生产环境。然而要让复杂的单个应用达到此水平却极为棘手。想更新应用的单个部分，必须重新部署整个应用，漫长的启动时间更是雪上加霜。另外，由于不能完全预见修改的影响，你不得不提前进行大量人工测试。结果就是，持续部署变得不可能。</p>
-    
-    <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span>
+      <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
     </nav>
   
 
@@ -894,11 +867,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -910,11 +879,11 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -922,11 +891,15 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -942,15 +915,11 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -967,6 +936,10 @@ useLibrary &apos;org.apache.http.legacy&apos;
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1007,6 +980,14 @@ useLibrary &apos;org.apache.http.legacy&apos;
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1066,11 +1047,11 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
+                <a href="javascript:void(0)" class="js-tag color2">服务发现组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1079,10 +1060,6 @@ useLibrary &apos;org.apache.http.legacy&apos;
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">服务消费者</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">服务发现组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1095,6 +1072,22 @@ useLibrary &apos;org.apache.http.legacy&apos;
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1114,23 +1107,15 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1257,6 +1242,15 @@ useLibrary &apos;org.apache.http.legacy&apos;
                   <i class="icon-link icon"></i>
                 
                 Hadoop
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://123.206.74.225/#/" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                个人学习
               </a>
             </li>
           
