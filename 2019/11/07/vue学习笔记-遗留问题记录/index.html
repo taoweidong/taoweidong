@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191106202357185.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191106204810407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191106205707184.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2020-01-22T15:06:08.536Z">
+<meta property="og:updated_time" content="2020-02-07T16:07:41.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue学习笔记-遗留问题记录">
 <meta name="twitter:description" content="Node.js是什么？对node.js的理解 官网解释：Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。    这是一种通过JavaScript语言开发web服务端的东西 Node 是一个服务器程序。但是，基础 Node 产品肯定不 像 Apache 或 Tomcat node.js有非阻塞，事件驱动I/O等特性，从而让高并发（high concurrency">
@@ -252,6 +252,7 @@
 </ul>
 <p>代码示例，开发一个简单的Http服务HelloWorldJs.js，代码如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Node 随机数字生成器</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>)</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">"url"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个Http服务</span></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>)</span>&#123;</span><br><span class="line">     <span class="comment">// 设置返回头信息</span></span><br><span class="line">     response.writeHead(<span class="number">200</span>, &#123;<span class="string">"Content-Type"</span>: <span class="string">"text/plain"</span>&#125;);</span><br><span class="line"> </span><br><span class="line">     <span class="comment">// 获取参数等</span></span><br><span class="line">     <span class="keyword">var</span> params = url.parse(request.url, <span class="literal">true</span>).query;</span><br><span class="line"></span><br><span class="line">      </span><br><span class="line">     <span class="comment">// 返回给浏览器的信息或者数据</span></span><br><span class="line">     response.write(<span class="string">"Hello World Node.js......."</span>);</span><br><span class="line">      </span><br><span class="line">     <span class="comment">// 结束返回</span></span><br><span class="line">     response.end();</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// 指定监听端口信息</span></span><br><span class="line">&#125;).listen(<span class="number">8005</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出信息</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello World Node.js Running..."</span>);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>运行<br><img src="https://img-blog.csdnimg.cn/20191106200734769.png" alt="在这里插入图片描述"><br>访问<br><img src="https://img-blog.csdnimg.cn/20191106200801461.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>参考链接1： <a href="https://www.zhihu.com/question/33578075/answer/56951771" target="_blank" rel="noopener">https://www.zhihu.com/question/33578075/answer/56951771</a></p>
 <p>参考链接2：<a href="https://www.ibm.com/developerworks/cn/opensource/os-nodejs/" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-nodejs/</a></p>
@@ -610,11 +611,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,7 +631,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color5">Docker Compose</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,11 +639,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Docker Compose</a>
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,14 +660,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Pivotal-tc-Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -686,6 +687,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">application.yml</a>
               </li>
              
@@ -698,10 +703,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
              
@@ -710,19 +711,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -758,11 +759,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
+                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
+                <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -778,6 +779,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">服务提供者</a>
               </li>
              
@@ -786,7 +791,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -795,26 +800,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitLab</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CI</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -842,6 +827,26 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitLab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">白鹭引擎</a>
               </li>
              
@@ -850,15 +855,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
               </li>
             
             <div class="clearfix"></div>
