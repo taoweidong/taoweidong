@@ -185,6 +185,395 @@
             
 
   
+    <article id="post-SSM框架学习笔记-SpringMVC的HelloWord" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/05/13/SSM框架学习笔记-SpringMVC的HelloWord/" target="_blank">SSM框架学习笔记-SpringMVC环境搭建以及HelloWord</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/05/13/SSM框架学习笔记-SpringMVC的HelloWord/" class="archive-article-date">
+        <time datetime="2018-05-13T11:13:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-13</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="SpringMVC简介"><a href="#SpringMVC简介" class="headerlink" title="SpringMVC简介"></a>SpringMVC简介</h1><ul>
+<li>Spring为展现层提供基于MVC设计理念的Web框架，是目前最主流的MVC框架之一。</li>
+<li>Spring3.0之后已经超越Struts2成为最优秀的MVC框架。</li>
+<li>SpringMVC通过一套MVC注解就让pojo成为处理请求控制器，无需实现任何接口(Struts2需要实现ActionSupport接口)。</li>
+<li>SpringMVC支持Rest风格的URL请求。</li>
+<li>SpringMVC采用松耦合可插拔组件结构，比其他的MVC框架更具扩展性和灵活性。</li>
+</ul>
+    
+    <a class="article-more-a" href="/2018/05/13/SSM框架学习笔记-SpringMVC的HelloWord/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SSM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringMVC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/05/13/SSM框架学习笔记-SpringMVC的HelloWord/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SSM框架学习笔记-SpringMVC简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/05/13/SSM框架学习笔记-SpringMVC简介/" target="_blank">SSM框架学习笔记-SpringMVC简介</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/05/13/SSM框架学习笔记-SpringMVC简介/" class="archive-article-date">
+        <time datetime="2018-05-13T10:49:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-13</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
+<li>Spring为展现层提供基于MVC设计理念的Web框架，是目前最主流的MVC框架之一。</li>
+<li>Spring3.0之后已经超越Struts2成为最优秀的MVC框架。</li>
+<li>SpringMVC通过一套MVC注解就让pojo成为处理请求控制器，无需实现任何接口(Struts2需要实现ActionSupport接口)。</li>
+<li>SpringMVC支持Rest风格的URL请求。</li>
+<li>SpringMVC采用松耦合可插拔组件结构，比其他的MVC框架更具扩展性和灵活性。</li>
+</ul>
+    
+    <a class="article-more-a" href="/2018/05/13/SSM框架学习笔记-SpringMVC简介/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SSM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringMVC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/05/13/SSM框架学习笔记-SpringMVC简介/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CentOS相关-安装python开发环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/05/13/CentOS相关-安装python开发环境/" target="_blank">CentOS相关-安装python开发环境</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/05/13/CentOS相关-安装python开发环境/" class="archive-article-date">
+        <time datetime="2018-05-12T16:42:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-12</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <blockquote>
+<p> 搭建Python开发环境，自己的阿里云服务器上的版本为Python 2.6.6，自己下载Python 2.7.9的源代码自己编译安装。</p>
+</blockquote>
+<h3 id="检查CentOS7-2中原先的版本："><a href="#检查CentOS7-2中原先的版本：" class="headerlink" title="检查CentOS7.2中原先的版本："></a>检查CentOS7.2中原先的版本：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># python -V</span><br><span class="line">Python 2.6.6</span><br></pre></td></tr></table></figure>
+<h3 id="安装devtoolset"><a href="#安装devtoolset" class="headerlink" title="安装devtoolset"></a>安装devtoolset</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum groupinstall &quot;Development tools&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="安装编译Python需要的包"><a href="#安装编译Python需要的包" class="headerlink" title="安装编译Python需要的包"></a>安装编译Python需要的包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum install zlib-devel</span><br><span class="line">yum install bzip2-devel</span><br><span class="line">yum install openssl-devel</span><br><span class="line">yum install ncurses-devel</span><br><span class="line">yum install sqlite-devel</span><br></pre></td></tr></table></figure>
+<h3 id="下载最新的Python2-7-13"><a href="#下载最新的Python2-7-13" class="headerlink" title="下载最新的Python2.7.13"></a>下载最新的Python2.7.13</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># wget --no-check-certificate https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tar.xz</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2018/05/13/CentOS相关-安装python开发环境/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CentOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/05/13/CentOS相关-安装python开发环境/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Oracle学习笔记-修改用户密码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/04/27/Oracle学习笔记-修改用户密码/" target="_blank">Oracle学习笔记-修改用户密码</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/04/27/Oracle学习笔记-修改用户密码/" class="archive-article-date">
+        <time datetime="2018-04-27T10:11:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="登录用户"><a href="#登录用户" class="headerlink" title="登录用户"></a>登录用户</h1><p><img src="https://i.imgur.com/OeaKDx3.png" alt></p>
+<h1 id="查看用户列表"><a href="#查看用户列表" class="headerlink" title="查看用户列表"></a>查看用户列表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> username <span class="keyword">from</span> dba_users</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/mbcvJp8.png" alt></p>
+<h1 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> 用户名 <span class="keyword">identified</span> <span class="keyword">by</span> 新密码；</span><br><span class="line">以<span class="keyword">system</span> 为例，密码修改为 <span class="number">123456.</span> 可输入</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> tellerdb <span class="keyword">identified</span> <span class="keyword">by</span> tellerdb;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/kIy3pmG.png" alt></p>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><ul>
+<li><p><a href="https://cloud.tencent.com/developer/article/1005172" target="_blank" rel="noopener">https://www.cnblogs.com/xujiating/p/6337511.html</a></p>
+<p>​</p>
+</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/04/27/Oracle学习笔记-修改用户密码/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SpringBoot学习笔记-集成Spring AOP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -258,435 +647,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2018/04/26/SpringBoot学习笔记-集成Spring AOP/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CentOS相关-搭建 FTP 文件服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/04/26/CentOS相关-搭建 FTP 文件服务/" target="_blank">CentOS相关-搭建 FTP 文件服务</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/04/26/CentOS相关-搭建 FTP 文件服务/" class="archive-article-date">
-        <time datetime="2018-04-26T13:18:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p> 搭建 FTP 文件服务    FTP 是一个很实用的文件传输协议，方便在客户端和服务器之间进行文件的传输。</p>
-</blockquote>
-<h1 id="安装并启动-FTP-服务"><a href="#安装并启动-FTP-服务" class="headerlink" title="安装并启动 FTP 服务"></a>安装并启动 FTP 服务</h1><p>安装 VSFTPD 使用 yum 安装 vsftpd：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install vsftpd -y</span><br></pre></td></tr></table></figure>
-<h1 id="启动-VSFTPD"><a href="#启动-VSFTPD" class="headerlink" title="启动 VSFTPD"></a>启动 VSFTPD</h1><p>安装完成后，启动 FTP 服务：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service vsftpd start</span><br></pre></td></tr></table></figure>
-<p>启动后，可以看到系统已经监听了 21 端口：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nltp | grep 21</span><br></pre></td></tr></table></figure>
-<p>此时，访问 <a href="ftp://119.29.148.232" target="_blank" rel="noopener">ftp://119.29.148.232</a> 可浏览机器上的 /var/ftp 目录了。</p>
-<blockquote>
-<p>注意：安装完毕后要注意应该使用cmd命令进行测试，是否可以访问，不能使用网页或者windows资源管理器进行测试，有可能无法访问。可以使用Filezilla等软件进行测试。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2018/04/26/CentOS相关-搭建 FTP 文件服务/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CentOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/26/CentOS相关-搭建 FTP 文件服务/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CentOS相关-搭建Git服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/04/26/CentOS相关-搭建Git服务器/" target="_blank">CentOS相关-搭建Git服务器</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/04/26/CentOS相关-搭建Git服务器/" class="archive-article-date">
-        <time datetime="2018-04-26T13:10:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p> 搭建 GIT 服务器教程   Git 是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。此实验以 CentOS 7.2 x64 的系统为环境，搭建 git 服务器。</p>
-</blockquote>
-<h1 id="安装依赖库和编译工具"><a href="#安装依赖库和编译工具" class="headerlink" title="安装依赖库和编译工具"></a>安装依赖库和编译工具</h1><p>​    为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br></pre></td></tr></table></figure>
-<p>​    安装编译工具：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc perl-ExtUtils-MakeMaker</span><br></pre></td></tr></table></figure>
-<h1 id="下载-git"><a href="#下载-git" class="headerlink" title="下载 git"></a>下载 git</h1><p>​    选一个目录，用来放下载下来的安装包，这里将安装包放在 /usr/local/src 目录里：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src</span><br></pre></td></tr></table></figure>
-<p>​    到官网找一个新版稳定的源码包下载到 /usr/local/src 文件夹里：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.kernel.org/pub/software/scm/git/git-2.10.0.tar.gz</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2018/04/26/CentOS相关-搭建Git服务器/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CentOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/26/CentOS相关-搭建Git服务器/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SpringBoot学习笔记-整合Mybatis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/04/26/SpringBoot学习笔记-整合Mybatis/" target="_blank">SpringBoot学习笔记-整合Mybatis</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/04/26/SpringBoot学习笔记-整合Mybatis/" class="archive-article-date">
-        <time datetime="2018-04-26T00:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="学习计划"><a href="#学习计划" class="headerlink" title="学习计划"></a>学习计划</h1><ul>
-<li>使用generateConfig生成Mapper以及Pojo</li>
-<li>实现基于Mybatis的CRUD功能</li>
-<li>整合mybatis-pagehelper实现分页</li>
-<li>自定义mapper的实现</li>
-<li>慕课网源码：<a href="https://github.com/leechenxiang/imooc-springboot-starter" target="_blank" rel="noopener">https://github.com/leechenxiang/imooc-springboot-starter</a></li>
-<li><a href="https://github.com/abel533/MyBatis-Spring-Boot" target="_blank" rel="noopener">https://github.com/abel533/MyBatis-Spring-Boot</a></li>
-</ul>
-<h1 id="使用generateConfig生成Mapper以及Pojo"><a href="#使用generateConfig生成Mapper以及Pojo" class="headerlink" title="使用generateConfig生成Mapper以及Pojo"></a>使用generateConfig生成Mapper以及Pojo</h1><blockquote>
-<p>使用org.mybatis.generator来生成Mapper和数据库表对应的pojo类，加快开发速度。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2018/04/26/SpringBoot学习笔记-整合Mybatis/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Mybatis</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/26/SpringBoot学习笔记-整合Mybatis/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Docker学习笔记-Docker Compose编排微服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/" target="_blank">Docker学习笔记-Docker Compose编排微服务</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/" class="archive-article-date">
-        <time datetime="2018-04-16T21:26:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="Docker-Compose编排工具简介"><a href="#Docker-Compose编排工具简介" class="headerlink" title="Docker Compose编排工具简介"></a>Docker Compose编排工具简介</h1><p>Compose是一个用于定义和运行多容器Docker应用程序的工具，前身是Fig，它非常适合用在开发、测试、构建CI（持续集成）工作流等场景中。</p>
-<p>Docker Compose是一个用来定义和运行复杂应用的Docker工具。一个使用Docker容器的应用，通常由多个容器组成。使用Docker Compose不再需要使用shell脚本来启动容器。 </p>
-<p>Compose 通过一个配置文件来管理多个Docker容器，在配置文件中，所有的容器通过services来定义，然后使用docker-compose脚本来启动，停止和重启应用，和应用中的服务以及所有依赖服务的容器，非常适合组合使用多个容器进行开发的场景。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021311.jpg" alt></p>
-<p><a href="https://docs.docker.com/compose/" target="_blank" rel="noopener">Compose</a> 是 Docker 公司推出的一个工具软件，可以管理多个 Docker 容器组成一个应用。你需要定义一个 <a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html" target="_blank" rel="noopener">YAML</a> 格式的配置文件<code>docker-compose.yml</code>，写好多个容器之间的调用关系。然后，只要一个命令，就能同时启动/关闭这些容器。</p>
-<p>Docker Compose将所管理的容器分为三层，分别是工程(Project)，服务(Service)以及容器(Container).Docker Compose运行目录下的所有文件(docker-compose.yml,extends文件或环境变量文件等)组成一个工程(默认为docker-compose.yml所在目录的目录名称)。一个工程可以包含多个服务，每个服务中定义了容器运行的镜像、参数和依赖，一个服务可包含多个容器实例。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 启动所有服务</span><br><span class="line">$ docker-compose up</span><br><span class="line"># 关闭所有服务</span><br><span class="line">$ docker-compose stop</span><br></pre></td></tr></table></figure>
-<h1 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h1><p>在<a href="https://github.com/TaciturnK/Micro-service-learning" target="_blank" rel="noopener"><strong>Micro-service-learning</strong></a> 工程的学习基础之上，使用docker工具进行服务的发布，主要利用其中的6个子工程来进行学习，工程列表如下：</p>
-<ul>
-<li>microservice-consume-movie-feign-hystrix：服务消费者(整合ribbon.feign,hystrix)</li>
-<li>microservice-discovery-eureka：服务注册中心(Eureak)</li>
-<li>microservice-getway-zuul：路由网关(Zuul)</li>
-<li>microservice-hystrix-dashboard：hystrix可视化监控工具(独立项目，不依赖服务注册中心)</li>
-<li>microservice-hystrix-turbine：turbine聚合监控数据(供microservice-hystrix-dashboard调用)</li>
-<li>microservice-provider-user：服务提供者</li>
-</ul>
-<p><strong>环境：</strong></p>
-<ul>
-<li>虚拟机上已经搭建了docker服务，并可以进行正常的镜像拉取，上传阿里云镜像仓库操作，相关功能已经经过测试，达到了实验的条件。</li>
-<li>idea开发工具上面已经安装了docker开发插件，并且虚拟机的docker开启了api2375端口，远程传输的功能，并且已经单独进行了测试，达到了在idea上发布镜像到虚拟中的条件。</li>
-</ul>
-<p><strong>学习目的：</strong></p>
-<blockquote>
-<p>在Idea工具上编排微服务的各个服务，并使用docker插件发布到虚拟机中的docker服务中，然后进入虚拟机，在虚拟机中将镜像发布到远程阿里云docker镜像仓库，供其他主机使用时拉取。</p>
-</blockquote>
-<p><strong>学习计划：</strong></p>
-<ol>
-<li>docker compose快速入门：使用microservice-discovery-eureka作为学习目标，使用compose工具进行编排发布，并可进行访问；</li>
-<li>编排这6个微服务，并最终可进行访问；</li>
-</ol>
-    
-    <a class="article-more-a" href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Docker Compose</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/">展开全文 >></a>
     </p>
     
 
@@ -857,11 +817,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -869,11 +829,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -885,11 +849,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -897,19 +865,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -921,15 +877,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -941,7 +901,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -950,6 +914,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bootstrap.yml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -965,15 +933,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -985,11 +949,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Dashboard</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1005,15 +981,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1029,7 +1001,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1038,30 +1010,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">服务消费者</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1081,6 +1029,26 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -1097,6 +1065,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">白鹭引擎</a>
               </li>
              
@@ -1105,15 +1077,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
               </li>
             
             <div class="clearfix"></div>

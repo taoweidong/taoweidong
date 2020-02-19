@@ -14,11 +14,11 @@
 <meta name="keywords" content="Docker,Dockerfile">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker学习笔记-Dockerfile构建Docker镜像">
-<meta property="og:url" content="http://www.taoweidong.com/2018/04/13/Docker学习笔记-Dockerfile构建Docker镜像/index.html">
+<meta property="og:url" content="http://www.taoweidong.com/2020/02/19/Docker学习笔记-Dockerfile构建Docker镜像/index.html">
 <meta property="og:site_name" content="半度微凉">
 <meta property="og:description" content="Dockerfile简介Docker 可以通过 Dockerfile 的内容来自动构建镜像。Dockerfile 是一个包含创建镜像所有命令的文本文件，通过docker build命令可以根据 Dockerfile 的内容构建镜像，指令描述了构建镜像的细节。 Docekrfile常用命令ADD1ADD &amp;lt;src&amp;gt;... &amp;lt;dest&amp;gt; ADD复制本地主机文件、目录或者远程文件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-07T16:04:45.006Z">
+<meta property="og:updated_time" content="2020-02-18T11:22:11.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker学习笔记-Dockerfile构建Docker镜像">
 <meta name="twitter:description" content="Dockerfile简介Docker 可以通过 Dockerfile 的内容来自动构建镜像。Dockerfile 是一个包含创建镜像所有命令的文本文件，通过docker build命令可以根据 Dockerfile 的内容构建镜像，指令描述了构建镜像的细节。 Docekrfile常用命令ADD1ADD &amp;lt;src&amp;gt;... &amp;lt;dest&amp;gt; ADD复制本地主机文件、目录或者远程文件">
@@ -200,8 +200,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2018/04/13/Docker学习笔记-Dockerfile构建Docker镜像/" class="archive-article-date">
-        <time datetime="2018-04-13T13:25:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
+<a href="/2020/02/19/Docker学习笔记-Dockerfile构建Docker镜像/" class="archive-article-date">
+        <time datetime="2020-02-18T19:21:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
 
   
@@ -235,7 +235,7 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="Dockerfile简介"><a href="#Dockerfile简介" class="headerlink" title="Dockerfile简介"></a>Dockerfile简介</h1><p>Docker 可以通过 Dockerfile 的内容来自动构建镜像。Dockerfile 是一个包含创建镜像所有命令的文本文件，通过docker build命令可以根据 Dockerfile 的内容构建镜像，指令描述了构建镜像的细节。</p>
-<h1 id="Docekrfile常用命令"><a href="#Docekrfile常用命令" class="headerlink" title="Docekrfile常用命令"></a>Docekrfile常用命令</h1><h2 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ADD &lt;src&gt;... &lt;dest&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="Docekrfile常用命令"><a href="#Docekrfile常用命令" class="headerlink" title="Docekrfile常用命令"></a>Docekrfile常用命令</h1><h2 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ADD &lt;src&gt;... &lt;dest&gt;</span><br></pre></td></tr></table></figure>
 <p>ADD复制本地主机文件、目录或者远程文件 URLS 从 并且添加到容器指定路径中 。</p>
 <p>支持通过 <a href="http://lib.csdn.net/base/go" target="_blank" rel="noopener">Go</a> 的正则模糊匹配，具体规则可参见 <a href="http://golang.org/pkg/path/filepath/#Match" target="_blank" rel="noopener">Go filepath.Match</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ADD hom* /mydir/        # adds all files starting with &quot;hom&quot;</span><br><span class="line">ADD hom?.txt /mydir/    # ? is replaced with any single character</span><br></pre></td></tr></table></figure>
@@ -293,7 +293,7 @@
 <h2 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h2><p>切换目录的指令，类似与cd命令。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR /path/to/workdir</span><br></pre></td></tr></table></figure>
 <p>为后续的RUN、CMD、ENTRYPOINT指令配置工作目录。可以使用多个WORKDIR指令，后续命令如果参数是相对路径，则会基于之前命令指定的路径。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR /a</span><br><span class="line">WORKDIR b</span><br><span class="line">WORKDIR c</span><br><span class="line">RUN pwd</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR /a</span><br><span class="line">WORKDIR b</span><br><span class="line">WORKDIR c</span><br><span class="line">RUN pwd</span><br></pre></td></tr></table></figure>
 <p>最终路径是/a/b/c。</p>
 <p>WORKDIR指令可以在ENV设置变量之后调用环境变量:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ENV DIRPATH /path</span><br><span class="line">WORKDIR $DIRPATH/$DIRNAME</span><br></pre></td></tr></table></figure>
@@ -417,7 +417,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.taoweidong.com/2018/04/13/Docker学习笔记-Dockerfile构建Docker镜像/" title="Docker学习笔记-Dockerfile构建Docker镜像" target="_blank">http://www.taoweidong.com/2018/04/13/Docker学习笔记-Dockerfile构建Docker镜像/</a>
+          <a href="http://www.taoweidong.com/2020/02/19/Docker学习笔记-Dockerfile构建Docker镜像/" title="Docker学习笔记-Dockerfile构建Docker镜像" target="_blank">http://www.taoweidong.com/2020/02/19/Docker学习笔记-Dockerfile构建Docker镜像/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -496,7 +496,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.taoweidong.com/2018/04/13/Docker学习笔记-Dockerfile构建Docker镜像/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.taoweidong.com/2020/02/19/Docker学习笔记-Dockerfile构建Docker镜像/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -511,18 +511,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/19/Java数据结构和算法-算法简介/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Docker学习笔记-Docker Compose编排微服务
+          Java数据结构和算法-算法简介
         
       </div>
     </a>
   
   
-    <a href="/2018/04/13/Docker学习笔记-windows上镜像推送到虚拟机中的docker服务/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Docker学习笔记-windows上镜像推送到虚拟机中的docker服务</div>
+    <a href="/2020/02/19/Docker学习笔记-Docker容器常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Docker学习笔记-Docker容器常用命令</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -705,11 +705,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -717,11 +717,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -733,11 +737,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,19 +753,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -769,15 +765,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,7 +789,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -798,6 +802,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bootstrap.yml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -813,15 +821,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -833,11 +837,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Dashboard</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,15 +869,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -877,7 +889,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -886,30 +898,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">服务消费者</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -929,6 +917,26 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -945,6 +953,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">白鹭引擎</a>
               </li>
              
@@ -953,15 +965,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
               </li>
             
             <div class="clearfix"></div>
