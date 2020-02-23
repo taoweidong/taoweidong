@@ -10,13 +10,13 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Gitlab简介下载软件包1[root@taoweidong ~]# wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-12.6.7-ce.0.el7.x86_64.rpm  安装gitLab1[root@taoweidong ~]# rpm -i gitlab-ce-12.6.7-ce.0.el7.x86_">
+  <meta name="description" content="Gitlab简介GitLab是利用Ruby on Rails一个开源的版本管理系统，实现一个自托管的Git项目仓库，可通过Web界面进行访问公开的或者私人项目。 与Github类似，GitLab能够浏览源代码，管理缺陷和注释。可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。团队成员可以利用内置的简单聊天程序(Wall)进行交流。 它还提供一个代码片段收集功能可以轻松实现代">
 <meta name="keywords" content="GitLab,git,服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitLab服务器搭建以及汉化过程">
 <meta property="og:url" content="http://www.taoweidong.com/2020/02/23/GitLab服务器搭建以及汉化过程/index.html">
 <meta property="og:site_name" content="半度微凉">
-<meta property="og:description" content="Gitlab简介下载软件包1[root@taoweidong ~]# wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-12.6.7-ce.0.el7.x86_64.rpm  安装gitLab1[root@taoweidong ~]# rpm -i gitlab-ce-12.6.7-ce.0.el7.x86_">
+<meta property="og:description" content="Gitlab简介GitLab是利用Ruby on Rails一个开源的版本管理系统，实现一个自托管的Git项目仓库，可通过Web界面进行访问公开的或者私人项目。 与Github类似，GitLab能够浏览源代码，管理缺陷和注释。可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。团队成员可以利用内置的简单聊天程序(Wall)进行交流。 它还提供一个代码片段收集功能可以轻松实现代">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200222211721753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200222212150212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
@@ -28,10 +28,13 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200222224520701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200222224616864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200222224837862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2020-02-22T15:03:48.961Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200223205140765.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200223205305169.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200223205613510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2020-02-23T12:58:05.295Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitLab服务器搭建以及汉化过程">
-<meta name="twitter:description" content="Gitlab简介下载软件包1[root@taoweidong ~]# wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-12.6.7-ce.0.el7.x86_64.rpm  安装gitLab1[root@taoweidong ~]# rpm -i gitlab-ce-12.6.7-ce.0.el7.x86_">
+<meta name="twitter:description" content="Gitlab简介GitLab是利用Ruby on Rails一个开源的版本管理系统，实现一个自托管的Git项目仓库，可通过Web界面进行访问公开的或者私人项目。 与Github类似，GitLab能够浏览源代码，管理缺陷和注释。可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。团队成员可以利用内置的简单聊天程序(Wall)进行交流。 它还提供一个代码片段收集功能可以轻松实现代">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200222211721753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="半度微凉" type="application/atom+xml">
@@ -225,7 +228,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">325字</span>
+      <span class="post-count">575字</span>
     </span>
   </span>
 
@@ -234,7 +237,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -245,7 +248,12 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="Gitlab简介"><a href="#Gitlab简介" class="headerlink" title="Gitlab简介"></a>Gitlab简介</h1><h1 id="下载软件包"><a href="#下载软件包" class="headerlink" title="下载软件包"></a>下载软件包</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@taoweidong ~]# wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-12.6.7-ce.0.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
+    <h1 id="Gitlab简介"><a href="#Gitlab简介" class="headerlink" title="Gitlab简介"></a>Gitlab简介</h1><p>GitLab是利用Ruby on Rails一个开源的版本管理系统，实现一个自托管的Git项目仓库，可通过Web界面进行访问公开的或者私人项目。</p>
+<p>与Github类似，GitLab能够浏览源代码，管理缺陷和注释。可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。团队成员可以利用内置的简单聊天程序(Wall)进行交流。</p>
+<p>它还提供一个代码片段收集功能可以轻松实现代码复用，便于日后有需要的时候进行查找。</p>
+<h1 id="Gitlab环境部署"><a href="#Gitlab环境部署" class="headerlink" title="Gitlab环境部署"></a>Gitlab环境部署</h1><p>ECS配置要求：<strong>内存2G以上</strong></p>
+<h1 id="下载软件包"><a href="#下载软件包" class="headerlink" title="下载软件包"></a>下载软件包</h1><p>国内镜像地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/?C=M&amp;O=D" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/?C=M&amp;O=D</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@taoweidong ~]# wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-12.6.7-ce.0.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200222211721753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h1 id="安装gitLab"><a href="#安装gitLab" class="headerlink" title="安装gitLab"></a>安装gitLab</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@taoweidong ~]# rpm -i gitlab-ce-12.6.7-ce.0.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200222212150212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="安装gitLab"></p>
@@ -263,11 +271,18 @@
 <blockquote>
 <p>能进入这里，说明gitLab服务安装成功</p>
 </blockquote>
-<h1 id="中文配置"><a href="#中文配置" class="headerlink" title="中文配置"></a>中文配置</h1><p>高版本的gitLab已经支持中文，可以在设置页面进行设置，进入主页面后<br><img src="https://img-blog.csdnimg.cn/20200222224520701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20200222224616864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">选择中文简体，点击保存后刷新页面即可切换为中文。<br><img src="https://img-blog.csdnimg.cn/20200222224837862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="中文配置"><a href="#中文配置" class="headerlink" title="中文配置"></a>中文配置</h2><p>高版本的gitLab已经支持中文，可以在设置页面进行设置，进入主页面后<br><img src="https://img-blog.csdnimg.cn/20200222224520701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20200222224616864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">选择中文简体，点击保存后刷新页面即可切换为中文。<br><img src="https://img-blog.csdnimg.cn/20200222224837862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="服务器生成SSH-Key密钥文件"><a href="#服务器生成SSH-Key密钥文件" class="headerlink" title="服务器生成SSH-Key密钥文件"></a>服务器生成SSH-Key密钥文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@taoweidong ~]# ssh-keygen</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200223205140765.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="查询SSH-key秘钥"><a href="#查询SSH-key秘钥" class="headerlink" title="查询SSH-key秘钥"></a>查询SSH-key秘钥</h2><p><img src="https://img-blog.csdnimg.cn/20200223205305169.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="查询SSH-key秘钥"></p>
+<h2 id="配置SSH-key秘钥"><a href="#配置SSH-key秘钥" class="headerlink" title="配置SSH-key秘钥"></a>配置SSH-key秘钥</h2><p><img src="https://img-blog.csdnimg.cn/20200223205613510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70" alt="配置SSH-key秘钥"></p>
+<h1 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h1><p>参考：<a href="https://www.cnblogs.com/niuben/p/10867877.html" target="_blank" rel="noopener">https://www.cnblogs.com/niuben/p/10867877.html</a></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
 <li><p>gitlab访问错误Whoops问题处理：<a href="https://blog.csdn.net/weixin_40816738/article/details/90551565" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40816738/article/details/90551565</a></p>
 </li>
 <li><p>安装指南：<a href="https://blog.csdn.net/qq_34129814/article/details/100043914" target="_blank" rel="noopener">https://blog.csdn.net/qq_34129814/article/details/100043914</a></p>
+</li>
+<li><p>GitLab简介：<a href="https://www.cnblogs.com/niuben/p/10867877.html" target="_blank" rel="noopener">https://www.cnblogs.com/niuben/p/10867877.html</a></p>
 </li>
 </ul>
 
@@ -438,7 +453,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Gitlab简介"><span class="toc-number">1.</span> <span class="toc-text">Gitlab简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载软件包"><span class="toc-number">2.</span> <span class="toc-text">下载软件包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装gitLab"><span class="toc-number">3.</span> <span class="toc-text">安装gitLab</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改gitlab配置文件指定服务器ip和自定义端口"><span class="toc-number">3.1.</span> <span class="toc-text">修改gitlab配置文件指定服务器ip和自定义端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启gitLab"><span class="toc-number">3.2.</span> <span class="toc-text">重启gitLab</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#访问：http-192-168-88-128-8888"><span class="toc-number">4.</span> <span class="toc-text">访问：http://192.168.88.128:8888</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一次访问时的页面"><span class="toc-number">4.1.</span> <span class="toc-text">第一次访问时的页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登录页面"><span class="toc-number">4.2.</span> <span class="toc-text">登录页面</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#中文配置"><span class="toc-number">5.</span> <span class="toc-text">中文配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Gitlab简介"><span class="toc-number">1.</span> <span class="toc-text">Gitlab简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gitlab环境部署"><span class="toc-number">2.</span> <span class="toc-text">Gitlab环境部署</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载软件包"><span class="toc-number">3.</span> <span class="toc-text">下载软件包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装gitLab"><span class="toc-number">4.</span> <span class="toc-text">安装gitLab</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改gitlab配置文件指定服务器ip和自定义端口"><span class="toc-number">4.1.</span> <span class="toc-text">修改gitlab配置文件指定服务器ip和自定义端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启gitLab"><span class="toc-number">4.2.</span> <span class="toc-text">重启gitLab</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#访问：http-192-168-88-128-8888"><span class="toc-number">5.</span> <span class="toc-text">访问：http://192.168.88.128:8888</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一次访问时的页面"><span class="toc-number">5.1.</span> <span class="toc-text">第一次访问时的页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登录页面"><span class="toc-number">5.2.</span> <span class="toc-text">登录页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中文配置"><span class="toc-number">5.3.</span> <span class="toc-text">中文配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器生成SSH-Key密钥文件"><span class="toc-number">5.4.</span> <span class="toc-text">服务器生成SSH-Key密钥文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询SSH-key秘钥"><span class="toc-number">5.5.</span> <span class="toc-text">查询SSH-key秘钥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置SSH-key秘钥"><span class="toc-number">5.6.</span> <span class="toc-text">配置SSH-key秘钥</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用教程"><span class="toc-number">6.</span> <span class="toc-text">使用教程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">7.</span> <span class="toc-text">参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -586,18 +601,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
               </li>
              
@@ -606,11 +609,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,6 +657,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
@@ -650,35 +669,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,7 +685,39 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -702,31 +729,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">FastJson</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">微服务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -735,6 +742,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Hystrix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Dashboard</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -750,14 +769,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Dashboard</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
               </li>
              
@@ -770,11 +781,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
+                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -810,6 +825,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
               </li>
              
@@ -827,10 +846,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -854,7 +869,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">EUI</a>
+                <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -862,7 +877,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
+                <a href="javascript:void(0)" class="js-tag color4">EUI</a>
               </li>
              
               <li class="article-tag-list-item">
