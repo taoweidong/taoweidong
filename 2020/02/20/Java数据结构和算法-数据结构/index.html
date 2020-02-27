@@ -19,7 +19,7 @@
 <meta property="og:description" content="数据结构简介数据结构是指相互之间存在着一种或多种关系的数据元素的集合和该集合中数据元素之间的关系组成 。 常用的数据结构有：数组，栈，链表，队列，树，图，堆，散列表等，如图所示：数据结构包括：线性结构和非线性结构 线性结构 线性结构作为最常用的数据结构，其特点是数据元素之间存在一对一的线性关系 线性结构包括两种不同的存储结构：顺序存储结构和链式存储结构 顺序表：顺序存储的线性表称为顺序表，顺序表中">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200219192500640.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhb3dlaWRvbmcx,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2020-02-19T11:37:52.357Z">
+<meta property="og:updated_time" content="2020-02-27T14:54:41.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java数据结构和算法-数据结构">
 <meta name="twitter:description" content="数据结构简介数据结构是指相互之间存在着一种或多种关系的数据元素的集合和该集合中数据元素之间的关系组成 。 常用的数据结构有：数组，栈，链表，队列，树，图，堆，散列表等，如图所示：数据结构包括：线性结构和非线性结构 线性结构 线性结构作为最常用的数据结构，其特点是数据元素之间存在一对一的线性关系 线性结构包括两种不同的存储结构：顺序存储结构和链式存储结构 顺序表：顺序存储的线性表称为顺序表，顺序表中">
@@ -216,7 +216,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">693字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -225,7 +225,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -247,7 +247,7 @@
 <li>线性结构常见的有：数组，栈，队列，链表</li>
 </ul>
 <a id="more"></a>
-<h3 id="顺序表的优缺点："><a href="#顺序表的优缺点：" class="headerlink" title="顺序表的优缺点："></a>顺序表的优缺点：</h3><ul>
+<h3 id="顺序表的优缺点"><a href="#顺序表的优缺点" class="headerlink" title="顺序表的优缺点"></a>顺序表的优缺点</h3><ul>
 <li><p>优点：</p>
 <ul>
 <li>可以快速获取下标的数据元素，时间复杂度为O(1)</li>
@@ -279,6 +279,7 @@
 <li>先读取稀疏数组的第一行，根据第一行的数据，创建原始的二维数组，比如：chessArr int[11][11]</li>
 <li>在读取稀疏数组后几行的数据，并赋值给原始的二维数组</li>
 </ol>
+<h3 id="代码实现稀疏数组和二维数组的转换"><a href="#代码实现稀疏数组和二维数组的转换" class="headerlink" title="代码实现稀疏数组和二维数组的转换"></a>代码实现稀疏数组和二维数组的转换</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.data.structure;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 算法学习-稀疏数组</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Taoweidong</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloDataStructure</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[][] chessArr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line">    chessArr[<span class="number">1</span>][<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">    chessArr[<span class="number">2</span>][<span class="number">5</span>] = <span class="number">8</span>;</span><br><span class="line">    <span class="comment">// 打印二维数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : chessArr) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">        System.out.print(anInt + <span class="string">"\t\t\t"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将二维数组转为稀疏数组</span></span><br><span class="line">    <span class="comment">// 1、遍历二维数组得到非0数字的个数</span></span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chessArr.length; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; chessArr[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (chessArr[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">          sum++;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(sum);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2、创建对应的稀疏数组</span></span><br><span class="line">    <span class="keyword">int</span>[][] sparseArr = <span class="keyword">new</span> <span class="keyword">int</span>[sum + <span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">    sparseArr[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">11</span>;</span><br><span class="line">    sparseArr[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">11</span>;</span><br><span class="line">    sparseArr[<span class="number">0</span>][<span class="number">2</span>] = sum;</span><br><span class="line">    <span class="comment">// 遍历</span></span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chessArr.length; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; chessArr[i].length; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (chessArr[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">          sparseArr[index][<span class="number">0</span>] = i;</span><br><span class="line">          sparseArr[index][<span class="number">1</span>] = j;</span><br><span class="line">          sparseArr[index][<span class="number">2</span>] = chessArr[i][j];</span><br><span class="line">          index++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(chessArr[i][j] + <span class="string">"\t\t\t"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历稀疏数组</span></span><br><span class="line">    System.out.println(<span class="string">"************遍历稀疏数组*****************"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sparseArr.length; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; sparseArr[i].length; j++) &#123;</span><br><span class="line">        System.out.print(sparseArr[i][j] + <span class="string">"\t\t\t"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 稀疏数组--转为二维数组</span></span><br><span class="line">    System.out.println(<span class="string">"************稀疏数组--转为二维数组*****************"</span>);</span><br><span class="line">    <span class="keyword">int</span>[][] chessArr2 = <span class="keyword">new</span> <span class="keyword">int</span>[sparseArr[<span class="number">0</span>][<span class="number">0</span>]][sparseArr[<span class="number">0</span>][<span class="number">1</span>]];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; sparseArr.length; i++) &#123;</span><br><span class="line">      chessArr2[sparseArr[i][<span class="number">0</span>]][sparseArr[i][<span class="number">1</span>]] = sparseArr[i][<span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chessArr2.length; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; chessArr2[i].length; j++) &#123;</span><br><span class="line">        System.out.print(chessArr2[i][j] + <span class="string">"\t\t\t"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="参考学习资料"><a href="#参考学习资料" class="headerlink" title="参考学习资料"></a>参考学习资料</h1><ul>
 <li><a href="https://blog.csdn.net/yeyazhishang/article/details/82353846" target="_blank" rel="noopener">https://blog.csdn.net/yeyazhishang/article/details/82353846</a></li>
 <li><a href="https://www.jianshu.com/p/30fdd6faea79" target="_blank" rel="noopener">https://www.jianshu.com/p/30fdd6faea79</a></li>
@@ -456,7 +457,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据结构简介"><span class="toc-number">1.</span> <span class="toc-text">数据结构简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性结构"><span class="toc-number">1.1.</span> <span class="toc-text">线性结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#顺序表的优缺点："><span class="toc-number">1.1.1.</span> <span class="toc-text">顺序表的优缺点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非线性结构"><span class="toc-number">1.2.</span> <span class="toc-text">非线性结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#稀疏数组"><span class="toc-number">1.3.</span> <span class="toc-text">稀疏数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java中定义数组的方式"><span class="toc-number">1.3.1.</span> <span class="toc-text">Java中定义数组的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#稀疏数组的处理方法"><span class="toc-number">1.3.2.</span> <span class="toc-text">稀疏数组的处理方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二维数组转稀疏数组的思路"><span class="toc-number">1.3.3.</span> <span class="toc-text">二维数组转稀疏数组的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#稀疏数组转原始的二维数组的思路"><span class="toc-number">1.3.4.</span> <span class="toc-text">稀疏数组转原始的二维数组的思路</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考学习资料"><span class="toc-number">2.</span> <span class="toc-text">参考学习资料</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据结构简介"><span class="toc-number">1.</span> <span class="toc-text">数据结构简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性结构"><span class="toc-number">1.1.</span> <span class="toc-text">线性结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#顺序表的优缺点"><span class="toc-number">1.1.1.</span> <span class="toc-text">顺序表的优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非线性结构"><span class="toc-number">1.2.</span> <span class="toc-text">非线性结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#稀疏数组"><span class="toc-number">1.3.</span> <span class="toc-text">稀疏数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java中定义数组的方式"><span class="toc-number">1.3.1.</span> <span class="toc-text">Java中定义数组的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#稀疏数组的处理方法"><span class="toc-number">1.3.2.</span> <span class="toc-text">稀疏数组的处理方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二维数组转稀疏数组的思路"><span class="toc-number">1.3.3.</span> <span class="toc-text">二维数组转稀疏数组的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#稀疏数组转原始的二维数组的思路"><span class="toc-number">1.3.4.</span> <span class="toc-text">稀疏数组转原始的二维数组的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实现稀疏数组和二维数组的转换"><span class="toc-number">1.3.5.</span> <span class="toc-text">代码实现稀疏数组和二维数组的转换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考学习资料"><span class="toc-number">2.</span> <span class="toc-text">参考学习资料</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -604,11 +605,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,7 +621,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,11 +633,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,10 +646,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -672,15 +669,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Pivotal-tc-Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -692,11 +681,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Pivotal-tc-Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -705,6 +698,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -728,6 +729,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
              
@@ -736,11 +741,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
+                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -749,10 +754,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Hystrix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -788,10 +789,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
               </li>
              
@@ -800,15 +797,11 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">服务提供者</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">服务消费者</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -820,15 +813,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">服务提供者</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">服务消费者</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -868,15 +869,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">白鹭引擎</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -885,6 +882,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Egret</a>
               </li>
             
             <div class="clearfix"></div>
