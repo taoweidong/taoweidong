@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="链表介绍 链表是有序的列表   链表是以节点的方式来存储数据的 每个节点包含data域，next域(指向下一个节点) 每个节点不一定是连续存储 链表分为带头结点的链表和没有头结点的链表，根据实际的需求来确定  代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950">
+  <meta name="description" content="链表介绍 链表是有序的列表   链表是以节点的方式来存储数据的 每个节点包含data域，next域(指向下一个节点) 每个节点不一定是连续存储 链表分为带头结点的链表和没有头结点的链表，根据实际的需求来确定">
 <meta name="keywords" content="数据结构,算法,链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java数据结构和算法-链表的学习记录">
-<meta property="og:url" content="http://www.taoweidong.com/2020/03/08/Java数据结构和算法-链表的学习记录/index.html">
+<meta property="og:url" content="http://www.taoweidong.com/2020/03/18/Java数据结构和算法-链表的学习记录/index.html">
 <meta property="og:site_name" content="半度微凉">
-<meta property="og:description" content="链表介绍 链表是有序的列表   链表是以节点的方式来存储数据的 每个节点包含data域，next域(指向下一个节点) 每个节点不一定是连续存储 链表分为带头结点的链表和没有头结点的链表，根据实际的需求来确定  代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950">
+<meta property="og:description" content="链表介绍 链表是有序的列表   链表是以节点的方式来存储数据的 每个节点包含data域，next域(指向下一个节点) 每个节点不一定是连续存储 链表分为带头结点的链表和没有头结点的链表，根据实际的需求来确定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-08T11:35:08.401Z">
+<meta property="og:updated_time" content="2020-03-17T15:54:40.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java数据结构和算法-链表的学习记录">
-<meta name="twitter:description" content="链表介绍 链表是有序的列表   链表是以节点的方式来存储数据的 每个节点包含data域，next域(指向下一个节点) 每个节点不一定是连续存储 链表分为带头结点的链表和没有头结点的链表，根据实际的需求来确定  代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950">
+<meta name="twitter:description" content="链表介绍 链表是有序的列表   链表是以节点的方式来存储数据的 每个节点包含data域，next域(指向下一个节点) 每个节点不一定是连续存储 链表分为带头结点的链表和没有头结点的链表，根据实际的需求来确定">
   
     <link rel="alternative" href="/atom.xml" title="半度微凉" type="application/atom+xml">
   
@@ -200,8 +200,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/03/08/Java数据结构和算法-链表的学习记录/" class="archive-article-date">
-        <time datetime="2020-03-08T14:28:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
+<a href="/2020/03/18/Java数据结构和算法-链表的学习记录/" class="archive-article-date">
+        <time datetime="2020-03-17T23:16:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-17</time>
 </a>
 
   
@@ -214,7 +214,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">319字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -223,7 +223,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">5分</span>
     </span>
   </span>
 </div>
@@ -243,7 +243,15 @@
 <li>每个节点不一定是连续存储</li>
 <li>链表分为带头结点的链表和没有头结点的链表，根据实际的需求来确定</li>
 </ul>
+<a id="more"></a>
 <h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.data.structure;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单链表实现</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Taoweidong</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroNode</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		HeroNode node = <span class="keyword">new</span> HeroNode(<span class="number">10</span>, <span class="string">"晁盖"</span>);</span><br><span class="line">		HeroNode node1 = <span class="keyword">new</span> HeroNode(<span class="number">25</span>, <span class="string">"宋江"</span>);</span><br><span class="line">		HeroNode node2 = <span class="keyword">new</span> HeroNode(<span class="number">22</span>, <span class="string">"武松"</span>);</span><br><span class="line"></span><br><span class="line">		node.add(node2);</span><br><span class="line">		node.add(node1);</span><br><span class="line"></span><br><span class="line">		node.showAll();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 添加节点</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> node</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(HeroNode node)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 遍历链表</span></span><br><span class="line">		HeroNode tmp = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">while</span> (Objects.nonNull(tmp.getNext())) &#123;</span><br><span class="line">			tmp = tmp.getNext();</span><br><span class="line">		&#125;</span><br><span class="line">		tmp.setNext(node);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 显示链表信息</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 遍历链表</span></span><br><span class="line">		HeroNode tmp = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">while</span> (Objects.nonNull(tmp)) &#123;</span><br><span class="line">			System.out.printf(<span class="string">"name=%s,age=%d\n"</span>, tmp.getName(), tmp.getAge());</span><br><span class="line">			tmp = tmp.getNext();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 年龄</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 姓名</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 下一个人物信息</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">private</span> HeroNode next;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">HeroNode</span><span class="params">(<span class="keyword">int</span> age, String name)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> JSON.toJSONString(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> HeroNode <span class="title">getNext</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNext</span><span class="params">(HeroNode next)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.next = next;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="单链表的实际应用案例"><a href="#单链表的实际应用案例" class="headerlink" title="单链表的实际应用案例"></a>单链表的实际应用案例</h1><ul>
+<li>单向链表的创建</li>
+<li>单向链表的添加和显示</li>
+<li>单向链表的排序添加</li>
+<li>单向链表删除指定节点</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.data.structure;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.lang3.StringUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单链表实现</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Taoweidong</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleLinkedList</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		SingleHeroNode node1 = <span class="keyword">new</span> SingleHeroNode(<span class="number">1</span>, <span class="string">"张三"</span>, <span class="number">12</span>);</span><br><span class="line">		SingleHeroNode node2 = <span class="keyword">new</span> SingleHeroNode(<span class="number">3</span>, <span class="string">"李四"</span>, <span class="number">66</span>);</span><br><span class="line">		SingleHeroNode node3 = <span class="keyword">new</span> SingleHeroNode(<span class="number">4</span>, <span class="string">"王五"</span>, <span class="number">25</span>);</span><br><span class="line">		SingleHeroNode node4 = <span class="keyword">new</span> SingleHeroNode(<span class="number">5</span>, <span class="string">"马六"</span>, <span class="number">23</span>);</span><br><span class="line"></span><br><span class="line">		SingleHeroNodeManage singleNode = <span class="keyword">new</span> SingleHeroNodeManage();</span><br><span class="line">		singleNode.addByOrder(node1);</span><br><span class="line">		singleNode.addByOrder(node4);</span><br><span class="line">		singleNode.addByOrder(node3);</span><br><span class="line">		singleNode.addByOrder(node2);</span><br><span class="line">		singleNode.showAll();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"**************************************"</span>);</span><br><span class="line">		SingleHeroNode node4New = <span class="keyword">new</span> SingleHeroNode(<span class="number">55</span>, <span class="string">"马六000000000"</span>, <span class="number">555</span>);</span><br><span class="line">		singleNode.update(node4New);</span><br><span class="line">		singleNode.showAll();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"**************************************"</span>);</span><br><span class="line">		singleNode.delete(node4New);</span><br><span class="line">		singleNode.showAll();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 管理器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingleHeroNodeManage</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 先初始化一个头结点:一般不需要动</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">public</span> SingleHeroNode head = <span class="keyword">new</span> SingleHeroNode(<span class="number">0</span>, StringUtils.EMPTY, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 删除节点</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> node</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(SingleHeroNode node)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		SingleHeroNode temp = head;</span><br><span class="line">		<span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (Objects.isNull(temp.next)) &#123;</span><br><span class="line">				System.out.println(<span class="string">"链表为空"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (temp.next.no == node.no) &#123;</span><br><span class="line">				<span class="comment">//找到了待修改的节点</span></span><br><span class="line">				flag = <span class="keyword">true</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//如果没有找到，则节点继续后移</span></span><br><span class="line">			temp = temp.next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (flag) &#123;</span><br><span class="line">			<span class="comment">//删除当前节点：实际上也就是将待删除节点的前一个节点的next指向修改</span></span><br><span class="line">			temp.next = temp.next.next;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"没有带删除的节点："</span> + node.no);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 更新节点</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> node 节点</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(SingleHeroNode node)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		SingleHeroNode temp = head;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (Objects.isNull(temp.next)) &#123;</span><br><span class="line">				System.out.println(<span class="string">"链表为空"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (temp.next.no == node.no) &#123;</span><br><span class="line">				<span class="comment">//找到了待修改的节点</span></span><br><span class="line">				temp.next.name = node.name;</span><br><span class="line">				temp.next.age = node.age;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//如果没有找到，则节点继续后移</span></span><br><span class="line">			temp = temp.next;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 添加有序的节点</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> node 节点</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addByOrder</span><span class="params">(SingleHeroNode node)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		SingleHeroNode temp = head;</span><br><span class="line">		<span class="comment">// 检查当前节点是否已经存在</span></span><br><span class="line">		<span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="comment">// 如果当前链表为空：则可以直接插入</span></span><br><span class="line">			<span class="keyword">if</span> (Objects.isNull(temp.next)) &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// 找到了当前待插入节点的位置</span></span><br><span class="line">			<span class="keyword">if</span> (temp.next.no &gt; node.no) &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (temp.next.no == node.no) &#123;</span><br><span class="line">				flag = <span class="keyword">true</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 没有找到对应的节点：移动当前节点位置到下一个节点</span></span><br><span class="line">			temp = temp.next;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (flag) &#123;</span><br><span class="line">			System.out.println(<span class="string">"待插入节点已经存在："</span> + node.no);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="comment">// 增加节点</span></span><br><span class="line">			node.next = temp.next;</span><br><span class="line">			temp.next = node;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 添加一个节点.</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> node 节点</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(SingleHeroNode node)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 1、找到当前链表的最后节点</span></span><br><span class="line">		<span class="comment">// 2、将最后这个节点的next指向新的节点</span></span><br><span class="line">		SingleHeroNode temp = head;</span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="comment">// 找到链表的结尾</span></span><br><span class="line">			<span class="keyword">if</span> (Objects.isNull(temp.next)) &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 如果没有找到继续后移</span></span><br><span class="line">			temp = temp.next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 退出循环时，temp就指向链表的最后</span></span><br><span class="line">		<span class="comment">// 把新增的节点加到链表的最后</span></span><br><span class="line">		temp.next = node;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 判断链表是否为空</span></span><br><span class="line">		<span class="keyword">if</span> (Objects.isNull(head.next)) &#123;</span><br><span class="line">			System.out.println(<span class="string">"链表为空"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		SingleHeroNode temp = head.next;</span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (Objects.isNull(temp)) &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 输出当前节点</span></span><br><span class="line">			System.out.println(temp.toString());</span><br><span class="line">			<span class="comment">// 将下一个节点后移</span></span><br><span class="line">			temp = temp.next;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 节点对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingleHeroNode</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> no;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> String name;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> SingleHeroNode next;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 构造器</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> no   编号</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> name 姓名</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> age  年龄</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">SingleHeroNode</span><span class="params">(<span class="keyword">int</span> no, String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.no = no;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="string">"SingleHeroNode&#123;"</span> + <span class="string">"no="</span> + no + <span class="string">", name='"</span> + name + <span class="string">'\''</span> + <span class="string">", age="</span> + age + <span class="string">"&#125;"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     
 
@@ -285,7 +293,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.taoweidong.com/2020/03/08/Java数据结构和算法-链表的学习记录/" title="Java数据结构和算法-链表的学习记录" target="_blank">http://www.taoweidong.com/2020/03/08/Java数据结构和算法-链表的学习记录/</a>
+          <a href="http://www.taoweidong.com/2020/03/18/Java数据结构和算法-链表的学习记录/" title="Java数据结构和算法-链表的学习记录" target="_blank">http://www.taoweidong.com/2020/03/18/Java数据结构和算法-链表的学习记录/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -368,7 +376,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.taoweidong.com/2020/03/08/Java数据结构和算法-链表的学习记录/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.taoweidong.com/2020/03/18/Java数据结构和算法-链表的学习记录/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -412,7 +420,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#链表介绍"><span class="toc-number">1.</span> <span class="toc-text">链表介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码实现"><span class="toc-number">2.</span> <span class="toc-text">代码实现</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#链表介绍"><span class="toc-number">1.</span> <span class="toc-text">链表介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码实现"><span class="toc-number">2.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#单链表的实际应用案例"><span class="toc-number">3.</span> <span class="toc-text">单链表的实际应用案例</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -560,14 +568,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
               </li>
              
@@ -576,11 +576,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,6 +593,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,6 +636,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
              
@@ -636,7 +652,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,19 +664,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,6 +716,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Feign</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Hystrix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
               </li>
              
@@ -717,14 +733,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">集群高可用注册中心配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Feign</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Hystrix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -768,11 +776,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
+                <a href="javascript:void(0)" class="js-tag color2">服务发现组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">服务发现组件</a>
+                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -784,23 +792,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -816,11 +812,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -832,11 +824,27 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">白鹭引擎</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">EUI</a>
+                <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,7 +852,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
+                <a href="javascript:void(0)" class="js-tag color4">EUI</a>
               </li>
              
               <li class="article-tag-list-item">
