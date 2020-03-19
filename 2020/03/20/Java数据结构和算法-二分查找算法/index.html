@@ -6,24 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.taoweidong.com">
-  <title>SpringBoot学习笔记-全局异常捕获 | 半度微凉</title>
+  <title>Java数据结构和算法-二分查找算法 | 半度微凉</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="简介项目开发过程中，一般会对代码中可能出现的异常进行统一处理，前台看到的就是统一可以看得懂的错误信息，而不是什么空指针…这些只有程序员才能看得懂的信息。 具体步骤 创建工程：SpringBoot-GlobalDefaultExceptionHandler    新建一个Class,这里取名为GlobalDefaultExceptionHandler 在class上添加注解，@ControllerA">
-<meta name="keywords" content="SpringBoot">
+  <meta name="description" content="算法思想二分查找法实质上是不断地将有序数据集进行对半分割，并检查每个分区的中间元素。 时间复杂度为O(lgn) 二分查找操作的数据集是一个有序的数据集。开始时，先找出有序集合中间的那个元素。如果此元素比要查找的元素大，就接着在较小的一个半区进行查找；反之，如果此元素比要找的元素小，就在较大的一个半区进行查找。在每个更小的数据集中重复这个查找过程，直到找到要查找的元素或者数据集不能再分割。 二分查找">
+<meta name="keywords" content="数据结构,算法,排序算法,二分查找算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot学习笔记-全局异常捕获">
-<meta property="og:url" content="http://www.taoweidong.com/2018/04/10/SpringBoot学习笔记-全局异常捕获/index.html">
+<meta property="og:title" content="Java数据结构和算法-二分查找算法">
+<meta property="og:url" content="http://www.taoweidong.com/2020/03/20/Java数据结构和算法-二分查找算法/index.html">
 <meta property="og:site_name" content="半度微凉">
-<meta property="og:description" content="简介项目开发过程中，一般会对代码中可能出现的异常进行统一处理，前台看到的就是统一可以看得懂的错误信息，而不是什么空指针…这些只有程序员才能看得懂的信息。 具体步骤 创建工程：SpringBoot-GlobalDefaultExceptionHandler    新建一个Class,这里取名为GlobalDefaultExceptionHandler 在class上添加注解，@ControllerA">
+<meta property="og:description" content="算法思想二分查找法实质上是不断地将有序数据集进行对半分割，并检查每个分区的中间元素。 时间复杂度为O(lgn) 二分查找操作的数据集是一个有序的数据集。开始时，先找出有序集合中间的那个元素。如果此元素比要查找的元素大，就接着在较小的一个半区进行查找；反之，如果此元素比要找的元素小，就在较大的一个半区进行查找。在每个更小的数据集中重复这个查找过程，直到找到要查找的元素或者数据集不能再分割。 二分查找">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/bPNPxNT.png">
-<meta property="og:updated_time" content="2020-02-07T16:04:45.011Z">
+<meta property="og:updated_time" content="2020-03-19T15:57:22.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot学习笔记-全局异常捕获">
-<meta name="twitter:description" content="简介项目开发过程中，一般会对代码中可能出现的异常进行统一处理，前台看到的就是统一可以看得懂的错误信息，而不是什么空指针…这些只有程序员才能看得懂的信息。 具体步骤 创建工程：SpringBoot-GlobalDefaultExceptionHandler    新建一个Class,这里取名为GlobalDefaultExceptionHandler 在class上添加注解，@ControllerA">
-<meta name="twitter:image" content="https://i.imgur.com/bPNPxNT.png">
+<meta name="twitter:title" content="Java数据结构和算法-二分查找算法">
+<meta name="twitter:description" content="算法思想二分查找法实质上是不断地将有序数据集进行对半分割，并检查每个分区的中间元素。 时间复杂度为O(lgn) 二分查找操作的数据集是一个有序的数据集。开始时，先找出有序集合中间的那个元素。如果此元素比要查找的元素大，就接着在较小的一个半区进行查找；反之，如果此元素比要找的元素小，就在较大的一个半区进行查找。在每个更小的数据集中重复这个查找过程，直到找到要查找的元素或者数据集不能再分割。 二分查找">
   
     <link rel="alternative" href="/atom.xml" title="半度微凉" type="application/atom+xml">
   
@@ -183,14 +181,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-SpringBoot学习笔记-全局异常捕获" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java数据结构和算法-二分查找算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      SpringBoot学习笔记-全局异常捕获
+      Java数据结构和算法-二分查找算法
     </h1>
   
 
@@ -202,8 +200,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2018/04/10/SpringBoot学习笔记-全局异常捕获/" class="archive-article-date">
-        <time datetime="2018-04-09T21:34:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
+<a href="/2020/03/20/Java数据结构和算法-二分查找算法/" class="archive-article-date">
+        <time datetime="2020-03-19T23:57:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-19</time>
 </a>
 
   
@@ -216,7 +214,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">572字</span>
+      <span class="post-count">928字</span>
     </span>
   </span>
 
@@ -225,7 +223,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -236,30 +234,15 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>项目开发过程中，一般会对代码中可能出现的异常进行统一处理，前台看到的就是统一可以看得懂的错误信息，而不是什么空指针…这些只有程序员才能看得懂的信息。</p>
-<h1 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h1><ul>
-<li>创建工程：SpringBoot-GlobalDefaultExceptionHandler</li>
-</ul>
-<p><img src="https://i.imgur.com/bPNPxNT.png" alt></p>
-<ul>
-<li>新建一个Class,这里取名为GlobalDefaultExceptionHandler</li>
-<li>在class上添加注解，@ControllerAdvice;</li>
-<li>在class中添加一个方法</li>
-<li>在方法上添加@ExcetionHandler拦截相应的异常信息；</li>
-<li>如果返回的是View – 方法的返回值是ModelAndView;</li>
-<li>如果返回的是String或者是Json数据，那么需要在方法上添加@ResponseBody注解.</li>
-</ul>
+    <h1 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h1><p><strong>二分查找法实质上是不断地将有序数据集进行对半分割，并检查每个分区的中间元素。</strong></p>
+<p><strong>时间复杂度为O(lgn)</strong></p>
+<p><strong>二分查找操作的数据集是一个有序的数据集</strong>。开始时，先找出有序集合中间的那个元素。如果此元素比要查找的元素大，就接着在较小的一个半区进行查找；反之，如果此元素比要找的元素小，就在较大的一个半区进行查找。在每个更小的数据集中重复这个查找过程，直到找到要查找的元素或者数据集不能再分割。</p>
+<p><strong>二分查找能应用于任何类型的数据，只要能将这些数据按照某种规则进行排序</strong>。然而，正因为它依赖于一个有序的集合，这使得它在处理那些频繁插入和删除操作的数据集时不太高效。这是因为，对于插入和操作来说，为了保证查找过程正常进行，必须保证数据集始终有序。相对于查找来说，维护一个有序数据集的代价更高。此外，元素必须存储在连续的空间中。<strong>因此，当待搜索的集合是相对静态的数据集时，此时使用二分查找是最好的选择</strong>。</p>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 1、新建一个Class,这里取名为GlobalDefaultExceptionHandler</span></span><br><span class="line"><span class="comment"> * 2、在class上添加注解，<span class="doctag">@ControllerAdvice</span>;</span></span><br><span class="line"><span class="comment"> * 3、在class中添加一个方法</span></span><br><span class="line"><span class="comment"> * 4、在方法上添加<span class="doctag">@ExcetionHandler</span>拦截相应的异常信息；</span></span><br><span class="line"><span class="comment"> * 5、如果返回的是View -- 方法的返回值是ModelAndView;</span></span><br><span class="line"><span class="comment"> * 6、如果返回的是String或者是Json数据，那么需要在方法上添加<span class="doctag">@ResponseBody</span>注解.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Taowd</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2018/4/9 - 21:54</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@ControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalDefaultExceptionHandler</span> </span>&#123;</span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(Exception.class)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">defaultExceptionHandler</span><span class="params">(HttpServletRequest req, Exception e)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"服务器异常，请稍后再试--&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="ControllerAdvice说明"><a href="#ControllerAdvice说明" class="headerlink" title="@ControllerAdvice说明"></a>@ControllerAdvice说明</h1><p><code>@ControllerAdvice</code>，是Spring3.2提供的新注解，从名字上可以看出大体意思是控制器增强。位置：org.springframework.web.bind.annotation，具体实现如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.springframework.web.bind.annotation;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> ControllerAdvice &#123;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@AliasFor</span>(<span class="string">"basePackages"</span>)</span><br><span class="line">String[] value() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@AliasFor</span>(<span class="string">"value"</span>)</span><br><span class="line">String[] basePackages() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"> </span><br><span class="line">Class&lt;?&gt;[] basePackageClasses() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"> </span><br><span class="line">Class&lt;?&gt;[] assignableTypes() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"> </span><br><span class="line">Class&lt;? extends Annotation&gt;[] annotations() <span class="keyword">default</span> &#123;&#125;;</span><br></pre></td></tr></table></figure>
-<p>该注解使用<code>@Component</code>注解，这样的话当我们使用<code>&lt;context:component-scan&gt;</code>扫描时也能扫描到。</p>
-<ul>
-<li><code>@ControllerAdvice</code>是一个<code>@Component</code>，用于定义<code>@ExceptionHandler</code>，<code>@InitBinder</code>和<code>@ModelAttribute</code>方法，适用于所有使用<code>@RequestMapping</code>方法。</li>
-<li>Spring4之前，<code>@ControllerAdvice</code>在同一调度的Servlet中协助所有控制器。Spring4已经改变：<code>@ControllerAdvice</code>支持配置控制器的子集，而默认的行为仍然可以利用。</li>
-<li>在Spring4中， <code>@ControllerAdvice</code>通过<code>annotations()</code>, <code>basePackageClasses()</code>, <code>basePackages()</code>方法定制用于选择控制器子集。</li>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.data.structure;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 二分查找算法</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Taoweidong</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bisearch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span>[] intArr = &#123; <span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">25</span>, <span class="number">63</span>, <span class="number">88</span>, <span class="number">96</span>, <span class="number">100</span> &#125;;</span><br><span class="line">		System.out.println(biSearch(intArr, <span class="number">6</span>));</span><br><span class="line"></span><br><span class="line">		System.out.println(biSearch(intArr, <span class="number">6</span>, <span class="number">0</span>, intArr.length - <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 非迭代方式</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> intArr 待查找的升序数组</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> target 目标值</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> 查找到的索引值</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">biSearch</span><span class="params">(<span class="keyword">int</span>[] intArr, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//排除特殊情况</span></span><br><span class="line">		<span class="keyword">if</span> (intArr == <span class="keyword">null</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (intArr.length == <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (intArr[<span class="number">0</span>] == target) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//正常查找</span></span><br><span class="line">		<span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> right = intArr.length - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">			<span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">if</span> (intArr[mid] &gt; target) &#123;</span><br><span class="line">				<span class="comment">//基于当前数组为升序序列的前提：如果目标值小于中间值，则说明目标值在中间值得左侧，应该将右侧right的范围缩小</span></span><br><span class="line">				right = mid - <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (intArr[mid] &lt; target) &#123;</span><br><span class="line">				<span class="comment">//基于当前数组为升序序列的前提：如果目标值大于中间值，则说明目标值在中间值得右侧，应该将左侧left的范围缩小</span></span><br><span class="line">				left = mid + <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> mid;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 非迭代方式</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> intArr 待查找的升序数组</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> target 目标值</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> left   左边范围</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> right  右边范围</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> 目标值索引位置</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">biSearch</span><span class="params">(<span class="keyword">int</span>[] intArr, <span class="keyword">int</span> target, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//排除特殊情况</span></span><br><span class="line">		<span class="keyword">if</span> (intArr == <span class="keyword">null</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (intArr.length == <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (intArr[<span class="number">0</span>] == target) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//注意一定要加此检查条件，防止堆栈溢出</span></span><br><span class="line">		<span class="keyword">if</span> (left &gt; right) &#123;</span><br><span class="line">			<span class="comment">//退出迭代条件2：没有找到目标值索引</span></span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//计算中间位置</span></span><br><span class="line">		<span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (intArr[mid] &gt; target) &#123;</span><br><span class="line">			<span class="comment">//基于当前数组为升序序列的前提：如果目标值小于中间值，则说明目标值在中间值得左侧，应该将右侧right的范围缩小</span></span><br><span class="line">			<span class="keyword">return</span> biSearch(intArr, target, left, mid - <span class="number">1</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (intArr[mid] &lt; target) &#123;</span><br><span class="line">			<span class="comment">//基于当前数组为升序序列的前提：如果目标值大于中间值，则说明目标值在中间值得右侧，应该将左侧left的范围缩小</span></span><br><span class="line">			<span class="keyword">return</span> biSearch(intArr, target, mid + <span class="number">1</span>, right);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="comment">//退出迭代条件1：找到目标值得索引</span></span><br><span class="line">			<span class="keyword">return</span> mid;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://www.cnblogs.com/idreamo/p/9000762.html" target="_blank" rel="noopener">https://www.cnblogs.com/idreamo/p/9000762.html</a></li>
 </ul>
-<h2 id="ControllerAdvice处理异常"><a href="#ControllerAdvice处理异常" class="headerlink" title="@ControllerAdvice处理异常"></a>@ControllerAdvice处理异常</h2><p>在SpringMVC重要注解（一）<code>@ExceptionHandler</code>和<code>@ResponseStatus</code>我们提到，如果单使用<code>@ExceptionHandler</code>，只能在当前Controller中处理异常。但当配合<code>@ControllerAdvice</code>一起使用的时候，就可以摆脱那个限制了。</p>
 
     
 
@@ -301,7 +284,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.taoweidong.com/2018/04/10/SpringBoot学习笔记-全局异常捕获/" title="SpringBoot学习笔记-全局异常捕获" target="_blank">http://www.taoweidong.com/2018/04/10/SpringBoot学习笔记-全局异常捕获/</a>
+          <a href="http://www.taoweidong.com/2020/03/20/Java数据结构和算法-二分查找算法/" title="Java数据结构和算法-二分查找算法" target="_blank">http://www.taoweidong.com/2020/03/20/Java数据结构和算法-二分查找算法/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -320,7 +303,19 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">二分查找算法</a>
         		</li>
       		
 		</ul>
@@ -376,7 +371,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.taoweidong.com/2018/04/10/SpringBoot学习笔记-全局异常捕获/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.taoweidong.com/2020/03/20/Java数据结构和算法-二分查找算法/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -391,18 +386,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/04/11/Docker学习笔记-使用Dockerfile构建Docker镜像/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Docker学习笔记-使用Dockerfile构建Docker镜像
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/06/SpringCloud微服务笔记-Sleuth微服务跟踪/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SpringCloud微服务笔记-Sleuth微服务跟踪</div>
+    <a href="/2020/03/19/Java数据结构和算法-冒泡排序算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java数据结构和算法-冒泡排序算法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -429,7 +415,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#具体步骤"><span class="toc-number">2.</span> <span class="toc-text">具体步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ControllerAdvice说明"><span class="toc-number">3.</span> <span class="toc-text">@ControllerAdvice说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ControllerAdvice处理异常"><span class="toc-number">3.1.</span> <span class="toc-text">@ControllerAdvice处理异常</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#算法思想"><span class="toc-number">1.</span> <span class="toc-text">算法思想</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码实现"><span class="toc-number">2.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
