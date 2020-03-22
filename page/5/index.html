@@ -185,6 +185,102 @@
             
 
   
+    <article id="post-Pivotal-tc-Server与Tomcat区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/09/01/Pivotal-tc-Server与Tomcat区别/" target="_blank">Pivotal-tc-Server与Tomcat区别</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/09/01/Pivotal-tc-Server与Tomcat区别/" class="archive-article-date">
+        <time datetime="2018-08-31T21:43:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p> Pivotal-tc-Server之前叫做SpringSource tc Server，包含三个版本分别是：Spring版、标准版和开发版，但其中只有开发版是免费的。比如在STS中包含的版本就是开发板。</p>
+<p>SpringSource tc Server是一个企业版本的Apache Tomcat，广泛使用的Web应用服务器。</p>
+<p>SpringSource tc Server主要的目的是为了强化企业使用，并加上关键业务能力，先进的诊断和支持的关键任务支持。</p>
+<p><a href="https://images2015.cnblogs.com/blog/417876/201706/417876-20170627033807883-1874599378.png" target="_blank" rel="noopener"><img src="https://images2015.cnblogs.com/blog/417876/201706/417876-20170627033807883-1874599378.png" alt="img"></a></p>
+<p>参考：</p>
+<p><a href="https://network.pivotal.io/products/pivotal-tcserver" target="_blank" rel="noopener">https://network.pivotal.io/products/pivotal-tcserver</a></p>
+<p><a href="http://developer.51cto.com/art/201004/193546.htm" target="_blank" rel="noopener">http://developer.51cto.com/art/201004/193546.htm</a></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Pivotal-tc-Server</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/09/01/Pivotal-tc-Server与Tomcat区别/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CentOS相关-安装Mysql并使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -573,143 +669,9 @@
 
 
   
-    <article id="post-Maven工程使用Git提交过滤文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/05/26/Maven工程使用Git提交过滤文件/" target="_blank">Maven工程使用Git提交过滤文件</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/05/26/Maven工程使用Git提交过滤文件/" class="archive-article-date">
-        <time datetime="2018-05-26T10:23:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p> Maven创建的工程，使用Git进行提交时，只需要提交最重要的文件，编译文件等文件不需要提交</p>
-</blockquote>
-<h1 id="在仓库中创建-gitignore文件"><a href="#在仓库中创建-gitignore文件" class="headerlink" title="在仓库中创建.gitignore文件"></a>在仓库中创建.gitignore文件</h1><p><img src="http://i.imgur.com/m69P0ZW.png" alt></p>
-<h1 id="编辑-gitignore文件"><a href="#编辑-gitignore文件" class="headerlink" title="编辑.gitignore文件"></a>编辑.gitignore文件</h1><pre><code>`
-##ignore this file##
-/target/
-
-.classpath
-.project
-.settings     
- ##filter databfile、sln file##
-*.mdb  
-*.ldb  
-*.sln   
-##class file##
-*.com  
-*.class  
-*.dll  
-*.exe  
-*.o  
-*.so 
-# compression file
-*.7z  
-*.dmg  
-*.gz  
-*.iso  
-*.jar  
-*.rar  
-*.tar  
-*.zip  
-*.via
-*.tmp
-*.err
-# OS generated files #  
-.DS_Store  
-.DS_Store?  
-._*  
-.Spotlight-V100  
-.Trashes  
-Icon?  
-ehthumbs.db  
-Thumbs.db  
-</code></pre><p>`</p>
-<h1 id="最终提交时文件"><a href="#最终提交时文件" class="headerlink" title="最终提交时文件"></a>最终提交时文件</h1><p><img src="http://i.imgur.com/FDKZhFH.png" alt></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Maven</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/05/26/Maven工程使用Git提交过滤文件/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -840,6 +802,14 @@ Thumbs.db
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
@@ -856,15 +826,7 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -872,7 +834,7 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -881,18 +843,6 @@ Thumbs.db
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitLab</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -912,11 +862,31 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitLab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">快速排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -928,19 +898,31 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Pivotal-tc-Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -960,27 +942,7 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Pivotal-tc-Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -992,11 +954,19 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
+                <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,7 +978,7 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1024,11 +994,11 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1044,11 +1014,7 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
+                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1056,11 +1022,11 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
+                <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
+                <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1068,7 +1034,7 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1080,19 +1046,23 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1108,7 +1078,11 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1120,11 +1094,7 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1132,15 +1102,11 @@ Thumbs.db
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">EUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+                <a href="javascript:void(0)" class="js-tag color4">EUI</a>
               </li>
              
               <li class="article-tag-list-item">

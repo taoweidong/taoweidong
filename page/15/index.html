@@ -185,6 +185,105 @@
             
 
   
+    <article id="post-SpringCloud微服务笔记-服务提供者和服务消费者" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/01/18/SpringCloud微服务笔记-服务提供者和服务消费者/" target="_blank">SpringCloud微服务笔记- 服务提供者和服务消费者</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/01/18/SpringCloud微服务笔记-服务提供者和服务消费者/" class="archive-article-date">
+        <time datetime="2018-01-17T19:45:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="服务消费者"><a href="#服务消费者" class="headerlink" title="服务消费者"></a>服务消费者</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>服务提供者：是指服务的被调用方（即：为其它服务提供服务的服务）</li>
+<li>服务消费者：是指服务的调用方（即：依赖其它服务的服务）</li>
+</ul>
+    
+    <a class="article-more-a" href="/2018/01/18/SpringCloud微服务笔记-服务提供者和服务消费者/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">服务提供者</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">服务消费者</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/01/18/SpringCloud微服务笔记-服务提供者和服务消费者/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ngrok反向代理工具" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -654,116 +753,9 @@ useLibrary &apos;org.apache.http.legacy&apos;
 
 
   
-    <article id="post-SpringCloud微服务笔记-微服务架构概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/" target="_blank">SpringCloud微服务笔记-微服务架构概述</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/" class="archive-article-date">
-        <time datetime="2018-01-16T19:28:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="单体架构是什么"><a href="#单体架构是什么" class="headerlink" title="单体架构是什么"></a>单体架构是什么</h1><ul>
-<li>一个归档包包含了应用所有功能的应用程序，我们通常称为单体应用。</li>
-<li>架构单体应用的架构风格，我们称为单体架构，这是一种比较传统的架构风格。</li>
-</ul>
-<h1 id="单体架构存在的缺点"><a href="#单体架构存在的缺点" class="headerlink" title="单体架构存在的缺点"></a>单体架构存在的缺点</h1><ul>
-<li>复杂性逐渐变高</li>
-</ul>
-<p>成功的应用最终会随着时间变得巨大。在每个 sprint 阶段，开发团队都会新加许多行代码。几年后，原本小而简单的应用会变得臃肿。举个极端的例子，我最近与一位开发者交流，他正在开发一款小工具，来分析他们应用（包括几百万行代码）中的几千个 JARs 的依赖。我相信每年都会有大量开发者不遗余力地对付这种麻烦。</p>
-<ul>
-<li>技术债务逐渐上升</li>
-</ul>
-<p>一旦你的应用变得庞大、复杂，你的开发团队将饱受折磨，苦苦挣扎于敏捷开发和交付。一大原因就是应用已经格外复杂，庞大到任何一个开发者都无法完全理解。最后，修复 bug 和实施新功能也就极其困难且耗时颇多。更可怕的是，这是一个向下的螺旋发展。代码库越难理解，正确的修改就越难。最后你会深陷庞大的、无法估量的泥淖之中。</p>
-<ul>
-<li>部署速度逐渐变慢</li>
-</ul>
-<p>而这种应用的尺寸也会拖慢开发进度。应用越大，启动时间越长。譬如在最近的调查中，不少开发者指出启动时间长达 12 分钟。我也听说有的应用启动时间居然得 40 分钟。如果开发者不得不频繁重启应用服务器，那大量时间就被浪费，生产效率也饱受其害。</p>
-<ul>
-<li>阻碍技术创新</li>
-</ul>
-<p>庞大且复杂的单体应用的另一大问题就是难以进行持续部署。现在， SaaS 应用的发展水平足以在单日内多次将修改推送到生产环境。然而要让复杂的单个应用达到此水平却极为棘手。想更新应用的单个部分，必须重新部署整个应用，漫长的启动时间更是雪上加霜。另外，由于不能完全预见修改的影响，你不得不提前进行大量人工测试。结果就是，持续部署变得不可能。</p>
-    
-    <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/01/17/SpringCloud微服务笔记-微服务架构概述/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/14/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span>
+      <a class="extend prev" rel="prev" href="/page/14/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/16/">Next &raquo;</a>
     </nav>
   
 
@@ -894,6 +886,14 @@ useLibrary &apos;org.apache.http.legacy&apos;
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
@@ -910,15 +910,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -926,7 +918,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -935,18 +927,6 @@ useLibrary &apos;org.apache.http.legacy&apos;
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitLab</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -966,11 +946,31 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitLab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">快速排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -982,19 +982,31 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Pivotal-tc-Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1014,27 +1026,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Pivotal-tc-Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1046,11 +1038,19 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
+                <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1062,7 +1062,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring AOP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1078,11 +1078,11 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SpringDataJPA</a>
+                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1098,11 +1098,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
+                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1110,11 +1106,11 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sidecar</a>
+                <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
+                <a href="javascript:void(0)" class="js-tag color2">Sleuth</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1122,7 +1118,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微服务网关</a>
+                <a href="javascript:void(0)" class="js-tag color5">注册中心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1134,19 +1130,23 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1162,7 +1162,11 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1174,11 +1178,7 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ngrok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">反向代理工具</a>
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1186,15 +1186,11 @@ useLibrary &apos;org.apache.http.legacy&apos;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">EUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">List控件数据绑定</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+                <a href="javascript:void(0)" class="js-tag color4">EUI</a>
               </li>
              
               <li class="article-tag-list-item">
