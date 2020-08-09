@@ -206,7 +206,7 @@
             
 
   
-    <article id="post-Docker学习笔记-Idea推送镜像到虚拟机中的docker服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Docker学习笔记-Docker Compose编排微服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -214,7 +214,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/" target="_blank">Docker学习笔记-Idea推送镜像到虚拟机中的docker服务</a>
+	  <a class="article-title" href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/" target="_blank">Docker学习笔记-Docker Compose编排微服务</a>
   
     </h1>
   
@@ -222,8 +222,8 @@
 
   
   
-<a href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/" class="archive-article-date">
-        <time datetime="2018-04-12T22:17:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
+<a href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/" class="archive-article-date">
+        <time datetime="2018-04-16T21:26:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-16</time>
 </a>
 
   
@@ -235,14 +235,38 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><p>Docker 是一个容器工具，提供虚拟环境。很多人认为，它改变了我们对软件的认识。</p>
-<p>站在 Docker 的角度，软件就是容器的组合：业务逻辑容器、数据库容器、储存容器、队列容器……Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木一样组合起来。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021306.png" alt></p>
-<p>这正是微服务（microservices）的思想：软件把任务外包出去，让各种外部服务完成这些任务，软件本身只是底层服务的调度中心和组装层。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021302.png" alt></p>
-<p>微服务很适合用 Docker 容器实现，每个容器承载一个服务。一台计算机同时运行多个容器，从而就能很轻松地模拟出复杂的微服务架构。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021303.png" alt></p>
+    <h1 id="Docker-Compose编排工具简介"><a href="#Docker-Compose编排工具简介" class="headerlink" title="Docker Compose编排工具简介"></a>Docker Compose编排工具简介</h1><p>Compose是一个用于定义和运行多容器Docker应用程序的工具，前身是Fig，它非常适合用在开发、测试、构建CI（持续集成）工作流等场景中。</p>
+<p>Docker Compose是一个用来定义和运行复杂应用的Docker工具。一个使用Docker容器的应用，通常由多个容器组成。使用Docker Compose不再需要使用shell脚本来启动容器。 </p>
+<p>Compose 通过一个配置文件来管理多个Docker容器，在配置文件中，所有的容器通过services来定义，然后使用docker-compose脚本来启动，停止和重启应用，和应用中的服务以及所有依赖服务的容器，非常适合组合使用多个容器进行开发的场景。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021311.jpg" alt></p>
+<p><a href="https://docs.docker.com/compose/" target="_blank" rel="noopener">Compose</a> 是 Docker 公司推出的一个工具软件，可以管理多个 Docker 容器组成一个应用。你需要定义一个 <a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html" target="_blank" rel="noopener">YAML</a> 格式的配置文件<code>docker-compose.yml</code>，写好多个容器之间的调用关系。然后，只要一个命令，就能同时启动/关闭这些容器。</p>
+<p>Docker Compose将所管理的容器分为三层，分别是工程(Project)，服务(Service)以及容器(Container).Docker Compose运行目录下的所有文件(docker-compose.yml,extends文件或环境变量文件等)组成一个工程(默认为docker-compose.yml所在目录的目录名称)。一个工程可以包含多个服务，每个服务中定义了容器运行的镜像、参数和依赖，一个服务可包含多个容器实例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 启动所有服务</span><br><span class="line">$ docker-compose up</span><br><span class="line"># 关闭所有服务</span><br><span class="line">$ docker-compose stop</span><br></pre></td></tr></table></figure>
+<h1 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h1><p>在<a href="https://github.com/TaciturnK/Micro-service-learning" target="_blank" rel="noopener"><strong>Micro-service-learning</strong></a> 工程的学习基础之上，使用docker工具进行服务的发布，主要利用其中的6个子工程来进行学习，工程列表如下：</p>
+<ul>
+<li>microservice-consume-movie-feign-hystrix：服务消费者(整合ribbon.feign,hystrix)</li>
+<li>microservice-discovery-eureka：服务注册中心(Eureak)</li>
+<li>microservice-getway-zuul：路由网关(Zuul)</li>
+<li>microservice-hystrix-dashboard：hystrix可视化监控工具(独立项目，不依赖服务注册中心)</li>
+<li>microservice-hystrix-turbine：turbine聚合监控数据(供microservice-hystrix-dashboard调用)</li>
+<li>microservice-provider-user：服务提供者</li>
+</ul>
+<p><strong>环境：</strong></p>
+<ul>
+<li>虚拟机上已经搭建了docker服务，并可以进行正常的镜像拉取，上传阿里云镜像仓库操作，相关功能已经经过测试，达到了实验的条件。</li>
+<li>idea开发工具上面已经安装了docker开发插件，并且虚拟机的docker开启了api2375端口，远程传输的功能，并且已经单独进行了测试，达到了在idea上发布镜像到虚拟中的条件。</li>
+</ul>
+<p><strong>学习目的：</strong></p>
+<blockquote>
+<p>在Idea工具上编排微服务的各个服务，并使用docker插件发布到虚拟机中的docker服务中，然后进入虚拟机，在虚拟机中将镜像发布到远程阿里云docker镜像仓库，供其他主机使用时拉取。</p>
+</blockquote>
+<p><strong>学习计划：</strong></p>
+<ol>
+<li>docker compose快速入门：使用microservice-discovery-eureka作为学习目标，使用compose工具进行编排发布，并可进行访问；</li>
+<li>编排这6个微服务，并最终可进行访问；</li>
+</ol>
     
-    <a class="article-more-a" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/#more">more >></a>
+    <a class="article-more-a" href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/#more">more >></a>
     
     
 
@@ -261,6 +285,10 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Docker Compose</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -269,7 +297,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/">展开全文 >></a>
+      <a class="article-more-a" href="/2018/04/17/Docker学习笔记-Docker Compose编排微服务/">展开全文 >></a>
     </p>
     
 
@@ -363,6 +391,99 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2018/04/13/Docker学习笔记-windows上镜像推送到虚拟机中的docker服务/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Docker学习笔记-Idea推送镜像到虚拟机中的docker服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/" target="_blank">Docker学习笔记-Idea推送镜像到虚拟机中的docker服务</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/" class="archive-article-date">
+        <time datetime="2018-04-12T22:17:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><p>Docker 是一个容器工具，提供虚拟环境。很多人认为，它改变了我们对软件的认识。</p>
+<p>站在 Docker 的角度，软件就是容器的组合：业务逻辑容器、数据库容器、储存容器、队列容器……Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木一样组合起来。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021306.png" alt></p>
+<p>这正是微服务（microservices）的思想：软件把任务外包出去，让各种外部服务完成这些任务，软件本身只是底层服务的调度中心和组装层。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021302.png" alt></p>
+<p>微服务很适合用 Docker 容器实现，每个容器承载一个服务。一台计算机同时运行多个容器，从而就能很轻松地模拟出复杂的微服务架构。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018021303.png" alt></p>
+    
+    <a class="article-more-a" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/04/13/Docker学习笔记-Idea推送镜像到虚拟机中的docker服务/">展开全文 >></a>
     </p>
     
 
@@ -601,114 +722,9 @@
 
 
   
-    <article id="post-SpringBoot学习笔记-整合SpringDataJPA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/04/12/SpringBoot学习笔记-整合SpringDataJPA/" target="_blank">SpringBoot学习笔记-整合SpringDataJPA</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/04/12/SpringBoot学习笔记-整合SpringDataJPA/" class="archive-article-date">
-        <time datetime="2018-04-11T19:44:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="SpringBoot学习笔记-整合SpringDataJPA"><a href="#SpringBoot学习笔记-整合SpringDataJPA" class="headerlink" title="SpringBoot学习笔记-整合SpringDataJPA"></a>SpringBoot学习笔记-整合SpringDataJPA</h1><h2 id="JPA简介"><a href="#JPA简介" class="headerlink" title="JPA简介"></a>JPA简介</h2><ul>
-<li>JPA全称是Java Persistence API。JPA通过JDK5.0注解或者XML描述对象-关系表的映射关系，并将运行期的实体对象持久化到数据库中。</li>
-<li>JPA是SUN公司提出的Java持久化规范。他为Java开发人员提供了一种对象/关系映射工具来管理Java应用中的关系数据。</li>
-<li>持久化，即把数据（如内存中的对象）保存到可永久保存的存储设备中(如磁盘)。持久化的主要应用是将内存中的对象存储在数据库中，或者存储在磁盘文件中、XML数据文件中等等。</li>
-<li>持久化是将程序数据在持久状态和瞬时状态间转换的机制</li>
-<li>JDBC就是一种持久化机制。文件IO也是一种持久化机制。</li>
-</ul>
-<h2 id="Hibernate简介"><a href="#Hibernate简介" class="headerlink" title="Hibernate简介"></a>Hibernate简介</h2><p>Hiberntae是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的ORM框架，Hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操作数据库。</p>
-<p>Hibernate可以应用在任何使用JDBC的场合，既可以在Java的客户端程序使用，也可以在Servlet/JSP的Web应用中使用，最具革命意义的是，Hibernate可以在EJB的J2EE架构中取代CMP,完成数据持久化的重任。</p>
-<h2 id="ORM简介"><a href="#ORM简介" class="headerlink" title="ORM简介"></a>ORM简介</h2><p>ORM是对象关系映射的意思，英语：Object Relational Mapping简称ORM，是一种程序技术，用于实现面向对象编程语言中不同系统类型的系统之间的数据转换。</p>
-    
-    <a class="article-more-a" href="/2018/04/12/SpringBoot学习笔记-整合SpringDataJPA/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SpringDataJPA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/12/SpringBoot学习笔记-整合SpringDataJPA/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 
@@ -839,19 +855,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CentOS6.5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -867,11 +883,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -903,10 +919,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitLab</a>
               </li>
              
@@ -919,7 +931,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单调栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">插入排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">快速排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -931,19 +959,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">插入排序算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">快速排序算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">选择排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -956,10 +980,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1015,19 +1035,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">微服务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Feign</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Hystrix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1039,6 +1047,18 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Feign</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Hystrix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Eureka</a>
               </li>
              
@@ -1047,15 +1067,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Dashboard</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Turbine</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1111,6 +1131,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
               </li>
              
@@ -1123,15 +1147,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1143,19 +1171,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CountDownLatch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">白鹭引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">EUI</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1163,7 +1183,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">EUI</a>
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
               </li>
              
               <li class="article-tag-list-item">
